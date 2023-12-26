@@ -3,25 +3,202 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --color-primary: 116, 72, 136; /* Accessible Light Lavender: #747488 */
+  --color-secondary: 255, 255, 240; /* Ivory: #FFFFF0 */
+  --color-accent: 151, 111, 0; /* Accessible Gold: #976f00 */
+  --soft-radius: 0.625rem;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  align-items: center; /* Centers content horizontally */
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-secondary));
+}
+
+/* Titles and Headers */
+.title {
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  color: rgb(var(--color-accent));
+  text-align: center; /* Centers title text */
+}
+
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(var(--color-primary));
+  text-align: center; /* Centers subtitle text */
+}
+
+/* Main Body Text */
+.body-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: rgb(var(--color-primary));
+  text-align: center; /* Centers body text */
+}
+
+/* Headings */
+.heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  color: rgb(var(--color-primary));
+  text-align: center; /* Centers headings */
+}
+
+/* Screen Reader Only (Accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Card Styles */
+.card {
+  align-items: center; /* Centers content horizontally */
+  justify-content: center;
+  background-color: rgb(var(--color-secondary));
+  border-radius: var(--soft-radius); /* Use variable for border-radius */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Images */
+.image {
+  border-radius: var(--soft-radius); /* Consistent border-radius */
+  margin: 1rem;
+}
+
+/* Buttons */
+.button {
+  background-color: rgb(var(--color-accent));
+  color: white;
+  border-radius: var(--soft-radius); /* Consistent border-radius */
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Navbar, Header, Footer Styles */
+.navbar,
+.header,
+.footer {
+  align-items: center; /* Centers content horizontally */
+  justify-content: center;
+  background-color: rgb(var(--color-secondary));
+  color: rgb(var(--color-primary));
+  padding: 1rem;
+  border-radius: 0.625rem;
+}
+/* existing styles... */
+
+/* Hover Effects */
+.button:hover,
+.image:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Scroll Effects for Images */
+.image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: translateY(-5px); /* Move up slightly on hover */
+}
+
+/* Scroll Effects for Content */
+.scroll-effect {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Trigger effect when content enters the viewport */
+.scroll-effect-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add this class to elements you want to animate on scroll */
+.animated-on-scroll {
+  visibility: hidden; /* initially hidden */
+}
+
+/* When element is in the viewport */
+.animated-on-scroll-visible {
+  visibility: visible;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Already centers content vertically */
+  min-height: 100vh; /* full screen height */
+  padding: 24px;
+  background-color: rgb(var(--color-secondary));
+}
+
+/* Gallery Section */
+.gallery {
+  margin-bottom: 24px;
+  /* Additional styles for gallery layout */
+}
+
+/* Services Section */
+.services {
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Service Card */
+.service-card {
+  padding: 24px;
+  background-color: rgb(var(--color-secondary));
+  border-radius: var(--soft-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* Other card styles */
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  margin-top: 48px;
+  background-color: rgb(var(--color-secondary));
+  /* Other footer styles */
 }

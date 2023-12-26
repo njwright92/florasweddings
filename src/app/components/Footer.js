@@ -12,35 +12,32 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <h2 className="footer-heading">Floras Weddings</h2>
-        <p className="footer-subtitle">
-          Elegant Floral Designs for Your Special Day
-        </p>
+        <p className="footer-subtitle">Thanks for visiting Floras Weddings!</p>
         <nav className="footer-nav">
-          <Link href="/gallery" passHref>
+          <Link href="#gallery" passHref>
             <PhotoIcon className="h-5 w-5 inline-block footer-link" />
             Gallery
           </Link>
-          <Link href="/services" passHref>
+          <Link href="#services" passHref>
             <CogIcon className="h-5 w-5 inline-block footer-link" />
             Services
           </Link>
-          <Link href="/packages" passHref>
+          <Link href="#packages" passHref>
             <TagIcon className="h-5 w-5 inline-block footer-link" />
             Packages
           </Link>
-          <Link href="/pricing" passHref>
+          <Link href="#pricing" passHref>
             <CurrencyDollarIcon className="h-5 w-5 inline-block footer-link" />
             Pricing
           </Link>
           <Link href="mailto:contact@florasweddings.com" passHref>
             <EnvelopeIcon className="h-5 w-5 inline-block footer-link" />
-            Contact Us
+            Contact Me
           </Link>
         </nav>
         <div className="footer-social">
           <div className="social-media-section">
-            <p className="footer-subtitle">Follow us on social media:</p>
+            <p className="footer-subtitle">Follow me on social media:</p>
             <div className="flex justify-center items-center">
               <a
                 href="https://www.instagram.com/florasweddings"
@@ -57,7 +54,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="florist-site-section">
+          <div className="footer-social">
             <p className="footer-subtitle">Visit my florist site at:</p>
             <div className="flex justify-center items-center">
               <a

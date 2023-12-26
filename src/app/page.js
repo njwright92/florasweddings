@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="main">
+    <main className="main" id="main">
       <Header />
       <h1 className="title mb-8">Floras Weddings</h1>
       <p className="subtitle mb-12">

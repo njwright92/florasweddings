@@ -189,12 +189,14 @@ body {
 }
 
 .footer-subtitle {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 .footer-nav,
 .footer-social {
-  margin-bottom: 1rem; /* Spacing between navigation links/social media links and other content */
+  margin-top: 1rem; /* Spacing between navigation links/social media links and other content */
 }
 
 .footer-link,

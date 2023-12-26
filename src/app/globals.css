@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: 116, 72, 136; /* Accessible Light Lavender: #747488 */
+  --color-primary: 190, 52, 85;
   --color-secondary: 255, 255, 240; /* Ivory: #FFFFF0 */
-  --color-accent: 151, 111, 0; /* Accessible Gold: #976f00 */
+  --color-accent: 183, 110, 121;
   --soft-radius: 0.625rem;
 }
 
@@ -22,21 +22,24 @@ body {
   font-family: "Great Vibes", cursive;
   font-size: 2rem;
   color: rgb(var(--color-accent));
-  text-align: center; /* Centers title text */
+  text-align: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .subtitle {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   color: rgb(var(--color-primary));
-  text-align: center; /* Centers subtitle text */
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* Main Body Text */
 .body-text {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  color: rgb(var(--color-primary));
+  color: black;
   text-align: center; /* Centers body text */
 }
 
@@ -71,10 +74,25 @@ body {
   margin-bottom: 1rem;
 }
 
+.section {
+  padding: 4rem 1rem; /* Ample vertical padding for a minimalist look */
+  text-align: center;
+  border-radius: var(--soft-radius);
+}
 /* Images */
 .image {
   border-radius: var(--soft-radius); /* Consistent border-radius */
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 200px; /* Example height */
+  background-color: #e0e0e0; /* Placeholder color */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--soft-radius); /* Consistent border-radius */
 }
 
 /* Buttons */
@@ -88,17 +106,6 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Navbar, Header, Footer Styles */
-.navbar,
-.header,
-.footer {
-  align-items: center; /* Centers content horizontally */
-  justify-content: center;
-  background-color: rgb(var(--color-secondary));
-  color: rgb(var(--color-primary));
-  padding: 1rem;
-  border-radius: 0.625rem;
-}
 /* existing styles... */
 
 /* Hover Effects */
@@ -114,42 +121,11 @@ body {
 }
 
 .image:hover {
-  transform: translateY(-5px); /* Move up slightly on hover */
+  transform: scale(1.05); /* Move up slightly on hover */
 }
 
-/* Scroll Effects for Content */
-.scroll-effect {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-/* Trigger effect when content enters the viewport */
-.scroll-effect-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Add this class to elements you want to animate on scroll */
-.animated-on-scroll {
-  visibility: hidden; /* initially hidden */
-}
-
-/* When element is in the viewport */
-.animated-on-scroll-visible {
-  visibility: visible;
-  animation: fadeInUp 0.5s ease-out;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.image-placeholder:hover {
+  transform: scale(1.05); /* Grow effect on hover */
 }
 
 .main {
@@ -193,12 +169,128 @@ body {
   /* Other card styles */
 }
 
-/* Footer Styles */
 .footer {
   width: 100%;
+  padding: 2rem; /* Increased padding for better spacing */
+  background-color: rgb(var(--color-secondary)); /* Ivory background */
+  color: rgb(var(--color-primary)); /* Light Lavender text */
   text-align: center;
-  padding: 16px;
-  margin-top: 48px;
-  background-color: rgb(var(--color-secondary));
-  /* Other footer styles */
+  border: 0.125rem solid rgb(var(--color-primary));
+}
+
+.footer-top {
+  margin-bottom: 2rem; /* Spacing between top and bottom parts of the footer */
+}
+
+.footer-heading {
+  font-size: 2.5rem; /* Larger size for prominence */
+  color: rgb(var(--color-accent)); /* Gold color for the heading */
+  margin-bottom: 1rem;
+}
+
+.footer-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav,
+.footer-social {
+  margin-bottom: 1rem; /* Spacing between navigation links/social media links and other content */
+}
+
+.footer-link,
+.footer-social-link {
+  color: black;
+  margin: 1rem; /* Spacing between links */
+  text-decoration: underline;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link:hover,
+.footer-social-link:hover {
+  text-decoration: none;
+  color: rgb(var(--color-accent));
+}
+
+.footer-bottom {
+  font-size: 0.875rem; /* Smaller font size for the bottom part */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center;
+  width: 100%; /* Full width */
+  padding: 0.625rem;
+  border-radius: var(--soft-radius);
+  background-color: rgb(var(--color-primary)); /* Light Lavender background */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
+}
+
+.home-button {
+  color: rgb(var(--color-secondary));
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: flex-start;
+  margin-left: 4rem;
+}
+
+.home-button:hover {
+  color: rgb(var(--color-accent)); /* Change to a different color on hover */
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  color: rgb(var(--color-secondary));
+  align-items: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 4rem;
+}
+
+.navbar-toggler:hover {
+  color: rgb(var(--color-accent)); /* Change to a different color on hover */
+  text-decoration: underline; /* Change to a different color on hover */
+}
+
+.navbar {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 12.5rem; /* Adjust as needed */
+  height: 100%;
+  background-color: rgb(var(--color-primary)); /* Ivory background */
+  padding: 1rem;
+  box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.navbar-open {
+  display: block; /* Show the navbar when this class is applied */
+}
+
+.navbar-close {
+  background: none; /* No background for the button */
+  border: none; /* No border for the button */
+  cursor: pointer; /* Cursor changes to pointer to indicate clickable */
+  color: black; /* Icon color set to black */
+  display: flex; /* Use flex to center the icon inside the button */
+  align-items: center; /* Vertical alignment */
+  justify-content: flex-end; /* Horizontal alignment */
+}
+
+.nav-link {
+  display: block;
+  margin: 1rem;
+  color: rgb(var(--color-secondary));
+}
+
+.nav-link:hover {
+  color: rgb(var(--color-accent)); /* Change to a different color on hover */
+  text-decoration: underline;
 }

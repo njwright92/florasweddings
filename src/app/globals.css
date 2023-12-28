@@ -235,7 +235,7 @@ body {
   z-index: 50;
   margin-top: -12rem;
 }
- 
+
 @media (min-width: 520px) {
   .header {
     margin-top: -21rem;
@@ -292,4 +292,57 @@ body {
   width: 100%; /* Set image width to 100% of its container */
   height: auto; /* Keep the image aspect ratio */
   max-height: 100%; /* Limit the image height to not exceed its container */
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  border: 0.25rem solid black; /* Light border */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  position: absolute;
+  z-index: 1000;
+  padding: 0;
+  width: max-content;
+  top: 100%; /* Position right below the parent element */
+  left: 50%; /* Center align */
+  transform: translateX(-50%);
+  cursor: pointer; /* Adjust for center alignment */
+  border-radius: var(--soft-radius);
+}
+
+.dropdown-items {
+  padding: 0.5rem;
+  margin: 0.25rem;
+  text-decoration: none;
+  color: black;
+  border: 0.1rem solid black; /* Border between links */
+  display: block; /* Ensure full width for each link */
+  cursor: pointer; /* Cursor pointer on hover */
+  border-radius: var(--soft-radius);
+}
+
+.dropdown-items:hover {
+  background-color: gray;
+  text-decoration: underline;
+  color: rgb(var(--color-accent));
+}
+
+.sidebar-dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  border: 0.25rem solid black; /* Light border */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  position: absolute;
+  z-index: 1000;
+  padding: 0;
+  width: max-content;
+  top: 10%; /* Position right below the parent element */
+  left: 130%; /* Center align */
+  transform: translateX(-50%);
+  cursor: pointer; /* Adjust for center alignment */
+  border-radius: var(--soft-radius);
 }

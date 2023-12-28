@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faImages,
-  faBox,
-  faDollarSign,
   faEnvelopeOpenText,
   faBars,
   faTimes,
   faHome,
-  faTaxi,
+  faQuestionCircle,
+  faUser,
+  faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareInstagram,
@@ -22,6 +22,27 @@ import {
 
 export default function Header() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+
+  const handleOutsideClick = (e) => {
+    // Close dropdown if click is outside the dropdown menu
+    if (!e.target.closest(".dropdown-menu")) {
+      setShowServicesDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showServicesDropdown) {
+      document.addEventListener("click", handleOutsideClick);
+    } else {
+      document.removeEventListener("click", handleOutsideClick);
+    }
+
+    // Cleanup event listener
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [showServicesDropdown]);
 
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -29,7 +50,6 @@ export default function Header() {
 
   return (
     <header className="header flex-col">
-
       {/* Header - Image Row with Social Links */}
       <div className="flex flex-col md:flex-row items-center gap-2 md:gap-0">
         {/* Social Links */}
@@ -38,25 +58,25 @@ export default function Header() {
             href="https://www.instagram.com/florasweddings"
             className="nav-link"
           >
-            <FontAwesomeIcon icon={faSquareInstagram} className="h-6 w-6" />
+            <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
           </a>
           <a
             href="https://www.facebook.com/florasweddings"
             className="nav-link"
           >
-            <FontAwesomeIcon icon={faSquareFacebook} className="h-6 w-6" />
+            <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
           </a>
           <a
             href="https://www.yelp.com/biz/florasweddings"
             className="nav-link"
           >
-            <FontAwesomeIcon icon={faYelp} className="h-6 w-6" />
+            <FontAwesomeIcon icon={faYelp} className="fa-xl" />
           </a>
           <a
             href="https://www.google.com/search?q=florasweddings"
             className="nav-link"
           >
-            <FontAwesomeIcon icon={faGoogle} className="h-6 w-6" />
+            <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
           </a>
         </div>
 
@@ -126,33 +146,53 @@ export default function Header() {
             </div>
           </Link>
           <Link href="#services" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div
+              className="nav-link mb-2"
+              onClick={toggleNavbar}
+              onMouseEnter={() => setShowServicesDropdown(true)}
+            >
               <FontAwesomeIcon
-                icon={faTaxi}
+                icon={faCalendarAlt}
                 className="h-6 w-6 inline-block mr-2"
               />
-              Services
+              Events & Occasions
             </div>
           </Link>
+          {showServicesDropdown && (
+            <div className="sidebar-dropdown">
+              <Link href="#weddings" passHref>
+                <span className="dropdown-items"> Weddings</span>
+              </Link>
+              <Link href="#private-parties" passHref>
+                <span className="dropdown-items"> Private Parties </span>
+              </Link>
+              <Link href="#business-parties" passHref>
+                <span className="dropdown-items"> Business Parties </span>
+              </Link>
+              <Link href="#funerals" passHref>
+                <span className="dropdown-items"> Funerals </span>
+              </Link>
+            </div>
+          )}
           <Link href="#packages" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
-                icon={faBox}
+                icon={faUser}
                 className="h-6 w-6 inline-block mr-2"
               />
-              Packages
+              About US
             </div>
           </Link>
           <Link href="#pricing" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
-                icon={faDollarSign}
+                icon={faQuestionCircle}
                 className="h-6 w-6 inline-block mr-2"
               />
-              Pricing
+              FAQs
             </div>
           </Link>
-          <Link href="mailto:contact@florasweddings.com" passHref>
+          <Link href="#contact" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}
@@ -183,33 +223,54 @@ export default function Header() {
             </div>
           </Link>
           <Link href="#services" passHref>
-            <div className="nav-link">
+            <div
+              className="nav-link mb-2"
+              onClick={toggleNavbar}
+              onMouseEnter={() => setShowServicesDropdown(true)}
+            >
               <FontAwesomeIcon
-                icon={faTaxi}
+                icon={faCalendarAlt}
                 className="h-6 w-6 inline-block mr-2"
               />
-              Services
+              Events & Occasions
             </div>
           </Link>
+          {showServicesDropdown && (
+            <div className="dropdown-menu">
+              <Link href="#weddings" passHref>
+                <span className="dropdown-items"> Weddings</span>
+              </Link>
+              <Link href="#private-parties" passHref>
+                <span className="dropdown-items"> Private Parties </span>
+              </Link>
+              <Link href="#business-parties" passHref>
+                <span className="dropdown-items"> Business Parties </span>
+              </Link>
+              <Link href="#funerals" passHref>
+                <span className="dropdown-items"> Funerals </span>
+              </Link>
+            </div>
+          )}
+
           <Link href="#packages" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
-                icon={faBox}
+                icon={faUser}
                 className="h-6 w-6 inline-block mr-2"
               />
-              Packages
+              About Us
             </div>
           </Link>
           <Link href="#pricing" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
-                icon={faDollarSign}
+                icon={faQuestionCircle}
                 className="h-6 w-6 inline-block mr-2"
               />
-              Pricing
+              FAQs
             </div>
           </Link>
-          <Link href="mailto:contact@florasweddings.com" passHref>
+          <Link href="#contact" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}

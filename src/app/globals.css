@@ -266,15 +266,43 @@ body {
 }
 
 .nav-link {
-  display: block;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  position: relative; /* Needed for pseudo-element positioning */
+  display: inline-block; /* Allows the link to fit the content */
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
   color: rgb(var(--color-secondary));
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0; /* Start with no width */
+  height: 2px; /* Height of the line */
+  background-color: rgb(var(--color-accent));
+  transition: width 0.3s;
+}
+
+.nav-link::before {
+  left: 0;
+  transform: translateY(-50%) translateX(-100%);
+}
+
+.nav-link::after {
+  right: 0;
+  transform: translateY(-50%) translateX(100%);
 }
 
 .nav-link:hover {
-  color: rgb(var(--color-accent)); /* Change to a different color on hover */
+  color: rgb(var(--color-accent));
   text-decoration: underline;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  width: 10px; /* Width of the line on hover */
 }
 
 .header-image {

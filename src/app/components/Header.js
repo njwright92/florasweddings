@@ -114,7 +114,7 @@ export default function Header() {
           } md:hidden`}
           onClick={toggleNavbar}
         >
-          <FontAwesomeIcon icon={faBars} className="h-6 w-6 mt-2" />
+          <FontAwesomeIcon icon={faBars} className="h-5 w-5 mt-2" />
         </button>
 
         {/* Side-opening menu for small screens */}
@@ -125,13 +125,13 @@ export default function Header() {
           style={{ backgroundColor: `rgba(var(--color-primary), 0.8)` }}
         >
           <button className="navbar-close text-right" onClick={toggleNavbar}>
-            <FontAwesomeIcon icon={faTimes} className="h-6 w-6" />
+            <FontAwesomeIcon icon={faTimes} className="h-5 w-5" />
           </button>
           <Link href="#main" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faHome}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Home
             </div>
@@ -140,7 +140,7 @@ export default function Header() {
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faImages}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Gallery
             </div>
@@ -153,7 +153,7 @@ export default function Header() {
             >
               <FontAwesomeIcon
                 icon={faCalendarAlt}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Events & Occasions
             </div>
@@ -178,7 +178,7 @@ export default function Header() {
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faUser}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               About US
             </div>
@@ -187,7 +187,7 @@ export default function Header() {
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faQuestionCircle}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               FAQs
             </div>
@@ -196,7 +196,7 @@ export default function Header() {
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Contact Us
             </div>
@@ -208,7 +208,7 @@ export default function Header() {
             <div className="nav-link" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faHome}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Home
             </div>
@@ -217,7 +217,7 @@ export default function Header() {
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faImages}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Gallery
             </div>
@@ -230,7 +230,7 @@ export default function Header() {
             >
               <FontAwesomeIcon
                 icon={faCalendarAlt}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Events & Occasions
             </div>
@@ -256,7 +256,7 @@ export default function Header() {
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faUser}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               About Us
             </div>
@@ -265,7 +265,7 @@ export default function Header() {
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faQuestionCircle}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               FAQs
             </div>
@@ -274,7 +274,7 @@ export default function Header() {
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}
-                className="h-6 w-6 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
               />
               Contact Us
             </div>

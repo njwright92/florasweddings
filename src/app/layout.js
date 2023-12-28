@@ -1,5 +1,11 @@
+import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "🌹 Floras Weddings",
@@ -11,18 +17,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.className}`}>
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
-      <body className="font-roboto">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

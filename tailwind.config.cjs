@@ -8,16 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#747488", // Light lavender
-        secondary: "#FFFFF0", // Ivory
-        accent: "#976f00", // Gold
+        primary: "#b2ac88", // Sage green
+        secondary: "#fffff0", // Ivory
+        accent: "#de5d83", // Blush
+        accent2: "#87ceeb", // Sky blue
       },
       borderRadius: {
         soft: "0.625rem",
-      },
-      fontFamily: {
-        greatvibes: ["Great Vibes", "cursive"],
-        roboto: ["Roboto", "sans-serif"],
       },
     },
   },

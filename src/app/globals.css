@@ -3,32 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: 190, 52, 85;
-  --color-secondary: 255, 255, 240; /* Ivory: #FFFFF0 */
-  --color-accent: 183, 110, 121;
+  --color-sage-green: 178, 172, 136;
+  --color-secondary: 255, 255, 240;
+  --color-primary: 213, 154, 173;
+  --color-accent: 135, 206, 235;
   --soft-radius: 0.625rem;
 }
 
+p,
+span {
+  font-family: "Inter", "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
 body {
-  align-items: center; /* Centers content horizontally */
+  align-items: center;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
   color: rgb(var(--color-primary));
   background-color: rgb(var(--color-secondary));
 }
 
 /* Titles and Headers */
 .title {
-  font-family: "Great Vibes", cursive;
-  font-size: 2rem;
-  color: rgb(var(--color-accent));
+  font-size: 2.5rem;
+  color: rgb(var(--color-secondary));
   text-align: center;
   align-items: center;
-  flex-grow: 1;
+  justify-items: center;
 }
 
 .subtitle {
-  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   color: rgb(var(--color-primary));
   text-align: center;
@@ -37,18 +52,9 @@ body {
 
 /* Main Body Text */
 .body-text {
-  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: black;
   text-align: center; /* Centers body text */
-}
-
-/* Headings */
-.heading {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.25rem;
-  color: rgb(var(--color-primary));
-  text-align: center; /* Centers headings */
 }
 
 /* Screen Reader Only (Accessibility) */
@@ -134,7 +140,6 @@ body {
   align-items: center; /* Centers content horizontally */
   justify-content: center; /* Already centers content vertically */
   min-height: 100vh; /* full screen height */
-  padding: 24px;
   background-color: rgb(var(--color-secondary));
 }
 
@@ -172,10 +177,10 @@ body {
 .footer {
   width: 100%;
   padding: 2rem; /* Increased padding for better spacing */
-  background-color: rgb(var(--color-secondary)); /* Ivory background */
-  color: rgb(var(--color-primary)); /* Light Lavender text */
+  background-color: rgb(var(--color-primary)); /* Ivory background */
+  color: rgb(var(--color-secondary)); /* Light Lavender text */
   text-align: center;
-  border: 0.125rem solid rgb(var(--color-primary));
+  border: 0.125rem solid rgb(var(--color-secondary));
 }
 
 .footer-top {
@@ -202,7 +207,7 @@ body {
 .footer-link,
 .footer-social-link {
   color: black;
-  margin: 1rem; /* Spacing between links */
+  margin: 1rem;
   text-decoration: underline;
   justify-content: center;
   align-items: center;
@@ -220,29 +225,21 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between; /* Distributes space between items */
   align-items: center;
-  width: 100%; /* Full width */
-  padding: 0.625rem;
+  width: 100%;
+  padding: 0.5rem;
   border-radius: var(--soft-radius);
-  background-color: rgb(var(--color-primary)); /* Light Lavender background */
+  background-color: rgb(var(--color-primary), 0.8);
   position: sticky;
   top: 0;
-  z-index: 1000; /* Ensure header stays on top */
+  z-index: 50;
+  margin-top: -12rem;
 }
-
-.home-button {
-  color: rgb(var(--color-secondary));
-  background: none;
-  border: none;
-  cursor: pointer;
-  align-items: flex-start;
-  margin-left: 4rem;
-}
-
-.home-button:hover {
-  color: rgb(var(--color-accent)); /* Change to a different color on hover */
-  text-decoration: underline;
+ 
+@media (min-width: 520px) {
+  .header {
+    margin-top: -21rem;
+  }
 }
 
 .navbar-toggler {
@@ -251,29 +248,11 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  margin-right: 4rem;
 }
 
 .navbar-toggler:hover {
   color: rgb(var(--color-accent)); /* Change to a different color on hover */
   text-decoration: underline; /* Change to a different color on hover */
-}
-
-.navbar {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 12.5rem; /* Adjust as needed */
-  height: 100%;
-  background-color: rgb(var(--color-primary)); /* Ivory background */
-  padding: 1rem;
-  box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
-}
-
-.navbar-open {
-  display: block; /* Show the navbar when this class is applied */
 }
 
 .navbar-close {
@@ -288,11 +267,29 @@ body {
 
 .nav-link {
   display: block;
-  margin: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   color: rgb(var(--color-secondary));
 }
 
 .nav-link:hover {
   color: rgb(var(--color-accent)); /* Change to a different color on hover */
   text-decoration: underline;
+}
+
+.header-image {
+  position: relative;
+  width: 30%; /* Set width to 30% of its container */
+  height: 30%; /* Set height to 30% of its container */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+  overflow: hidden; /* This will ensure the border-radius affects the child image */
+  border-radius: var(--soft-radius); /* Apply the soft radius */
+}
+
+.header-image img {
+  display: block; /* Remove any default inline spacing */
+  width: 100%; /* Set image width to 100% of its container */
+  height: auto; /* Keep the image aspect ratio */
+  max-height: 100%; /* Limit the image height to not exceed its container */
 }

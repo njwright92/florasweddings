@@ -14,10 +14,21 @@ export default function Home() {
   return (
     <main className="main" id="main">
       <Header />
-      <h1 className="title mb-8">Floras Weddings</h1>
-      <p className="subtitle mb-12">
+      <div style={{ position: "relative" }}>
+        <img
+          src="/banner.webp"
+          alt="Floras Weddings Banner"
+          style={{
+            width: "100%",
+            objectFit: "cover",
+            height: "auto",
+          }}
+        />
+      </div>
+
+      <h2 className="subtitle mb-12">
         Elegant Floral Designs for Your Special Day
-      </p>
+      </h2>
       <section className="section" id="gallery" data-aos="fade-up">
         <h2 className="subtitle">Gallery</h2>
         <p className="body-text">

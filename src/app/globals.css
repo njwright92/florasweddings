@@ -87,19 +87,40 @@ body {
   border-radius: var(--soft-radius);
 }
 /* Images */
+.banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--soft-radius);
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: relative;
+  text-align: center;
+}
+
+.image-title {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to control the distance from the bottom */
+  left: 50%; /* Adjust this value to control the distance from the left */
+  background-color: rgba(0, 0, 0, 0.7); /* Background color for the text */
+  transform: translateX(-50%); /* Center horizontally */
+  color: #fff; /* Text color */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: var(--soft-radius);
+}
+
 .image {
-  border-radius: var(--soft-radius); /* Consistent border-radius */
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  border-radius: var(--soft-radius);
+  margin: 0.5rem;
+  width: 100%;
+  height: "auto"; /* 200px in rem */
 }
 
 .image-placeholder {
   width: 100%;
-  height: 200px; /* Example height */
-  background-color: #e0e0e0; /* Placeholder color */
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-radius: var(--soft-radius); /* Consistent border-radius */
+  background-color: #e0e0e0;
+  border-radius: var(--soft-radius);
 }
 
 /* Buttons */
@@ -146,22 +167,23 @@ body {
 
 /* Gallery Section */
 .gallery {
-  margin-bottom: 24px;
-  /* Additional styles for gallery layout */
+  margin-bottom: 3rem;
 }
 
-/* Services Section */
-.services {
-  text-align: center;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 8px;
-  margin-bottom: 24px;
-  /* Responsive adjustments */
-  @media (min-width: 768px) {
+@media (max-width: 767px) {
+  .grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
-  @media (min-width: 1024px) {
+}
+
+/* For md and xl viewports, display 3 columns */
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 }
 
@@ -269,53 +291,35 @@ body {
   color: rgb(var(--color-secondary));
   transition: color 0.3s; /* Smooth transition for color change */
 }
-
 .nav-link::before,
 .nav-link::after {
   content: "";
   position: absolute;
-  top: 50%;
-  width: 0; /* Start with no width */
-  height: 2px; /* Height of the line */
+  width: 0.15rem; /* Width of the vertical line */
   background-color: rgb(var(--color-secondary-hover));
-  transition: width 0.3s;
+  transition: height 0.3s;
 }
 
 .nav-link::before {
-  left: 0;
-  transform: translateY(-50%) translateX(-100%);
+  top: 0;
+  left: -0.15rem; /* Position it just to the left of the link */
+  height: 100%; /* Full height */
+  transform-origin: right top; /* Set transform origin to top-right */
+  transform: scaleY(0); /* Start with no height */
 }
 
 .nav-link::after {
-  right: 0;
-  transform: translateY(-50%) translateX(100%);
-}
-
-.nav-link:hover {
-  color: rgb(var(--color-secondary-hover));
-  text-decoration: underline;
+  bottom: 0;
+  right: -0.15rem; /* Position it just to the right of the link */
+  height: 100%; /* Full height */
+  transform-origin: left bottom; /* Set transform origin to bottom-left */
+  transform: scaleY(0); /* Start with no height */
 }
 
 .nav-link:hover::before,
 .nav-link:hover::after {
-  width: 10px; /* Width of the line on hover */
-}
-
-.header-image {
-  position: relative;
-  width: 30%; /* Set width to 30% of its container */
-  height: 30%; /* Set height to 30% of its container */
-  margin-left: auto; /* Center the image horizontally */
-  margin-right: auto; /* Center the image horizontally */
-  overflow: hidden; /* This will ensure the border-radius affects the child image */
-  border-radius: var(--soft-radius); /* Apply the soft radius */
-}
-
-.header-image img {
-  display: block; /* Remove any default inline spacing */
-  width: 100%; /* Set image width to 100% of its container */
-  height: auto; /* Keep the image aspect ratio */
-  max-height: 100%; /* Limit the image height to not exceed its container */
+  transform: scaleY(1);
+  background-color: rgb(var(--color-secondary-hover));
 }
 
 .dropdown-menu {

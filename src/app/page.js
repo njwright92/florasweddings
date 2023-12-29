@@ -14,15 +14,11 @@ export default function Home() {
   return (
     <main className="main" id="main">
       <Header />
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="/banner.webp"
+          src="/img/banner.webp"
           alt="Floras Weddings Banner"
-          style={{
-            width: "100%",
-            objectFit: "cover",
-            height: "auto",
-          }}
+          className="banner-img"
         />
       </div>
 

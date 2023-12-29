@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex justify-start md:justify-start md:flex-grow-0">
             <Link href="#main">
               <img
-                src="/floras-Flowers.png"
+                src="/img/floras-Flowers.png"
                 alt="Floras Flowers"
                 className="cursor-pointer"
                 width="300"

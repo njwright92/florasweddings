@@ -81,10 +81,10 @@ export default function Header() {
         </div>
 
         {/* Image */}
-        <div className="flex -mt-5 -mb-12">
+        <div className="flex -mt-12 -mb-14">
           <Link href="/" passHref>
             <img
-              src="/floras-Flowers.png"
+              src="/img/floras-Flowers.png"
               alt="Floras Flowers"
               className="cursor-pointer"
               height="auto"
@@ -127,7 +127,7 @@ export default function Header() {
           <button className="navbar-close text-right" onClick={toggleNavbar}>
             <FontAwesomeIcon icon={faTimes} className="h-5 w-5" />
           </button>
-          <Link href="#main" passHref>
+          <Link href="/" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faHome}
@@ -136,7 +136,7 @@ export default function Header() {
               Home
             </div>
           </Link>
-          <Link href="#gallery" passHref>
+          <Link href="/gallery" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faImages}
@@ -213,7 +213,7 @@ export default function Header() {
               Home
             </div>
           </Link>
-          <Link href="#gallery" passHref>
+          <Link href="/gallery" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faImages}

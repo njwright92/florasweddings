@@ -23,16 +23,22 @@ import {
 export default function Header() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const [showGalleryDropdown, setShowGalleryDropdown] = useState(false);
 
   const handleOutsideClick = (e) => {
-    // Close dropdown if click is outside the dropdown menu
-    if (!e.target.closest(".dropdown-menu")) {
+    // Close services dropdown if click is outside the dropdown menu
+    if (!e.target.closest(".services-dropdown-menu")) {
       setShowServicesDropdown(false);
+    }
+    // Close gallery dropdown if click is outside the dropdown menu
+    if (!e.target.closest(".gallery-dropdown-menu")) {
+      setShowGalleryDropdown(false);
     }
   };
 
   useEffect(() => {
-    if (showServicesDropdown) {
+    // Add event listener if either dropdown is visible
+    if (showServicesDropdown || showGalleryDropdown) {
       document.addEventListener("click", handleOutsideClick);
     } else {
       document.removeEventListener("click", handleOutsideClick);
@@ -42,7 +48,7 @@ export default function Header() {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [showServicesDropdown]);
+  }, [showServicesDropdown, showGalleryDropdown]);
 
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -137,7 +143,10 @@ export default function Header() {
             </div>
           </Link>
           <Link href="/gallery" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div
+              className="nav-link"
+              onMouseEnter={() => setShowGalleryDropdown(!showGalleryDropdown)}
+            >
               <FontAwesomeIcon
                 icon={faImages}
                 className="h-5 w-5 inline-block mr-2"
@@ -145,6 +154,23 @@ export default function Header() {
               Gallery
             </div>
           </Link>
+          {showGalleryDropdown && (
+            <div className="dropdown-menu gallery-dropdown-menu">
+              <Link href="/gallery/knox" passHref>
+                <span className="dropdown-items">Knox/Farley Wedding</span>
+              </Link>
+              <Link href="/gallery/ditrich" passHref>
+                <span className="dropdown-items">
+                  Chelsey and Tim Ditrich Backyard Wedding
+                </span>
+              </Link>
+              <Link href="/gallery/wabs" passHref>
+                <span className="dropdown-items">The Wabs Wedding</span>
+              </Link>
+              {/* Add links to other gallery subpages here */}
+            </div>
+          )}
+
           <Link href="#services" passHref>
             <div
               className="nav-link mb-2"
@@ -214,7 +240,10 @@ export default function Header() {
             </div>
           </Link>
           <Link href="/gallery" passHref>
-            <div className="nav-link">
+            <div
+              className="nav-link"
+              onMouseEnter={() => setShowGalleryDropdown(!showGalleryDropdown)}
+            >
               <FontAwesomeIcon
                 icon={faImages}
                 className="h-5 w-5 inline-block mr-2"
@@ -222,11 +251,27 @@ export default function Header() {
               Gallery
             </div>
           </Link>
-          <Link href="#services" passHref>
+          {showGalleryDropdown && (
+            <div className="dropdown-menu gallery-dropdown-menu">
+              <Link href="/gallery/knox" passHref>
+                <span className="dropdown-items">Knox/Farley Wedding</span>
+              </Link>
+              <Link href="/gallery/ditrich" passHref>
+                <span className="dropdown-items">
+                  Chelsey and Tim Ditrich Backyard Wedding
+                </span>
+              </Link>
+              <Link href="/gallery/wabs" passHref>
+                <span className="dropdown-items">The Wabs Wedding</span>
+              </Link>
+              {/* Add links to other gallery subpages here */}
+            </div>
+          )}
+
+          <Link href="/events" passHref>
             <div
-              className="nav-link mb-2"
-              onClick={toggleNavbar}
-              onMouseEnter={() => setShowServicesDropdown(true)}
+              className="nav-link"
+              onMouseEnter={() => setShowServicesDropdown(!showServicesDropdown)}
             >
               <FontAwesomeIcon
                 icon={faCalendarAlt}

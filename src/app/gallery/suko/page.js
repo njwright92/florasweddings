@@ -1,11 +1,11 @@
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 import fs from "fs";
 import path from "path";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function Gallery() {
   // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "wabs");
+  const imagesDirectory = path.join(process.cwd(), "public", "img", "knox");
   const imageFilenames = fs.readdirSync(imagesDirectory);
 
   let currentIndex = 0;
@@ -13,10 +13,10 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">The Wabs Wedding.</h1>
-      <p className="gallery">
-        Photos by Yasmina Rose Photography White Barn Ranch
-      </p>
+      <h1 className="subtitle gallery">
+        Knox/Farley Wedding Coeurd&apos;Alene Casino
+      </h1>
+      <p className="gallery text-center">Photos by Meagan Mylan Photography</p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file
@@ -25,7 +25,7 @@ export default function Gallery() {
           }
 
           // Check if the image file exists
-          const imagePath = `/img/wabs/${filename}`;
+          const imagePath = `/img/knox/${filename}`;
           const imageExists = fs.existsSync(
             path.join(imagesDirectory, filename)
           );
@@ -46,7 +46,7 @@ export default function Gallery() {
                     className="image-placeholder"
                     loading="lazy"
                   />
-                  <p className="image-title">The Wabs Wedding</p>
+                  <p className="image-title">The Knox Wedding</p>
                 </div>
               </div>
             );

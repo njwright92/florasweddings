@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 
 export default function Gallery() {
   // Read the image filenames from the directory
@@ -13,10 +13,10 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">The Wabs Wedding.</h1>
-      <p className="gallery">
-        Photos by Yasmina Rose Photography White Barn Ranch
-      </p>
+      <h1 className="subtitle gallery">
+        The Wabs Wedding. 
+      </h1>
+      <p className="gallery text-center">Yasmina Rose Photography White Barn Ranch</p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

@@ -82,7 +82,7 @@ export default function Header() {
 
         {/* Image */}
         <div className="flex -mt-5 -mb-12">
-          <Link href="#main" passHref>
+          <Link href="/" passHref>
             <img
               src="/floras-Flowers.png"
               alt="Floras Flowers"
@@ -204,7 +204,7 @@ export default function Header() {
         </div>
 
         <div className="hidden md:flex flex-row justify-center space-x-4 flex-wrap">
-          <Link href="#main" passHref>
+          <Link href="/" passHref>
             <div className="nav-link" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faHome}
@@ -237,7 +237,7 @@ export default function Header() {
           </Link>
           {showServicesDropdown && (
             <div className="dropdown-menu">
-              <Link href="#weddings" passHref>
+              <Link href="/events/weddings" passHref>
                 <span className="dropdown-items"> Weddings</span>
               </Link>
               <Link href="#private-parties" passHref>

@@ -23,7 +23,7 @@ export default function Footer() {
                 src="/floras-Flowers.png"
                 alt="Floras Flowers"
                 className="cursor-pointer"
-                width="200"
+                width="300"
                 height="auto"
               />
             </Link>
@@ -32,9 +32,9 @@ export default function Footer() {
           {/* Social Media Links - Flex Center */}
           <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:flex-grow">
             <div className="flex flex-col items-center">
-              <h4 className="footer-subtitle text-center">
+              <h3 className="footer-subtitle text-center">
                 Follow me on social media:
-              </h4>
+              </h3>
               <div className="flex gap-2">
                 <a
                   href="https://www.instagram.com/florasweddings"
@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="footer-subtitle">Email or call me now at:</p>
+        <h3 className="footer-subtitle">Email or call me now at:</h3>
         <a href="mailto:stacimw@yahoo.com" className="footer-link">
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-2" />
           stacimw@yahoo.com

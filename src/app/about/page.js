@@ -19,21 +19,33 @@ export default function About() {
 
       <div className="flex justify-between mt-4 ml-2">
         <div>
-          <h6 className="body-text">
+          <h3 className="body-text ml-2">
             Serving Rathdrum, Coeur d&apos;Alene, Post Falls, & Surrounding
             Areas.
-          </h6>
-          <p className="text-black mt-2 ml-2 text-center">
-            <FontAwesomeIcon icon={faMapMarkerAlt} /> Rathdrum, ID
+          </h3>
+          <p className="text-black mt-2 p-2 text-left">
+            <span className="icon-text">
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                className="custom-button"
+              />
+              <span className="ml-2">Rathdrum, ID</span>
+            </span>
             <br />
-            <FontAwesomeIcon icon={faPhone} /> (208) 755-9409
+            <span className="icon-text">
+              <FontAwesomeIcon icon={faPhone} className="custom-button" />
+              <span className="ml-2">(208) 755-9409</span>
+            </span>
             <br />
-            <FontAwesomeIcon icon={faEnvelope} /> stacimw@yahoo.com
+            <span className="icon-text">
+              <FontAwesomeIcon icon={faEnvelope} className="custom-button" />
+              <span className="ml-2">stacimw@yahoo.com</span>
+            </span>
           </p>
         </div>
         <div>
-          <h6 className="body-text text-lg mr-2">Hours of Operation</h6>
-          <p className="body-text mt-2 mr-2">
+          <h3 className="body-text mr-2">Hours of Operation</h3>
+          <p className="text-black text-right mt-2 p-2">
             Monday: 9 AM - 5 PM
             <br />
             Tuesday: 9 AM - 5 PM
@@ -58,7 +70,7 @@ export default function About() {
       />
 
       <br />
-      <p className="body-text">
+      <p className="body-text p-2">
         {" "}
         With a passion for floral design cultivated at JJ Neville&apos;s School
         of Floral Design in Vancouver, Canada, I&apos;ve embarked on a journey
@@ -75,10 +87,12 @@ export default function About() {
         Rathdrum. Delight in the elegance of locally sourced blooms from Idaho
         growers and Spokane&apos;s wholesale markets. Whether it&apos;s
         weddings, events or any special occasion, let Flora&apos;s Flowers add a
-        touch of floral magic. Enjoy the convenience of deliveries to Rathdrum
-        and surrounding areas. Your support means the world to me, and I
-        can&apos;t wait to bring a burst of beauty into your life.
+        touch of floral magic.
         <br />
+        <br />
+        Enjoy the convenience of deliveries to Rathdrum and surrounding areas.
+        Your support means the world to me, and I can&apos;t wait to bring a
+        burst of beauty into your life.
         <br />
         Thank you for considering Flora&apos;s Flowers for your next floral
         moment!
@@ -86,11 +100,7 @@ export default function About() {
       <br />
       <br />
       <div className="flex flex-col md:flex-row items-center">
-        <img
-          src="/img/staci.webp"
-          alt="Staci"
-          className="rounded-full mr-4 mb-1"
-        />
+        <img src="/img/staci.webp" alt="Staci" className="rounded-full mr-4" />
         <h4 className="subtitle">Staci Huffman</h4>
         <p className="body-text">
           With 30 years of experience in the floral industry, I&apos;m a

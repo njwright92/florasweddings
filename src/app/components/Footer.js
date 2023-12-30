@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex justify-start md:justify-start md:flex-grow-0">
             <Link href="/">
               <img
-                src="/img/floras-Flowers.webp"
+                src="/img/logo.webp"
                 alt="Floras Flowers"
                 className="cursor-pointer"
                 width="300"
@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Social Media Links - Flex Center */}
           <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:flex-grow">
             <div className="flex flex-col items-center">
-              <h3 className="subtitle text-center">
+              <h3 className="body-text text-center">
                 Follow me on social media:
               </h3>
               <div className="flex gap-1">
@@ -67,7 +67,7 @@ export default function Footer() {
           {/* Site Link - Flex End */}
           <div className="flex flex-col items-end md:flex-row md:justify-end md:flex-grow-0">
             <div className="flex flex-col items-center">
-              <h4 className="subtitle text-center">
+              <h4 className="body-text text-center">
                 Looking for fresh flowers for your everydy occssions? visit
                 Visit my florist eCommerce site here:
               </h4>
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <h3 className="subtitle">Email or call me now at:</h3>
+        <h3 className="body-text">Email or call me now at:</h3>
         <a href="mailto:stacimw@yahoo.com" className="footer-link text-lg">
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-2" />
           florasproflowers@gmail.com

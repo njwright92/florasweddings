@@ -9,13 +9,15 @@
   --color-green: 158, 152, 116;
   --soft-radius: 0.625rem;
 }
+
 .logo {
   border-radius: var(--soft-radius);
 }
+
 .custom-button {
-  border-radius: 9999px; /* equivalent to Tailwind's rounded-full */
+  border-radius: 9999px;
   background-color: rgb(var(--color-primary));
-  padding: 0.5rem; /* equivalent to Tailwind's p-2 */
+  padding: 0.5rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -46,30 +48,29 @@ body {
   background-color: rgb(var(--color-secondary));
 }
 
-/* Titles and Headers */
 .title {
   font-size: 2.5rem;
   color: rgb(var(--color-primary));
   text-align: center;
   align-items: center;
   justify-items: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
 .subtitle {
   font-size: 1.5rem;
   color: black;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
-/* Main Body Text */
 .body-text {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: black;
-  text-align: center; /* Centers body text */
+  text-align: center;
+  justify-content: center;
 }
 
-/* Screen Reader Only (Accessibility) */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -81,14 +82,12 @@ body {
   border: 0;
 }
 
-/* Card Styles */
-
 .section {
-  padding: 4rem 1rem; /* Ample vertical padding for a minimalist look */
+  padding: 4rem 1rem;
   text-align: center;
   border-radius: var(--soft-radius);
 }
-/* Images */
+
 .banner-img {
   width: 100%;
   height: auto;
@@ -97,13 +96,13 @@ body {
 }
 
 .image-overlay {
-  position: absolute; /* Use absolute positioning */
-  top: 50%; /* Align vertically center */
-  left: 0; /* Align to the left */
-  transform: translateY(-50%); /* Adjust for exact vertical center */
-  text-align: center; /* Align text to the left */
-  width: 33.33%; /* Take the left third of the parent */
-  padding-left: 1rem; /* Padding on the left */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 33.33%;
+  padding-left: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -115,18 +114,26 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
-  cursor: pointer; /* Cursor pointer to indicate it's clickable */
-  margin-top: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.8);
+  position: relative;
+  top: 0;
+}
+
+.button:hover {
+  background-color: rgb(var(--color-green));
+  color: rgb(var(--color-primary));
+  transform: scale(1.1);
 }
 
 .image-title {
   position: absolute;
-  bottom: 10px; /* Adjust this value to control the distance from the bottom */
-  left: 50%; /* Adjust this value to control the distance from the left */
-  background-color: rgba(0, 0, 0, 0.7); /* Background color for the text */
-  transform: translateX(-50%); /* Center horizontally */
-  color: #fff; /* Text color */
-  padding: 5px 10px; /* Padding around the text */
+  bottom: 10px;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 5px 10px;
   border-radius: var(--soft-radius);
 }
 
@@ -138,9 +145,9 @@ body {
 
 .image {
   width: 100%;
-  padding-top: 100%; /* This makes the div a square */
-  position: relative; /* Needed for absolute positioning inside */
-  overflow: hidden; /* Hides the part of the image that overflows */
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
   border-radius: var(--soft-radius);
   margin: 0.75rem;
   transition: transform 0.3s ease-in-out;
@@ -152,21 +159,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the whole area */
+  object-fit: cover;
   border-radius: var(--soft-radius);
   transition: transform 0.3s ease-in-out;
 }
 
 .image:hover {
-  transform: scale(1.1); /* Enlarges the entire image container */
+  transform: scale(1.1);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  justify-content: center; /* Centers content vertically */
-  min-height: 100vh; /* Full screen height */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   background-color: rgb(var(--color-secondary));
 }
 
@@ -174,7 +181,6 @@ body {
   margin-bottom: 3rem;
 }
 
-/* Media Queries for responsive grid layout */
 @media (max-width: 767px) {
   .grid {
     display: grid;
@@ -214,17 +220,10 @@ body {
 .footer-link,
 .footer-social-link {
   color: rgb(var(--color-green));
-  margin: 0.5rem;
+  margin: 0.3rem;
   text-decoration: underline;
   justify-content: center;
   align-items: center;
-}
-
-.footer-link:hover,
-.footer-social-link:hover {
-  text-decoration: none;
-  color: rgb(var(--color-secondary-hover));
-  transform: scale(1.1);
 }
 
 .footer-bottom {
@@ -251,47 +250,46 @@ body {
   cursor: pointer;
 }
 
-.navbar-toggler:hover {
-  color: rgb(var(--color-secondary-hover));
-  transform: scale(1.1);
-}
-
 .navbar-close {
-  background: none; /* No background for the button */
-  border: none; /* No border for the button */
-  cursor: pointer; /* Cursor changes to pointer to indicate clickable */
-  color: black; /* Icon color set to black */
-  display: flex; /* Use flex to center the icon inside the button */
-  align-items: center; /* Vertical alignment */
-  justify-content: flex-end; /* Horizontal alignment */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .nav-link {
-  position: relative; /* Needed for pseudo-element positioning */
-  display: inline-block; /* Allows the link to fit the content */
+  position: relative;
+  display: inline-block;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
   color: rgb(var(--color-green));
-  transition: color 0.4s; /* Smooth transition for color change */
+  transition: color 0.4s;
 }
 
+.footer-link:hover,
+.footer-social-link:hover,
+.navbar-toggler:hover,
 .button:hover,
 .nav-link:hover {
+  text-decoration: dashed underline;
   transform: scale(1.1);
   color: rgb(var(--color-secondary));
 }
+
 .dropdown-menu {
   display: flex;
   flex-direction: column;
-  background-color: rgb(var(--color-secondary));
+  background-color: rgb(var(--color-primary));
   color: black;
-  border: 0.125rem solid black;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-bottom: 0.2rem solid black;
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   width: max-content;
-  top: 100%;
-  left: 39%;
+  top: 98%;
+  left: 37%;
   transform: translateX(-50%);
   cursor: pointer;
   border-radius: var(--soft-radius);
@@ -307,24 +305,43 @@ body {
 }
 
 .dropdown-items:hover {
+  text-decoration: dashed underline;
+  transform: scale(1.05);
   background-color: rgb(var(--color-secondary));
-  transform: scale(1.1);
 }
 
-.sidebar-dropdown {
+.icon-text {
   display: flex;
-  flex-direction: column;
-  background-color: rgb(var(--color-secondary));
-  color: black;
-  border: 0.25rem solid black; /* Light border */
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  position: absolute;
-  z-index: 1000;
-  padding: 0;
-  width: max-content;
-  top: 10%; /* Position right below the parent element */
-  left: 130%; /* Center align */
-  transform: translateX(-50%);
-  cursor: pointer; /* Adjust for center alignment */
+  align-items: center;
+}
+
+form {
+  background-color: var(--color-primary);
   border-radius: var(--soft-radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.textarea {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 0.125rem solid rgba(var(--color-green));
+  border-radius: var(--soft-radius);
+  width: 50%;
+  padding: 0.75rem;
+  color: #4a5568;
+  line-height: 1.25;
+}
+
+.horizontal-line {
+  border: 0.1rem solid black;
+  margin: 1rem 0;
 }

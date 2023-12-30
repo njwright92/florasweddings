@@ -104,7 +104,7 @@ export default function Header() {
 
         {/* Email and Phone Links */}
         <div className="flex flex-col md:ml-20">
-          <p className="text-white">Email or call me now at:</p>
+          <p className="body-text">Email or call me now at:</p>
           <a href="mailto:stacimw@yahoo.com" className="nav-link">
             florasproflowers@gmail.com
           </a>
@@ -170,7 +170,7 @@ export default function Header() {
                 icon={faQuestionCircle}
                 className="h-5 w-5 inline-block mr-2"
               />
-              FAQs
+              Q&A
             </div>
           </Link>
           <Link href="/contact" passHref>
@@ -239,7 +239,7 @@ export default function Header() {
                 icon={faQuestionCircle}
                 className="h-5 w-5 inline-block mr-2"
               />
-              FAQs
+              Q&A
             </div>
           </Link>
           <Link href="/contact" passHref>

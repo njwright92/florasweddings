@@ -11,7 +11,7 @@ import {
   faHome,
   faQuestionCircle,
   faUser,
-  faCalendarAlt,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareInstagram,
@@ -58,52 +58,55 @@ export default function Header() {
     <header className="header flex-col">
       {/* Header - Image Row with Social Links */}
       <div className="flex flex-col md:flex-row items-center gap-2 md:gap-0">
-        {/* Social Links */}
-        <div className="flex gap-2 mt-2 md:mr-20">
-          <a
-            href="https://www.instagram.com/florasweddings"
-            className="nav-link"
-          >
-            <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
-          </a>
-          <a
-            href="https://www.facebook.com/florasweddings"
-            className="nav-link"
-          >
-            <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
-          </a>
-          <a
-            href="https://www.yelp.com/biz/florasweddings"
-            className="nav-link"
-          >
-            <FontAwesomeIcon icon={faYelp} className="fa-xl" />
-          </a>
-          <a
-            href="https://www.google.com/search?q=florasweddings"
-            className="nav-link"
-          >
-            <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
-          </a>
-        </div>
-
-        {/* Image */}
-        <div className="flex -mt-12 -mb-14">
+        <div className="flex">
           <Link href="/" passHref>
             <img
-              src="/img/floras-Flowers.png"
+              src="/img/logo.webp"
               alt="Floras Flowers"
-              className="cursor-pointer"
+              className="cursor-pointer logo"
               height="auto"
-              width={300}
+              width={400}
             />
           </Link>
         </div>
+
+        {/* Social Links */}
+        <div className="flex gap-2 mt-2 md:mr-20">
+          <Link href="https://www.instagram.com/florasflower4u/" passHref>
+            <div className="nav-link custom-button">
+              <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
+            </div>
+          </Link>
+          <Link href="https://www.facebook.com/happytrailsfloral" passHref>
+            <div className="nav-link custom-button">
+              <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
+            </div>
+          </Link>
+          <Link
+            href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
+            passHref
+          >
+            <div className="nav-link custom-button">
+              <FontAwesomeIcon icon={faYelp} className="fa-xl" />
+            </div>
+          </Link>
+          <Link
+            href="https://www.google.com/search?q=floras+flowers&oq=floras+flowers&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgKGK8BGMcBGIAEMgYIAhBFGEAyDwgDEC4YChivARjHARiABDIMCAQQABgKGA8YFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTA1N2owajSoAgCwAgA&sourceid=chrome&ie=UTF-8"
+            passHref
+          >
+            <div className="nav-link custom-button">
+              <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
+            </div>
+          </Link>
+        </div>
+
+        {/* Image */}
 
         {/* Email and Phone Links */}
         <div className="flex flex-col md:ml-20">
           <p className="text-white">Email or call me now at:</p>
           <a href="mailto:stacimw@yahoo.com" className="nav-link">
-            stacimw@yahoo.com
+            florasproflowers@gmail.com
           </a>
           <a href="tel:+12087559409" className="nav-link">
             (208)-755-9409
@@ -143,64 +146,16 @@ export default function Header() {
             </div>
           </Link>
           <Link href="/gallery" passHref>
-            <div
-              className="nav-link"
-              onMouseEnter={() => setShowGalleryDropdown(!showGalleryDropdown)}
-            >
+            <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faImages}
                 className="h-5 w-5 inline-block mr-2"
               />
-              Gallery
+              Galleries
             </div>
           </Link>
-          {showGalleryDropdown && (
-            <div className="dropdown-menu gallery-dropdown-menu">
-              <Link href="/gallery/knox" passHref>
-                <span className="dropdown-items">Knox/Farley Wedding</span>
-              </Link>
-              <Link href="/gallery/ditrich" passHref>
-                <span className="dropdown-items">
-                  Chelsey and Tim Ditrich Backyard Wedding
-                </span>
-              </Link>
-              <Link href="/gallery/wabs" passHref>
-                <span className="dropdown-items">The Wabs Wedding</span>
-              </Link>
-              {/* Add links to other gallery subpages here */}
-            </div>
-          )}
 
-          <Link href="#services" passHref>
-            <div
-              className="nav-link mb-2"
-              onClick={toggleNavbar}
-              onMouseEnter={() => setShowServicesDropdown(true)}
-            >
-              <FontAwesomeIcon
-                icon={faCalendarAlt}
-                className="h-5 w-5 inline-block mr-2"
-              />
-              Events & Occasions
-            </div>
-          </Link>
-          {showServicesDropdown && (
-            <div className="sidebar-dropdown">
-              <Link href="#weddings" passHref>
-                <span className="dropdown-items"> Weddings</span>
-              </Link>
-              <Link href="#private-parties" passHref>
-                <span className="dropdown-items"> Private Parties </span>
-              </Link>
-              <Link href="#business-parties" passHref>
-                <span className="dropdown-items"> Business Parties </span>
-              </Link>
-              <Link href="#funerals" passHref>
-                <span className="dropdown-items"> Funerals </span>
-              </Link>
-            </div>
-          )}
-          <Link href="#packages" passHref>
+          <Link href="/about" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faUser}
@@ -209,7 +164,7 @@ export default function Header() {
               About US
             </div>
           </Link>
-          <Link href="#pricing" passHref>
+          <Link href="/faqs" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faQuestionCircle}
@@ -218,7 +173,7 @@ export default function Header() {
               FAQs
             </div>
           </Link>
-          <Link href="#contact" passHref>
+          <Link href="/contact" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}
@@ -248,7 +203,8 @@ export default function Header() {
                 icon={faImages}
                 className="h-5 w-5 inline-block mr-2"
               />
-              Gallery
+              Galleries
+              <FontAwesomeIcon icon={faAngleDown} className="fa-lg" />
             </div>
           </Link>
           {showGalleryDropdown && (
@@ -258,7 +214,7 @@ export default function Header() {
               </Link>
               <Link href="/gallery/ditrich" passHref>
                 <span className="dropdown-items">
-                  Chelsey and Tim Ditrich Backyard Wedding
+                  Chelsey and Tim Ditrich Wedding
                 </span>
               </Link>
               <Link href="/gallery/wabs" passHref>
@@ -268,36 +224,7 @@ export default function Header() {
             </div>
           )}
 
-          <Link href="/events" passHref>
-            <div
-              className="nav-link"
-              onMouseEnter={() => setShowServicesDropdown(!showServicesDropdown)}
-            >
-              <FontAwesomeIcon
-                icon={faCalendarAlt}
-                className="h-5 w-5 inline-block mr-2"
-              />
-              Events & Occasions
-            </div>
-          </Link>
-          {showServicesDropdown && (
-            <div className="dropdown-menu">
-              <Link href="/events/weddings" passHref>
-                <span className="dropdown-items"> Weddings</span>
-              </Link>
-              <Link href="#private-parties" passHref>
-                <span className="dropdown-items"> Private Parties </span>
-              </Link>
-              <Link href="#business-parties" passHref>
-                <span className="dropdown-items"> Business Parties </span>
-              </Link>
-              <Link href="#funerals" passHref>
-                <span className="dropdown-items"> Funerals </span>
-              </Link>
-            </div>
-          )}
-
-          <Link href="#packages" passHref>
+          <Link href="/about" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faUser}
@@ -306,7 +233,7 @@ export default function Header() {
               About Us
             </div>
           </Link>
-          <Link href="#pricing" passHref>
+          <Link href="/faqs" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faQuestionCircle}
@@ -315,7 +242,7 @@ export default function Header() {
               FAQs
             </div>
           </Link>
-          <Link href="#contact" passHref>
+          <Link href="/contact" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}

@@ -13,10 +13,10 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        The Wabs Wedding. 
-      </h1>
-      <p className="gallery text-center">Yasmina Rose Photography White Barn Ranch</p>
+      <h1 className="subtitle gallery">The Wabs Wedding.</h1>
+      <p className="gallery text-center">
+        Yasmina Rose Photography White Barn Ranch
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file
@@ -39,15 +39,12 @@ export default function Gallery() {
 
             return (
               <div key={index} className="image">
-                <div className="image-overlay">
-                  <img
-                    src={imagePath}
-                    alt={altText}
-                    className="image-placeholder"
-                    loading="lazy"
-                  />
-                  <p className="image-title">The Wabs Wedding</p>
-                </div>
+                <img
+                  src={imagePath}
+                  alt={altText}
+                  className="image-placeholder"
+                  loading="lazy"
+                />
               </div>
             );
           }

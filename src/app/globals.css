@@ -3,18 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --color-sage-green: 178, 172, 136;
-  --color-secondary: 255, 255, 240;
-  --color-primary: 213, 154, 173;
-  --color-accent: 135, 206, 235;
-  --color-secondary-hover: 210, 210, 200;
+  --color-secondary: 255, 190, 152;
+  --color-primary: 255, 255, 255;
+  --color-accent: 0, 0, 0;
+  --color-green: 158, 152, 116;
   --soft-radius: 0.625rem;
+}
+.logo {
+  border-radius: var(--soft-radius);
+}
+.custom-button {
+  border-radius: 9999px; /* equivalent to Tailwind's rounded-full */
+  background-color: rgb(var(--color-primary));
+  padding: 0.5rem; /* equivalent to Tailwind's p-2 */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 p,
 span {
   font-family: "Inter", "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h1,
@@ -24,7 +35,7 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display", serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -38,7 +49,7 @@ body {
 /* Titles and Headers */
 .title {
   font-size: 2.5rem;
-  color: rgb(var(--color-secondary));
+  color: rgb(var(--color-primary));
   text-align: center;
   align-items: center;
   justify-items: center;
@@ -46,9 +57,9 @@ body {
 
 .subtitle {
   font-size: 1.5rem;
-  color: rgb(var(--color-primary));
+  color: black;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Main Body Text */
@@ -71,15 +82,6 @@ body {
 }
 
 /* Card Styles */
-.card {
-  align-items: center; /* Centers content horizontally */
-  justify-content: center;
-  background-color: rgb(var(--color-secondary));
-  border-radius: var(--soft-radius); /* Use variable for border-radius */
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-}
 
 .section {
   padding: 4rem 1rem; /* Ample vertical padding for a minimalist look */
@@ -95,8 +97,26 @@ body {
 }
 
 .image-overlay {
-  position: relative;
-  text-align: center;
+  position: absolute; /* Use absolute positioning */
+  top: 50%; /* Align vertically center */
+  left: 0; /* Align to the left */
+  transform: translateY(-50%); /* Adjust for exact vertical center */
+  text-align: center; /* Align text to the left */
+  width: 33.33%; /* Take the left third of the parent */
+  padding-left: 1rem; /* Padding on the left */
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-green));
+  border-radius: var(--soft-radius);
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer; /* Cursor pointer to indicate it's clickable */
+  margin-top: 0.5rem;
 }
 
 .image-title {
@@ -110,127 +130,91 @@ body {
   border-radius: var(--soft-radius);
 }
 
-.image {
-  border-radius: var(--soft-radius);
-  margin: 0.5rem;
-  width: 100%;
-  height: "auto"; /* 200px in rem */
-}
-
 .image-placeholder {
   width: 100%;
   background-color: #e0e0e0;
   border-radius: var(--soft-radius);
 }
 
-/* Buttons */
-.button {
-  background-color: rgb(var(--color-accent));
-  color: white;
-  border-radius: var(--soft-radius); /* Consistent border-radius */
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* existing styles... */
-
-/* Hover Effects */
-.button:hover,
-.image:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Scroll Effects for Images */
 .image {
+  width: 100%;
+  padding-top: 100%; /* This makes the div a square */
+  position: relative; /* Needed for absolute positioning inside */
+  overflow: hidden; /* Hides the part of the image that overflows */
+  border-radius: var(--soft-radius);
+  margin: 0.75rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the whole area */
+  border-radius: var(--soft-radius);
   transition: transform 0.3s ease-in-out;
 }
 
 .image:hover {
-  transform: scale(1.05); /* Move up slightly on hover */
-}
-
-.image-placeholder:hover {
-  transform: scale(1.05); /* Grow effect on hover */
+  transform: scale(1.1); /* Enlarges the entire image container */
 }
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centers content horizontally */
-  justify-content: center; /* Already centers content vertically */
-  min-height: 100vh; /* full screen height */
+  justify-content: center; /* Centers content vertically */
+  min-height: 100vh; /* Full screen height */
   background-color: rgb(var(--color-secondary));
 }
 
-/* Gallery Section */
 .gallery {
   margin-bottom: 3rem;
 }
 
+/* Media Queries for responsive grid layout */
 @media (max-width: 767px) {
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 }
 
-/* For md and xl viewports, display 3 columns */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 }
 
-/* Service Card */
-.service-card {
-  padding: 24px;
-  background-color: rgb(var(--color-secondary));
-  border-radius: var(--soft-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  /* Other card styles */
+@media (min-width: 992px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
 }
 
 .footer {
   width: 100%;
-  padding: 2rem; /* Increased padding for better spacing */
-  background-color: rgb(var(--color-primary)); /* Ivory background */
-  color: rgb(var(--color-secondary)); /* Light Lavender text */
+  padding: 1rem;
+  background-color: rgb(var(--color-primary), 0.8);
+  color: rgb(var(--color-secondary));
   text-align: center;
-  border: 0.125rem solid rgb(var(--color-secondary));
 }
 
 .footer-top {
-  margin-bottom: 2rem; /* Spacing between top and bottom parts of the footer */
-}
-
-.footer-heading {
-  font-size: 2.5rem; /* Larger size for prominence */
-  color: rgb(var(--color-accent)); /* Gold color for the heading */
   margin-bottom: 1rem;
-}
-
-.footer-subtitle {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-.footer-nav,
-.footer-social {
-  margin-top: 1rem; /* Spacing between navigation links/social media links and other content */
 }
 
 .footer-link,
 .footer-social-link {
-  color: rgb(var(--color-secondary));
-  margin: 1rem;
+  color: rgb(var(--color-green));
+  margin: 0.5rem;
   text-decoration: underline;
   justify-content: center;
   align-items: center;
@@ -240,10 +224,11 @@ body {
 .footer-social-link:hover {
   text-decoration: none;
   color: rgb(var(--color-secondary-hover));
+  transform: scale(1.1);
 }
 
 .footer-bottom {
-  font-size: 0.875rem; /* Smaller font size for the bottom part */
+  font-size: 0.875rem;
 }
 
 .header {
@@ -259,7 +244,7 @@ body {
 }
 
 .navbar-toggler {
-  color: rgb(var(--color-secondary));
+  color: rgb(var(--color-green));
   align-items: flex-end;
   background: none;
   border: none;
@@ -267,10 +252,8 @@ body {
 }
 
 .navbar-toggler:hover {
-  color: rgb(
-    var(--color-secondary-hover)
-  ); /* Change to a different color on hover */
-  text-decoration: underline; /* Change to a different color on hover */
+  color: rgb(var(--color-secondary-hover));
+  transform: scale(1.1);
 }
 
 .navbar-close {
@@ -288,71 +271,44 @@ body {
   display: inline-block; /* Allows the link to fit the content */
   margin-left: 0.3rem;
   margin-right: 0.3rem;
+  color: rgb(var(--color-green));
+  transition: color 0.4s; /* Smooth transition for color change */
+}
+
+.button:hover,
+.nav-link:hover {
+  transform: scale(1.1);
   color: rgb(var(--color-secondary));
-  transition: color 0.3s; /* Smooth transition for color change */
 }
-.nav-link::before,
-.nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0.15rem; /* Width of the vertical line */
-  background-color: rgb(var(--color-secondary-hover));
-  transition: height 0.3s;
-}
-
-.nav-link::before {
-  top: 0;
-  left: -0.15rem; /* Position it just to the left of the link */
-  height: 100%; /* Full height */
-  transform-origin: right top; /* Set transform origin to top-right */
-  transform: scaleY(0); /* Start with no height */
-}
-
-.nav-link::after {
-  bottom: 0;
-  right: -0.15rem; /* Position it just to the right of the link */
-  height: 100%; /* Full height */
-  transform-origin: left bottom; /* Set transform origin to bottom-left */
-  transform: scaleY(0); /* Start with no height */
-}
-
-.nav-link:hover::before,
-.nav-link:hover::after {
-  transform: scaleY(1);
-  background-color: rgb(var(--color-secondary-hover));
-}
-
 .dropdown-menu {
   display: flex;
   flex-direction: column;
   background-color: rgb(var(--color-secondary));
   color: black;
-  border: 0.25rem solid black; /* Light border */
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border: 0.125rem solid black;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   position: absolute;
   z-index: 1000;
   width: max-content;
-  top: 100%; /* Position right below the parent element */
-  left: 39%; /* Center align */
+  top: 100%;
+  left: 39%;
   transform: translateX(-50%);
-  cursor: pointer; /* Adjust for center alignment */
+  cursor: pointer;
   border-radius: var(--soft-radius);
 }
 
 .dropdown-items {
   padding: 0.5rem;
-  text-decoration: none;
   color: black;
-  margin: 0.1rem;
-  border: 0.1rem solid black; /* Border between links */
-  display: block; /* Ensure full width for each link */
-  cursor: pointer; /* Cursor pointer on hover */
+  border-bottom: 0.1rem solid black;
+  display: block;
+  cursor: pointer;
   border-radius: var(--soft-radius);
 }
 
 .dropdown-items:hover {
-  background-color: rgb(var(--color-secondary-hover));
-  text-decoration: underline;
+  background-color: rgb(var(--color-secondary));
+  transform: scale(1.1);
 }
 
 .sidebar-dropdown {

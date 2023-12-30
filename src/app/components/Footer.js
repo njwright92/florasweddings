@@ -12,15 +12,15 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <h3 className="footer-subtitle">
+        <h3 className="subtitle">
           Thanks for visiting Floras Flowers wedding page!
         </h3>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Image - Flex Start */}
           <div className="flex justify-start md:justify-start md:flex-grow-0">
-            <Link href="#main">
+            <Link href="/">
               <img
-                src="/img/floras-Flowers.png"
+                src="/img/floras-Flowers.webp"
                 alt="Floras Flowers"
                 className="cursor-pointer"
                 width="300"
@@ -32,31 +32,31 @@ export default function Footer() {
           {/* Social Media Links - Flex Center */}
           <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:flex-grow">
             <div className="flex flex-col items-center">
-              <h3 className="footer-subtitle text-center">
+              <h3 className="subtitle text-center">
                 Follow me on social media:
               </h3>
-              <div className="flex gap-2">
+              <div className="flex gap-1">
                 <a
-                  href="https://www.instagram.com/florasweddings"
-                  className="footer-link"
+                  href="https://www.instagram.com/florasflower4u/"
+                  className="footer-link custom-button"
                 >
                   <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
                 </a>
                 <a
-                  href="https://www.facebook.com/florasweddings"
-                  className="footer-link"
+                  href="https://www.facebook.com/happytrailsfloral"
+                  className="footer-link custom-button"
                 >
                   <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
                 </a>
                 <a
-                  href="https://www.yelp.com/biz/florasweddings"
-                  className="footer-link"
+                  href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
+                  className="footer-link custom-button"
                 >
                   <FontAwesomeIcon icon={faYelp} className="fa-xl" />
                 </a>
                 <a
                   href="https://www.google.com/search?q=florasweddings"
-                  className="footer-link"
+                  className="footer-link custom-button"
                 >
                   <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
                 </a>
@@ -65,27 +65,28 @@ export default function Footer() {
           </div>
 
           {/* Site Link - Flex End */}
-          <div className="flex flex-col items-end gap-2 md:flex-row md:justify-end md:flex-grow-0">
+          <div className="flex flex-col items-end md:flex-row md:justify-end md:flex-grow-0">
             <div className="flex flex-col items-center">
-              <h4 className="footer-subtitle text-center">
+              <h4 className="subtitle text-center">
+                Looking for fresh flowers for your everydy occssions? visit
                 Visit my florist eCommerce site here:
               </h4>
               <Link
                 href="https://www.florasflowers.com"
-                className="footer-link"
+                className="footer-link text-2xl"
               >
-                🌸 Floras Flowers
+                <span>🌸 Floras Flowers</span>
               </Link>
             </div>
           </div>
         </div>
 
-        <h3 className="footer-subtitle">Email or call me now at:</h3>
-        <a href="mailto:stacimw@yahoo.com" className="footer-link">
+        <h3 className="subtitle">Email or call me now at:</h3>
+        <a href="mailto:stacimw@yahoo.com" className="footer-link text-lg">
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-2" />
-          stacimw@yahoo.com
+          florasproflowers@gmail.com
         </a>
-        <a href="tel:+12087559409" className="footer-link">
+        <a href="tel:+12087559409" className="footer-link text-lg">
           <FontAwesomeIcon icon={faPhone} className="h-5 w-5 mr-2" />
           (208)-755-9409
         </a>

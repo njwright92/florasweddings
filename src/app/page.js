@@ -20,33 +20,23 @@ export default function Home() {
           alt="Floras Weddings Banner"
           className="banner-img"
         />
+        <div className="image-overlay">
+          <h4 className="title">
+            Seeking a signature style? Let me create your exclusive look.
+          </h4>
+          <button href="/contact" className="button">
+            Contact Us
+          </button>
+        </div>
       </div>
 
-      <h2 className="subtitle mb-12">
-        Elegant Floral Designs for Your Special Day
-      </h2>
+      <h1 className="title">Floras Flowers</h1>
+      <h3 className="subtitle">Welcome to my weddings site</h3>
+
       <section className="section" id="gallery" data-aos="fade-up">
         <h2 className="subtitle">Gallery</h2>
         <p className="body-text">
           Discover our collection of elegant floral designs.
-        </p>
-        {/* Placeholder image */}
-        <div className="image-placeholder"></div>
-      </section>
-
-      <section className="section" id="services" data-aos="fade-up">
-        <h2 className="subtitle">Services</h2>
-        <p className="body-text">
-          Tailored floral arrangements for all your special occasions.
-        </p>
-        {/* Placeholder image */}
-        <div className="image-placeholder"></div>
-      </section>
-
-      <section className="section" id="packages" data-aos="fade-up">
-        <h2 className="subtitle">Packages</h2>
-        <p className="body-text">
-          Explore our variety of wedding and event floral packages.
         </p>
         {/* Placeholder image */}
         <div className="image-placeholder"></div>
@@ -65,6 +55,15 @@ export default function Home() {
         <h2 className="subtitle">Contact Us</h2>
         <p className="body-text">
           Get in touch for bespoke floral designs and consultations.
+        </p>
+        {/* Placeholder image */}
+        <div className="image-placeholder"></div>
+      </section>
+
+      <section className="section" id="Reviews" data-aos="fade-up">
+        <h2 className="subtitle">Reviews</h2>
+        <p className="body-text">
+          My clients have left positive reviews on google!
         </p>
         {/* Placeholder image */}
         <div className="image-placeholder"></div>

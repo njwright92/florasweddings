@@ -39,15 +39,14 @@ export default function Gallery() {
 
             return (
               <div key={index} className="image">
-                <div className="image-overlay">
+              
                   <img
                     src={imagePath}
                     alt={altText}
                     className="image-placeholder"
                     loading="lazy"
                   />
-                  <p className="image-title">The Ditrich Wedding</p>
-                </div>
+                  
               </div>
             );
           }

@@ -319,7 +319,7 @@ body {
   z-index: 100;
   width: max-content;
   top: 98%;
-  left: 37%;
+  left: 30%;
   transform: translateX(-50%);
   cursor: pointer;
   border-radius: var(--soft-radius);

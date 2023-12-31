@@ -5,7 +5,17 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <h1 className="title">Contact Us for a Consultation</h1>
+      <div className="title-container">
+        <h1 className="title">Contact Us for a Consultation</h1>
+        <img
+          src="./img/flower-PhotoRoom.webp"
+          width={200}
+          height={100}
+          loading="lazy"
+          alt="Flower"
+          className="-mt-20"
+        />
+      </div>
       <p className="body-text p-2">
         At Flora&#39;s, we specialize in personalizing your wedding flowers. We
         believe the flowers for your wedding should be as unique as each
@@ -19,6 +29,7 @@ export default function Contact() {
           <h3 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
           </h3>
+
           <hr className="mb-4" />
           <div className="mb-4 md:flex">
             <div className="md:mr-2 mb-4 md:mb-0">

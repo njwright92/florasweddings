@@ -6,13 +6,23 @@ export default function Pricing() {
     <>
       <Header />
       <div className="pricing-container">
-        <h1 className="title">Full Service Floral Guide</h1>
+        <div className="title-container">
+          <h1 className="title">Full Service Floral Guide</h1>
+          <img
+            src="./img/flower-PhotoRoom.webp"
+            width={200}
+            height={100}
+            loading="lazy"
+            alt="Flower"
+            className="-mt-20"
+          />
+        </div>
 
-        <h2 className="subtitle">No idea how much wedding flowers cost?</h2>
         <p className="body-text mb-4">
-          Here are some starting costs to give you an idea of what our prices
-          are.
+          Here are some initial prices to consider while planning your wedding
+          florals
         </p>
+
         <div className="grid1">
           <div className="pricing-column">
             <h3 className="subtitle">Ceremony</h3>

@@ -13,8 +13,19 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">The Wabs Wedding.</h1>
-      <p className="gallery">
+      <div className="title-container">
+        <h1 className="title">The Wabs Wedding.</h1>
+        <img
+          src="./img/flower-PhotoRoom.webp"
+          width={200}
+          height={100}
+          loading="lazy"
+          alt="Flower"
+          className="-mt-20"
+        />
+      </div>
+
+      <p className="subtitle">
         Photos by Yasmina Rose Photography White Barn Ranch
       </p>
       <div className="grid">
@@ -32,21 +43,20 @@ export default function Gallery() {
 
           if (imageExists) {
             // Use the filename without the extension as alt text
-            const altText = filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
+            const altText =
+              filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
 
             // Increment the current index for the next image
             currentIndex++;
 
             return (
               <div key={index} className="image">
-               
-                  <img
-                    src={imagePath}
-                    alt={altText}
-                    className="image-placeholder"
-                    loading="lazy"
-                  />
-                 
+                <img
+                  src={imagePath}
+                  alt={altText}
+                  className="image-placeholder"
+                  loading="lazy"
+                />
               </div>
             );
           }

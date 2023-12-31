@@ -11,7 +11,17 @@ export default function About() {
   return (
     <>
       <Header />
-      <h1 className="title">About Flora&apos;s Flowers</h1>
+      <div className="title-container">
+        <h1 className="title">About Flora&apos;s Flowers</h1>
+        <img
+          src="./img/flower-PhotoRoom.webp"
+          width={200}
+          height={100}
+          loading="lazy"
+          alt="Flower"
+          className="-mt-20"
+        />
+      </div>
       <h3 className="subtitle text-center">
         Hello there! I&apos;m Staci, the creative force behind Flora&apos;s
         Flowers.

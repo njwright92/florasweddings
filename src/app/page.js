@@ -36,12 +36,32 @@ export default function Home() {
         </div>
       </div>
 
-      <h1 className="title">Floras Flowers</h1>
+      <div className="title-container">
+        <h1 className="title">Floras Flowers</h1>
+        <img
+          src="./img/flower-PhotoRoom.webp"
+          width={200}
+          height={100}
+          loading="lazy"
+          alt="Flower"
+          className="-mt-20"
+        />
+      </div>
       <h3 className="subtitle">Welcome to my weddings site</h3>
 
       <>
         <section className="section" id="gallery" data-aos="fade-up">
-          <h2 className="subtitle">Gallery</h2>
+          <div className="title-container">
+            <h2 className="subtitle">Gallery</h2>
+            <img
+              src="./img/flower-PhotoRoom.webp"
+              width={200}
+              height={100}
+              loading="lazy"
+              alt="Flower"
+              className="-mt-20"
+            />
+          </div>
           <p className="body-text">
             Discover our collection of elegant floral designs.
           </p>
@@ -51,12 +71,20 @@ export default function Home() {
 
         <section className="section" id="pricing" data-aos="fade-up">
           <div className="pricing-container">
-            <h3 className="title">Full Service Floral Guide</h3>
-
-            <h3 className="subtitle">No idea how much wedding flowers cost?</h3>
+            <div className="title-container">
+              <h3 className="title">Full Service Floral Guide</h3>
+              <img
+                src="./img/flower-PhotoRoom.webp"
+                width={200}
+                height={100}
+                loading="lazy"
+                alt="Flower"
+                className="-mt-20"
+              />
+            </div>
             <p className="body-text mb-4">
-              Here are some starting costs to give you an idea of what our
-              prices are.
+              Here are some initial prices to consider while planning your
+              wedding florals
             </p>
             <div className="grid1">
               <div className="pricing-column">
@@ -103,7 +131,17 @@ export default function Home() {
 
         <section className="section" id="about" data-aos="fade-up">
           <>
-            <h1 className="title">About Flora&apos;s Flowers</h1>
+            <div className="title-container">
+              <h1 className="title">About Flora&apos;s Flowers</h1>
+              <img
+                src="./img/flower-PhotoRoom.webp"
+                width={200}
+                height={100}
+                loading="lazy"
+                alt="Flower"
+                className="-mt-20"
+              />
+            </div>
             <h3 className="subtitle text-center">
               Hello there! I&apos;m Staci, the creative force behind
               Flora&apos;s Flowers.
@@ -213,7 +251,17 @@ export default function Home() {
 
         <section className="section" id="contact" data-aos="fade-up">
           <>
-            <h1 className="title">Contact Us for a Consultation</h1>
+            <div className="title-container">
+              <h1 className="title">Contact Us for a Consultation</h1>
+              <img
+                src="./img/flower-PhotoRoom.webp"
+                width={200}
+                height={100}
+                loading="lazy"
+                alt="Flower"
+                className="-mt-20"
+              />
+            </div>
             <p className="body-text p-2">
               At Flora&#39;s, we specialize in personalizing your wedding
               flowers. We believe the flowers for your wedding should be as
@@ -552,7 +600,17 @@ export default function Home() {
         </section>
 
         <section className="section" id="Reviews" data-aos="fade-up">
-          <h2 className="subtitle">Reviews</h2>
+          <div className="title-container">
+            <h2 className="subtitle">Reviews</h2>
+            <img
+              src="./img/flower-PhotoRoom.webp"
+              width={200}
+              height={100}
+              loading="lazy"
+              alt="Flower"
+              className="-mt-20"
+            />
+          </div>
           <p className="body-text">
             My clients have left positive reviews on google!
           </p>

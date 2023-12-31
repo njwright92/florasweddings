@@ -12,9 +12,19 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <h3 className="subtitle">
-          Thanks for visiting Floras Flowers wedding page!
-        </h3>
+        <div className="title-container text-center">
+          <h3 className="subtitle">
+            Thanks for visiting Floras Flowers wedding page!
+            <img
+              src="./img/flower-PhotoRoom.webp"
+              width={200}
+              height={100}
+              loading="lazy"
+              alt="Flower"
+              className="-mt-20"
+            />
+          </h3>
+        </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Image - Flex Start */}
           <div className="flex justify-start md:justify-start md:flex-grow-0">
@@ -73,9 +83,9 @@ export default function Footer() {
               </h4>
               <Link
                 href="https://www.florasflowers.com"
-                className="footer-link text-2xl"
+                className="footer-link text-xl"
               >
-                <span>🌸 Floras Flowers</span>
+                <button className="button">🌸 Floras Flowers</button>
               </Link>
             </div>
           </div>

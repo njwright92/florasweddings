@@ -21,7 +21,7 @@ export default function Footer() {
               height={100}
               loading="lazy"
               alt="Flower"
-              className="-mt-20"
+              className="-mt-20 -mb-20"
             />
           </h3>
         </div>

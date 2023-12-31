@@ -25,6 +25,7 @@ export default function Home() {
           src="/img/banner.webp"
           alt="Floras Weddings Banner"
           className="banner-img"
+          load="eager"
         />
         <div className="image-overlay">
           <h4 className="img-title">
@@ -513,7 +514,7 @@ export default function Home() {
               <div className="form-container md:w-1/2">
                 <form className="form p-8 mb-6">
                   <h3 className="subtitle text-center mb-2">
-                    Tell Us What You Need
+                    Specify Your Wedding Floral Essentials
                   </h3>
                   <hr className="mb-4" />
                   <div className="mb-4">

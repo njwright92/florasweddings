@@ -266,7 +266,9 @@ export default function Contact() {
         </form>
         <div className="form-container md:w-1/2">
           <form className="form p-8 mb-6">
-            <h3 className="subtitle text-center mb-2">Tell Us What You Need</h3>
+            <h3 className="subtitle text-center mb-2">
+              Specify Your Wedding Floral Essentials
+            </h3>
             <hr className="mb-4" />
             <div className="mb-4">
               <label className="label" htmlFor="bridal_bouquets">

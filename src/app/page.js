@@ -21,7 +21,7 @@ export default function Home() {
           className="banner-img"
         />
         <div className="image-overlay">
-          <h4 className="title">
+          <h4 className="img-title">
             Seeking a signature style? Let me create your exclusive look.
           </h4>
           <button href="/contact" className="button">

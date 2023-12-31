@@ -101,9 +101,25 @@ body {
   left: 0;
   transform: translateY(-50%);
   text-align: center;
-  width: 33.33%;
-  padding-left: 1rem;
+  width: 37%;
+  padding-left: 0.625rem;
   margin-bottom: 1rem;
+}
+
+.img-title {
+  font-size: 2.5rem;
+  color: rgb(var(--color-primary));
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 700px) {
+  .img-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .button {
@@ -118,6 +134,13 @@ body {
   box-shadow: 0 4px rgba(0, 0, 0, 0.8);
   position: relative;
   top: 0;
+}
+
+@media (max-width: 767px) {
+  .button {
+    padding: 0.5rem 1rem; /* Smaller padding for smaller screens */
+    font-size: 0.875rem; /* Smaller font size for smaller screens */
+  }
 }
 
 .button:hover {

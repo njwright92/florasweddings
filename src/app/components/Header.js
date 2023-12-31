@@ -12,6 +12,7 @@ import {
   faQuestionCircle,
   faUser,
   faAngleDown,
+  faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareInstagram,
@@ -105,12 +106,12 @@ export default function Header() {
         {/* Email and Phone Links */}
         <div className="flex flex-col md:ml-20">
           <p className="body-text">Email or call me now at:</p>
-          <a href="mailto:stacimw@yahoo.com" className="nav-link">
+          <Link href="mailto:stacimw@yahoo.com" className="nav-link">
             florasproflowers@gmail.com
-          </a>
-          <a href="tel:+12087559409" className="nav-link">
+          </Link>
+          <Link href="tel:+12087559409" className="nav-link">
             (208)-755-9409
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -123,7 +124,7 @@ export default function Header() {
           } md:hidden`}
           onClick={toggleNavbar}
         >
-          <FontAwesomeIcon icon={faBars} className="h-5 w-5 mt-2" />
+          <FontAwesomeIcon icon={faBars} className="h-5 w-5 mt-2" /> Menu
         </button>
 
         {/* Side-opening menu for small screens */}
@@ -154,7 +155,15 @@ export default function Header() {
               Galleries
             </div>
           </Link>
-
+          <Link href="/pricing" passHref>
+            <div className="nav-link mb-2" onClick={toggleNavbar}>
+              <FontAwesomeIcon
+                icon={faDollarSign}
+                className="h-5 w-5 inline-block mr-2"
+              />
+              Pricing
+            </div>
+          </Link>
           <Link href="/about" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
@@ -164,15 +173,7 @@ export default function Header() {
               About US
             </div>
           </Link>
-          <Link href="/faqs" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faQuestionCircle}
-                className="h-5 w-5 inline-block mr-2"
-              />
-              Q&A
-            </div>
-          </Link>
+
           <Link href="/contact" passHref>
             <div className="nav-link mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
@@ -180,6 +181,15 @@ export default function Header() {
                 className="h-5 w-5 inline-block mr-2"
               />
               Contact Us
+            </div>
+          </Link>
+          <Link href="/faqs" passHref>
+            <div className="nav-link mb-2" onClick={toggleNavbar}>
+              <FontAwesomeIcon
+                icon={faQuestionCircle}
+                className="h-5 w-5 inline-block mr-2"
+              />
+              Q&A
             </div>
           </Link>
         </div>
@@ -223,7 +233,15 @@ export default function Header() {
               {/* Add links to other gallery subpages here */}
             </div>
           )}
-
+          <Link href="/pricing" passHref>
+            <div className="nav-link mb-2" onClick={toggleNavbar}>
+              <FontAwesomeIcon
+                icon={faDollarSign}
+                className="h-5 w-5 inline-block mr-2"
+              />
+              Pricing
+            </div>
+          </Link>
           <Link href="/about" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
@@ -233,15 +251,7 @@ export default function Header() {
               About Us
             </div>
           </Link>
-          <Link href="/faqs" passHref>
-            <div className="nav-link">
-              <FontAwesomeIcon
-                icon={faQuestionCircle}
-                className="h-5 w-5 inline-block mr-2"
-              />
-              Q&A
-            </div>
-          </Link>
+
           <Link href="/contact" passHref>
             <div className="nav-link">
               <FontAwesomeIcon
@@ -249,6 +259,15 @@ export default function Header() {
                 className="h-5 w-5 inline-block mr-2"
               />
               Contact Us
+            </div>
+          </Link>
+          <Link href="/faqs" passHref>
+            <div className="nav-link">
+              <FontAwesomeIcon
+                icon={faQuestionCircle}
+                className="h-5 w-5 inline-block mr-2"
+              />
+              Q&A
             </div>
           </Link>
         </div>

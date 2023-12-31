@@ -84,7 +84,6 @@ body {
 
 .section {
   padding: 4rem 1rem;
-  text-align: center;
   border-radius: var(--soft-radius);
 }
 
@@ -367,4 +366,49 @@ form {
 .horizontal-line {
   border: 0.1rem solid black;
   margin: 1rem 0;
+}
+
+.pricing-container {
+  background-color: rgb(var(--color-green)); /* light tan/beige color */
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--soft-radius);
+}
+
+.pricing-column {
+  padding: 1rem;
+  border: 1px solid black; /* example border */
+  border-radius: var(--soft-radius);
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column in small viewports */
+  gap: 0.5rem; /* Adjust the gap as needed */
+}
+
+@media (min-width: 480px) {
+  /* md breakpoint */
+  .grid1 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns in md viewports */
+  }
+}
+
+@media (min-width: 800px) {
+  /* lg-xl breakpoint */
+  .grid1 {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns in lg-xl viewports */
+  }
+}
+
+.pricing-list {
+  list-style: disc;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.pricing-list li {
+  margin-bottom: 0.5rem; /* Spacing between list items */
+  font-size: 1rem; /* Adjust font size as needed */
+  color: Black;
 }

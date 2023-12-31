@@ -82,14 +82,14 @@ export default function Footer() {
         </div>
 
         <h3 className="body-text">Email or call me now at:</h3>
-        <Link href="mailto:stacimw@yahoo.com" className="footer-link text-lg">
+        <a href="mailto:stacimw@yahoo.com" className="footer-link text-lg">
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-2" />
           florasproflowers@gmail.com
-        </Link>
-        <Link href="tel:+12087559409" className="footer-link text-lg">
+        </a>
+        <a href="tel:+12087559409" className="footer-link text-lg">
           <FontAwesomeIcon icon={faPhone} className="h-5 w-5 mr-2" />
           (208)-755-9409
-        </Link>
+        </a>
       </div>
 
       <div className="footer-bottom">

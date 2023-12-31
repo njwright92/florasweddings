@@ -106,12 +106,12 @@ export default function Header() {
         {/* Email and Phone Links */}
         <div className="flex flex-col md:ml-20">
           <p className="body-text">Email or call me now at:</p>
-          <Link href="mailto:stacimw@yahoo.com" className="nav-link">
+          <a href="mailto:stacimw@yahoo.com" className="nav-link">
             florasproflowers@gmail.com
-          </Link>
-          <Link href="tel:+12087559409" className="nav-link">
+          </a>
+          <a href="tel:+12087559409" className="nav-link">
             (208)-755-9409
-          </Link>
+          </a>
         </div>
       </div>
 

@@ -230,6 +230,39 @@ export default function Header() {
               <Link href="/gallery/wabs" passHref>
                 <span className="dropdown-items">The Wabs Wedding</span>
               </Link>
+              <Link href="/gallery/flores" passHref>
+                <span className="dropdown-items">
+                  The Flores Cruise Wedding
+                </span>
+              </Link>
+              <Link href="/gallery/suko" passHref>
+                <span className="dropdown-items">
+                  The Suko Firebrand Wedding
+                </span>
+              </Link>
+              <Link href="/gallery/jewett" passHref>
+                <span className="dropdown-items">The Jewett House Wedding</span>
+              </Link>
+              <Link href="/gallery/webster" passHref>
+                <span className="dropdown-items">
+                  Webster wedding at the mountain sky guest ranch
+                </span>
+              </Link>
+              <Link href="/gallery/butterfield" passHref>
+                <span className="dropdown-items">
+                  Butterfield Wedding at the Willows CDA
+                </span>
+              </Link>
+              <Link href="/gallery/wright" passHref>
+                <span className="dropdown-items">
+                  Wright wedding at Idaho Shakespeare Festival park
+                </span>
+              </Link>
+              <Link href="/gallery/koho" passHref>
+                <span className="dropdown-items">
+                  Koho wedding firebrand cocallala
+                </span>
+              </Link>
               {/* Add links to other gallery subpages here */}
             </div>
           )}

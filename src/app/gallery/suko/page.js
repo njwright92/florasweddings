@@ -5,7 +5,7 @@ import path from "path";
 
 export default function Gallery() {
   // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "knox");
+  const imagesDirectory = path.join(process.cwd(), "public", "img", "suko");
   const imageFilenames = fs.readdirSync(imagesDirectory);
 
   let currentIndex = 0;
@@ -14,9 +14,11 @@ export default function Gallery() {
     <div>
       <Header />
       <h1 className="subtitle gallery">
-        Knox/Farley Wedding Coeurd&apos;Alene Casino
+        Sabre and Spencer Suko Firebrand Cocolalla, Idaho
       </h1>
-      <p className="gallery text-center">Photos by Meagan Mylan Photography</p>
+      <p className="body-text text-center">
+        Photos by Roaming Rose Photography
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file
@@ -25,29 +27,27 @@ export default function Gallery() {
           }
 
           // Check if the image file exists
-          const imagePath = `/img/knox/${filename}`;
+          const imagePath = `/img/suko/${filename}`;
           const imageExists = fs.existsSync(
             path.join(imagesDirectory, filename)
           );
 
           if (imageExists) {
             // Use the filename without the extension as alt text
-            const altText = filename.replace(/\.[^/.]+$/, "");
+            const altText =
+              filename.replace(/\.[^/.]+$/, "") + "Wedding Flowers";
 
             // Increment the current index for the next image
             currentIndex++;
 
             return (
               <div key={index} className="image">
-                <div className="image-overlay">
-                  <img
-                    src={imagePath}
-                    alt={altText}
-                    className="image-placeholder"
-                    loading="lazy"
-                  />
-                  <p className="image-title">The Knox Wedding</p>
-                </div>
+                <img
+                  src={imagePath}
+                  alt={altText}
+                  className="image-placeholder"
+                  loading="lazy"
+                />
               </div>
             );
           }

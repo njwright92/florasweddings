@@ -24,7 +24,7 @@ export default function Contact() {
         your inspiration board, our creativity, and our knowledge of flowers,
         you&#39;ll have the wedding flowers of your dreams!
       </p>
-      <div className="md:flex md:flex-row md:justify-between horizontal-line">
+      <div className="md:flex md:flex-row md:justify-between">
         <form className="form p-8 mb-6 md:w-1/2">
           <h3 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!

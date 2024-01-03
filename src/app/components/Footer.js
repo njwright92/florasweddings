@@ -16,12 +16,12 @@ export default function Footer() {
           <h3 className="subtitle">
             Thanks for visiting Floras Flowers wedding page!
             <img
-              src="./img/flower-PhotoRoom.webp"
+              src="../img/flower-PhotoRoom.webp"
               width={200}
               height={100}
               loading="lazy"
               alt="Flower"
-              className="-mt-20 -mb-20"
+              className="-mt-20 -mb-10"
             />
           </h3>
         </div>

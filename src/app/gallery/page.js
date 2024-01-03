@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 export default function Gallery() {
   // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "wabs");
+  const imagesDirectory = path.join(process.cwd(), "public", "img", "gallery");
   const imageFilenames = fs.readdirSync(imagesDirectory);
 
   let currentIndex = 0;
@@ -36,7 +36,7 @@ export default function Gallery() {
           }
 
           // Check if the image file exists
-          const imagePath = `/img/wabs/${filename}`;
+          const imagePath = `/img/gallery/${filename}`;
           const imageExists = fs.existsSync(
             path.join(imagesDirectory, filename)
           );

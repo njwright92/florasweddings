@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Collage from "./components/collage";
+import ReviewsCarousel from "./components/carousel";
 
 export default function Home() {
   useEffect(() => {
@@ -22,7 +24,7 @@ export default function Home() {
       <Header />
       <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="/img/banner.webp"
+          src="./img/banner2.webp"
           alt="Floras Weddings Banner"
           className="banner-img"
           load="eager"
@@ -602,7 +604,7 @@ export default function Home() {
 
         <section className="section" id="Reviews" data-aos="fade-up">
           <div className="title-container">
-            <h2 className="subtitle">Reviews</h2>
+            <h2 className="title">Reviews</h2>
             <img
               src="./img/flower-PhotoRoom.webp"
               width={200}
@@ -612,14 +614,13 @@ export default function Home() {
               className="-mt-20"
             />
           </div>
-          <p className="body-text">
-            My clients have left positive reviews on google!
+          <p className="subtitle">
+            My clients have left positive reviews on yelp and google!
           </p>
-          {/* Placeholder image */}
-          <div className="image-placeholder"></div>
+          <ReviewsCarousel />
         </section>
       </>
-
+      <Collage />
       <Footer />
     </main>
   );

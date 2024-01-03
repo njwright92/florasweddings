@@ -94,7 +94,7 @@ export default function Footer() {
         <h3 className="body-text">Email or call me now at:</h3>
         <a href="mailto:stacimw@yahoo.com" className="footer-link text-lg">
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-2" />
-          florasproflowers@gmail.com
+          FlorasProFlowers@gmail.com
         </a>
         <a href="tel:+12087559409" className="footer-link text-lg">
           <FontAwesomeIcon icon={faPhone} className="h-5 w-5 mr-2" />
@@ -103,8 +103,18 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p className="body-text">
+        <p>
           © {new Date().getFullYear()} Floras Weddings. All rights reserved.
+          <br />
+          Designed and Coded by: Nathan Wright visit my portfolio:
+          <Link
+            href="https://njwright92.github.io/paper-kit-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Portfolio
+          </Link>
         </p>
       </div>
     </footer>

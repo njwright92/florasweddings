@@ -1,3 +1,4 @@
+"use client";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +7,7 @@ import {
   faEnvelope,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import ReviewsCarousel from "../components/carousel";
 
 export default function About() {
   return (
@@ -118,6 +120,10 @@ export default function About() {
         alt="Map"
         className="w-full my-4 h-auto border-white border-2 rounded-xl"
       />
+      <p className="subtitle">
+        My clients have left positive reviews on Yelp and google!
+      </p>
+      <ReviewsCarousel />
       <Footer />
     </>
   );

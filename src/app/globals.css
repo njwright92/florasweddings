@@ -180,6 +180,15 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+.image1 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--soft-radius);
+  margin: 0.75rem;
+  transition: transform 0.3s ease-in-out;
+}
+
 .image img {
   position: absolute;
   top: 0;
@@ -192,6 +201,10 @@ body {
 }
 
 .image:hover {
+  transform: scale(1.1);
+}
+
+.image1:hover {
   transform: scale(1.1);
 }
 
@@ -247,14 +260,16 @@ body {
 .footer-link,
 .footer-social-link {
   color: rgb(var(--color-green));
-  margin: 0.3rem;
+
   text-decoration: underline;
   justify-content: center;
   align-items: center;
 }
 
 .footer-bottom {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
+  color: black;
+  margin-top: 0.3rem;
 }
 
 .header {
@@ -319,6 +334,8 @@ body {
   transform: translateX(-50%);
   cursor: pointer;
   border-radius: var(--soft-radius);
+  overflow-y: auto;
+  max-height: 400px;
 }
 
 .dropdown-items {
@@ -415,4 +432,19 @@ form {
   margin-bottom: 0.5rem; /* Spacing between list items */
   font-size: 1rem; /* Adjust font size as needed */
   color: Black;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--soft-radius);
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center; /* Center the carousel horizontally */
+  align-items: center; /* Center the carousel vertically */
+  padding: 2rem; /* Padding around the carousel */
+  margin: 2rem auto; /* Margin for top, bottom, and auto for left, right */
+  max-width: 100%; /* Limit the maximum width of the carousel */
 }

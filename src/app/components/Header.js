@@ -58,7 +58,7 @@ export default function Header() {
   return (
     <header className="header flex-col">
       {/* Header - Image Row with Social Links */}
-      <div className="flex flex-col md:flex-row items-center gap-2 md:gap-0">
+      <div className="flex flex-col md:flex-row items-center">
         <div className="flex">
           <Link href="/" passHref>
             <img
@@ -72,15 +72,15 @@ export default function Header() {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-2 mt-2 md:mr-20">
+        <div className="flex gap-2 mt-2 md:ml-10">
           <Link href="https://www.instagram.com/florasflower4u/" passHref>
             <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
+              <FontAwesomeIcon icon={faSquareInstagram} className="fa-2xl" />
             </div>
           </Link>
           <Link href="https://www.facebook.com/happytrailsfloral" passHref>
             <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
+              <FontAwesomeIcon icon={faSquareFacebook} className="fa-2xl" />
             </div>
           </Link>
           <Link
@@ -88,7 +88,7 @@ export default function Header() {
             passHref
           >
             <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faYelp} className="fa-xl" />
+              <FontAwesomeIcon icon={faYelp} className="fa-2xl" />
             </div>
           </Link>
           <Link
@@ -96,7 +96,7 @@ export default function Header() {
             passHref
           >
             <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
+              <FontAwesomeIcon icon={faGoogle} className="fa-2xl" />
             </div>
           </Link>
         </div>
@@ -107,7 +107,7 @@ export default function Header() {
         <div className="flex flex-col md:ml-20">
           <p className="body-text">Email or call me now at:</p>
           <a href="mailto:stacimw@yahoo.com" className="nav-link">
-            florasproflowers@gmail.com
+            FlorasProFlowers@gmail.com
           </a>
           <a href="tel:+12087559409" className="nav-link">
             (208)-755-9409
@@ -261,6 +261,30 @@ export default function Header() {
               <Link href="/gallery/koho" passHref>
                 <span className="dropdown-items">
                   Koho wedding firebrand cocallala
+                </span>
+              </Link>
+              <Link href="/gallery/hirschel" passHref>
+                <span className="dropdown-items">
+                  Hirschel Wedding Hagadone Event Center
+                </span>
+              </Link>
+              <Link href="/gallery/trezzi" passHref>
+                <span className="dropdown-items">Trezzi Farm Winery</span>
+              </Link>
+              <Link href="/gallery/dretke" passHref>
+                <span className="dropdown-items">
+                  The Dretke Wedding at Elkins Resort
+                </span>
+              </Link>
+              <Link href="/gallery/justin" passHref>
+                <span className="dropdown-items">Justin Wright wedding</span>
+              </Link>
+              <Link href="/gallery/cataldo" passHref>
+                <span className="dropdown-items">Country barn Cataldo</span>
+              </Link>
+              <Link href="/gallery/misc" passHref>
+                <span className="dropdown-items">
+                  Miscelanious smaller weddings
                 </span>
               </Link>
               {/* Add links to other gallery subpages here */}

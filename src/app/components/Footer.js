@@ -49,26 +49,34 @@ export default function Footer() {
                 <Link
                   href="https://www.instagram.com/florasflower4u/"
                   className="footer-link custom-button"
+                  aria-label="Visit our Instagram page"
                 >
                   <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
+                  <span className="sr-only">Instagram</span>
                 </Link>
                 <Link
                   href="https://www.facebook.com/happytrailsfloral"
                   className="footer-link custom-button"
+                  aria-label="Visit our Facebook page"
                 >
                   <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
+                  <span className="sr-only">Facebook</span>
                 </Link>
                 <Link
                   href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
                   className="footer-link custom-button"
+                  aria-label="Check out our reviews on Yelp"
                 >
                   <FontAwesomeIcon icon={faYelp} className="fa-xl" />
+                  <span className="sr-only">Yelp</span>
                 </Link>
                 <Link
                   href="https://www.google.com/search?q=florasweddings"
                   className="footer-link custom-button"
+                  aria-label="Find us on Google"
                 >
                   <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
+                  <span className="sr-only">Google</span>
                 </Link>
               </div>
             </div>

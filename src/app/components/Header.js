@@ -73,31 +73,37 @@ export default function Header() {
 
         {/* Social Links */}
         <div className="flex gap-2 mt-2 md:ml-10">
-          <Link href="https://www.instagram.com/florasflower4u/" passHref>
-            <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faSquareInstagram} className="fa-2xl" />
-            </div>
+          <Link
+            href="https://www.instagram.com/florasflower4u/"
+            className="footer-link custom-button"
+            aria-label="Visit our Instagram page"
+          >
+            <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
+            <span className="sr-only">Instagram</span>
           </Link>
-          <Link href="https://www.facebook.com/happytrailsfloral" passHref>
-            <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faSquareFacebook} className="fa-2xl" />
-            </div>
+          <Link
+            href="https://www.facebook.com/happytrailsfloral"
+            className="footer-link custom-button"
+            aria-label="Visit our Facebook page"
+          >
+            <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
+            <span className="sr-only">Facebook</span>
           </Link>
           <Link
             href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
-            passHref
+            className="footer-link custom-button"
+            aria-label="Check out our reviews on Yelp"
           >
-            <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faYelp} className="fa-2xl" />
-            </div>
+            <FontAwesomeIcon icon={faYelp} className="fa-xl" />
+            <span className="sr-only">Yelp</span>
           </Link>
           <Link
-            href="https://www.google.com/search?q=floras+flowers&oq=floras+flowers&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgKGK8BGMcBGIAEMgYIAhBFGEAyDwgDEC4YChivARjHARiABDIMCAQQABgKGA8YFhgeMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTA1N2owajSoAgCwAgA&sourceid=chrome&ie=UTF-8"
-            passHref
+            href="https://www.google.com/search?q=florasweddings"
+            className="footer-link custom-button"
+            aria-label="Find us on Google"
           >
-            <div className="nav-link custom-button">
-              <FontAwesomeIcon icon={faGoogle} className="fa-2xl" />
-            </div>
+            <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
+            <span className="sr-only">Google</span>
           </Link>
         </div>
 

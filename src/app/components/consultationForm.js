@@ -21,10 +21,10 @@ export default function ConsultationForm() {
         you&#39;ll have the wedding flowers of your dreams!
       </p>
       <div className="md:flex md:flex-row md:justify-between horizontal-line">
-        <form className="form p-8 mb-6 md:w-1/2">
-          <h3 className="subtitle mb-2">
+        <form className="form p-6 mb-4 md:w-1/2">
+          <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
-          </h3>
+          </h2>
           <hr className="mb-4" />
           <div className="mb-4 md:flex">
             <div className="md:mr-2 mb-4 md:mb-0">
@@ -39,7 +39,7 @@ export default function ConsultationForm() {
                 required
               />
             </div>
-            <div className="md:ml-2">
+            <div className="md:">
               <label className="label" htmlFor="groomName">
                 Groom&apos;s Name
               </label>
@@ -74,10 +74,11 @@ export default function ConsultationForm() {
                 id="email"
                 type="email"
                 placeholder="email@.com"
+                autoComplete="email"
                 required
               />
             </div>
-            <div className="md:ml-2">
+            <div className="md:">
               <label className="label" htmlFor="email1">
                 Planner Email
               </label>
@@ -86,6 +87,7 @@ export default function ConsultationForm() {
                 id="email1"
                 type="email"
                 placeholder="email@.com"
+                autoComplete="email"
               />
             </div>
           </div>
@@ -100,10 +102,11 @@ export default function ConsultationForm() {
                 type="tel"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 placeholder="###-###-####"
+                autoComplete="tel"
                 required
               />
             </div>
-            <div className="md:ml-2">
+            <div className="md:">
               <label className="label" htmlFor="phone1">
                 Planner Phone
               </label>
@@ -112,6 +115,7 @@ export default function ConsultationForm() {
                 id="phone1"
                 type="tel"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                autoComplete="tel"
                 placeholder="###-###-####"
               />
             </div>
@@ -182,7 +186,7 @@ export default function ConsultationForm() {
                   value="modern"
                   id="modern"
                 />
-                <span className="ml-2 text-gray-700">Modern</span>
+                <span className=" text-gray-700">Modern</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -192,7 +196,7 @@ export default function ConsultationForm() {
                   value="garden"
                   id="garden"
                 />
-                <span className="ml-2 text-gray-700">Garden</span>
+                <span className=" text-gray-700">Garden</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -202,7 +206,7 @@ export default function ConsultationForm() {
                   value="classic"
                   id="classic"
                 />
-                <span className="ml-2 text-gray-700">Classic</span>
+                <span className=" text-gray-700">Classic</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -212,7 +216,7 @@ export default function ConsultationForm() {
                   value="fairytale"
                   id="fairytale"
                 />
-                <span className="ml-2 text-gray-700">Fairytale</span>
+                <span className=" text-gray-700">Fairytale</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -222,7 +226,7 @@ export default function ConsultationForm() {
                   value="wildflower"
                   id="wildflower"
                 />
-                <span className="ml-2 text-gray-700">Wildflower</span>
+                <span className=" text-gray-700">Wildflower</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -232,7 +236,7 @@ export default function ConsultationForm() {
                   value="sophisticated"
                   id="sophisticated"
                 />
-                <span className="ml-2 text-gray-700">Sophisticated</span>
+                <span className=" text-gray-700">Sophisticated</span>
               </label>
             </div>
             <p className="secondary-label text-gray-700">
@@ -260,7 +264,7 @@ export default function ConsultationForm() {
           </div>
         </form>
         <div className="form-container md:w-1/2">
-          <form className="form p-8 mb-6">
+          <form className="form p-6 mb-4">
             <h3 className="subtitle text-center mb-2">
               Specify Your Wedding Floral Essentials
             </h3>

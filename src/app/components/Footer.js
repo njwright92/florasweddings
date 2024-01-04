@@ -86,11 +86,11 @@ export default function Footer() {
           <div className="flex flex-col items-end md:flex-row md:justify-end md:flex-grow-0">
             <div className="flex flex-col items-center">
               <h2 className="body-text text-center">
-                Looking for fresh flowers for your everydy occssions? visit
+                Looking for fresh flowers for your everydy occssions?
                 Visit my florist eCommerce site here:
               </h2>
               <Link
-                href="https://www.florasflowers.com"
+                href="https://www.florasflowers4u.com"
                 className="footer-link text-xl"
               >
                 <button className="button">🌸 Floras Flowers</button>

@@ -19,7 +19,7 @@ export default function Gallery() {
     <div>
       <Header />
       <h1 className="subtitle gallery">
-        The Zoe and Joey Butterfield Wedding The Willows Coeurd'Alene, ID
+        The Zoe and Joey Butterfield Wedding The Willows Coeur d&apos;Alene, ID
       </h1>
       <p className="body-text text-center">
         Photos by Shaena Sullivan Photography

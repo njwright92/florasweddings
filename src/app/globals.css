@@ -65,6 +65,15 @@ body {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
+.title-alt {
+  font-size: 2.5rem;
+  color: rgb(var(--color-primary));
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
 .subtitle {
   font-size: 1.5rem;
   color: black;

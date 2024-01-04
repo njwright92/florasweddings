@@ -21,7 +21,7 @@ export default function PricingGuide() {
 
         <div className="grid1">
           <div className="pricing-column">
-            <h3 className="subtitle">Ceremony</h3>
+            <h2 className="subtitle">Ceremony</h2>
             <hr className="mb-4 horizontal-line" />
             <ul className="pricing-list">
               <li>Statement Piece - $175</li>
@@ -31,7 +31,7 @@ export default function PricingGuide() {
             </ul>
           </div>
           <div className="pricing-column">
-            <h3 className="subtitle">Reception</h3>
+            <h2 className="subtitle">Reception</h2>
             <hr className="mb-4 horizontal-line" />
             <ul className="pricing-list">
               <li>Centerpiece - $55</li>
@@ -42,7 +42,7 @@ export default function PricingGuide() {
             </ul>
           </div>
           <div className="pricing-column">
-            <h3 className="subtitle">Bridal Party</h3>
+            <h2 className="subtitle">Bridal Party</h2>
             <hr className="mb-4 horizontal-line" />
             <ul className="pricing-list">
               <li>Bridal Bouquet - $155</li>

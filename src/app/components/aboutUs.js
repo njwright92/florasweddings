@@ -19,10 +19,10 @@ export default function AboutUs() {
           className="-mt-20"
         />
       </div>
-      <h3 className="subtitle text-center">
+      <h2 className="subtitle text-center">
         Hello there! I&apos;m Staci, the creative force behind Flora&apos;s
         Flowers.
-      </h3>
+      </h2>
 
       <div className="flex flex-col md:flex-row items-center">
         <img src="/img/staci.webp" alt="Staci" className="rounded-full m-2" />

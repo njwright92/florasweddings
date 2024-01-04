@@ -82,8 +82,9 @@ export default function Home() {
           <ReviewsCarousel />
         </section>
 
-        <Collage />
-
+        <section className="section" id="collage" data-aos="fade-up">
+          <Collage />
+        </section>
         <Footer />
       </>
     </main>

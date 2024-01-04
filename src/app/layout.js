@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import WebVitals from "@/app/components/webVitals";
 import Head from "next/head";
 import "./globals.css";
 
@@ -24,7 +25,10 @@ export default function RootLayout({ children }) {
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <body>{children}</body>
+      <body>
+        <WebVitals />
+        {children}
+      </body>
     </html>
   );
 }

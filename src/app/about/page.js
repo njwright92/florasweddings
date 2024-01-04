@@ -11,7 +11,7 @@ export default function About() {
       <Header />
       <AboutUs />
       <div className="title-container">
-        <h2 className="title">Reviews</h2>
+        <h1 className="title">Reviews</h1>
         <img
           src="./img/flower-PhotoRoom.webp"
           width={200}

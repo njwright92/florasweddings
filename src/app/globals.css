@@ -6,7 +6,7 @@
   --color-secondary: 247, 231, 206;
   --color-primary: 255, 255, 255;
   --color-accent: 0, 0, 0;
-  --color-green: 11, 106, 52;
+  --color-green: 101, 106, 54;
   --soft-radius: 0.625rem;
 }
 
@@ -62,7 +62,7 @@ body {
   text-align: center;
   align-items: center;
   justify-items: center;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  text-shadow: 0.06rem 0.06rem 0.06rem rgba(0, 0, 0, 0.7);
 }
 
 .title-alt {
@@ -71,7 +71,7 @@ body {
   text-align: center;
   align-items: center;
   justify-items: center;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  text-shadow: 0.06rem 0.06rem 0.06rem rgba(0, 0, 0, 0.7);
 }
 
 .subtitle {
@@ -146,15 +146,15 @@ body {
   text-transform: uppercase;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0.06rem 0.06rem 0.06rem rgba(0, 0, 0, 0.7);
   position: relative;
   top: 0;
 }
 
 @media (max-width: 767px) {
   .button {
-    padding: 0.5rem 1rem; /* Smaller padding for smaller screens */
-    font-size: 0.875rem; /* Smaller font size for smaller screens */
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem; 
   }
 }
 
@@ -269,7 +269,6 @@ body {
 .footer-link,
 .footer-social-link {
   color: rgb(var(--color-green));
-
   text-decoration: underline;
   justify-content: center;
   align-items: center;
@@ -322,6 +321,11 @@ body {
 
 .footer-link:hover,
 .footer-social-link:hover,
+.active-link {
+  text-decoration: dashed underline;
+  transform: scale(1.2);
+}
+
 .navbar-toggler:hover,
 .button:hover,
 .nav-link:hover {
@@ -344,7 +348,7 @@ body {
   cursor: pointer;
   border-radius: var(--soft-radius);
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 420px;
 }
 
 .dropdown-items {
@@ -394,12 +398,12 @@ form {
 }
 
 .horizontal-line {
-  border: 0.1rem solid black;
+  border-top: 0.1rem solid black;
   margin: 1rem 0;
 }
 
 .pricing-container {
-  background-color: rgb(var(--color-green)); /* light tan/beige color */
+  background-color: rgb(var(--color-green));
   padding: 3rem;
   text-align: center;
   border-radius: var(--soft-radius);
@@ -407,27 +411,27 @@ form {
 
 .pricing-column {
   padding: 1rem;
-  border: 1px solid black; /* example border */
+  border: 1px solid black;
   border-radius: var(--soft-radius);
 }
 
 .grid1 {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* 1 column in small viewports */
-  gap: 0.5rem; /* Adjust the gap as needed */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.5rem;
 }
 
 @media (min-width: 480px) {
   /* md breakpoint */
   .grid1 {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns in md viewports */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 800px) {
   /* lg-xl breakpoint */
   .grid1 {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns in lg-xl viewports */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -435,12 +439,14 @@ form {
   list-style: disc;
   text-align: left;
   padding-left: 0.5rem;
+  font-weight: 500;
 }
 
 .pricing-list li {
-  margin-bottom: 0.5rem; /* Spacing between list items */
-  font-size: 1rem; /* Adjust font size as needed */
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
   color: Black;
+  font-weight: 500;
 }
 
 .carousel .slide img {
@@ -451,11 +457,11 @@ form {
 
 .carousel-wrapper {
   display: flex;
-  justify-content: center; /* Center the carousel horizontally */
-  align-items: center; /* Center the carousel vertically */
-  padding: 2rem; /* Padding around the carousel */
-  margin: 2rem auto; /* Margin for top, bottom, and auto for left, right */
-  max-width: 100%; /* Limit the maximum width of the carousel */
+  justify-content: center; 
+  align-items: center; 
+  padding: 2rem; 
+  margin: 2rem auto; 
+  max-width: 100%; 
 }
 
 .image-overlay1 {
@@ -463,8 +469,8 @@ form {
   font-size: 1rem;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.325rem;
 }

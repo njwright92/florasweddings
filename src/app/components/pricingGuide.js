@@ -14,7 +14,7 @@ export default function PricingGuide() {
           />
         </div>
 
-        <p className="body-text mb-4">
+        <p className="body-text mb-4 font-bold">
           Here are some initial prices to consider while planning your wedding
           florals
         </p>

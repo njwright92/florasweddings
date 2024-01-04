@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,37 +24,32 @@ import {
 
 export default function Header() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const pathname = usePathname();
   const [showGalleryDropdown, setShowGalleryDropdown] = useState(false);
 
   const handleOutsideClick = (e) => {
-    // Close services dropdown if click is outside the dropdown menu
-    if (!e.target.closest(".services-dropdown-menu")) {
-      setShowServicesDropdown(false);
-    }
-    // Close gallery dropdown if click is outside the dropdown menu
     if (!e.target.closest(".gallery-dropdown-menu")) {
       setShowGalleryDropdown(false);
     }
   };
 
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
+
   useEffect(() => {
-    // Add event listener if either dropdown is visible
-    if (showServicesDropdown || showGalleryDropdown) {
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (showGalleryDropdown) {
       document.addEventListener("click", handleOutsideClick);
     } else {
       document.removeEventListener("click", handleOutsideClick);
     }
-
-    // Cleanup event listener
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [showServicesDropdown, showGalleryDropdown]);
-
-  const toggleNavbar = () => {
-    setIsNavbarOpen(!isNavbarOpen);
-  };
+  }, [showGalleryDropdown]);
 
   return (
     <header className="header flex-col">
@@ -112,10 +108,10 @@ export default function Header() {
         {/* Email and Phone Links */}
         <div className="flex flex-col md:ml-20">
           <p className="body-text">Email or call me now at:</p>
-          <a href="mailto:stacimw@yahoo.com" className="nav-link">
+          <a href="mailto:stacimw@yahoo.com" className="nav-link text-center">
             FlorasProFlowers@gmail.com
           </a>
-          <a href="tel:+12087559409" className="nav-link">
+          <a href="tel:+12087559409" className="nav-link text-center">
             (208)-755-9409
           </a>
         </div>
@@ -162,7 +158,7 @@ export default function Header() {
             </div>
           </Link>
           <Link href="/pricing" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faDollarSign}
                 className="h-5 w-5 inline-block mr-2"
@@ -171,7 +167,7 @@ export default function Header() {
             </div>
           </Link>
           <Link href="/about" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faUser}
                 className="h-5 w-5 inline-block mr-2"
@@ -181,7 +177,7 @@ export default function Header() {
           </Link>
 
           <Link href="/contact" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}
                 className="h-5 w-5 inline-block mr-2"
@@ -190,7 +186,7 @@ export default function Header() {
             </div>
           </Link>
           <Link href="/faqs" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
               <FontAwesomeIcon
                 icon={faQuestionCircle}
                 className="h-5 w-5 inline-block mr-2"
@@ -202,22 +198,26 @@ export default function Header() {
 
         <div className="hidden md:flex flex-row justify-center space-x-4 flex-wrap">
           <Link href="/" passHref>
-            <div className="nav-link" onClick={toggleNavbar}>
+            <div
+              className={`nav-link ${pathname === "/" ? "active-link" : ""}`}
+            >
               <FontAwesomeIcon
                 icon={faHome}
-                className="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-1"
               />
               Home
             </div>
           </Link>
           <Link href="/gallery" passHref>
             <div
-              className="nav-link"
+              className={`nav-link ${
+                pathname === "/gallery" ? "active-link" : ""
+              }`}
               onMouseEnter={() => setShowGalleryDropdown(!showGalleryDropdown)}
             >
               <FontAwesomeIcon
                 icon={faImages}
-                className="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-1"
               />
               Galleries
               <FontAwesomeIcon icon={faAngleDown} className="fa-lg" />
@@ -225,110 +225,143 @@ export default function Header() {
           </Link>
           {showGalleryDropdown && (
             <div className="dropdown-menu gallery-dropdown-menu">
-              <Link href="/gallery/knox" passHref>
-                <span className="dropdown-items">Knox/Farley Wedding</span>
+              <Link href="/gallery/lumen" passHref>
+                <span className="dropdown-items">
+                  Damschen Wedding at The Lumen Hall CDA
+                </span>
+              </Link>
+
+              <Link href="/gallery/butterfield" passHref>
+                <span className="dropdown-items">
+                  Butterfield Wedding at The Willows CDA
+                </span>
+              </Link>
+              <Link href="/gallery/cataldo" passHref>
+                <span className="dropdown-items">
+                  Country Barn Bed and Breakfast, Cataldo ID
+                </span>
               </Link>
               <Link href="/gallery/ditrich" passHref>
                 <span className="dropdown-items">
-                  Chelsey and Tim Ditrich Wedding
+                  Ditrich Wedding in Athol, ID
                 </span>
-              </Link>
-              <Link href="/gallery/wabs" passHref>
-                <span className="dropdown-items">The Wabs Wedding</span>
-              </Link>
-              <Link href="/gallery/flores" passHref>
-                <span className="dropdown-items">
-                  The Flores Cruise Wedding
-                </span>
-              </Link>
-              <Link href="/gallery/suko" passHref>
-                <span className="dropdown-items">
-                  The Suko Firebrand Wedding
-                </span>
-              </Link>
-              <Link href="/gallery/jewett" passHref>
-                <span className="dropdown-items">The Jewett House Wedding</span>
-              </Link>
-              <Link href="/gallery/webster" passHref>
-                <span className="dropdown-items">
-                  Webster wedding at the mountain sky guest ranch
-                </span>
-              </Link>
-              <Link href="/gallery/butterfield" passHref>
-                <span className="dropdown-items">
-                  Butterfield Wedding at the Willows CDA
-                </span>
-              </Link>
-              <Link href="/gallery/wright" passHref>
-                <span className="dropdown-items">
-                  Wright wedding at Idaho Shakespeare Festival park
-                </span>
-              </Link>
-              <Link href="/gallery/koho" passHref>
-                <span className="dropdown-items">
-                  Koho wedding firebrand cocallala
-                </span>
-              </Link>
-              <Link href="/gallery/hirschel" passHref>
-                <span className="dropdown-items">
-                  Hirschel Wedding Hagadone Event Center
-                </span>
-              </Link>
-              <Link href="/gallery/trezzi" passHref>
-                <span className="dropdown-items">Trezzi Farm Winery</span>
               </Link>
               <Link href="/gallery/dretke" passHref>
                 <span className="dropdown-items">
                   The Dretke Wedding at Elkins Resort
                 </span>
               </Link>
-              <Link href="/gallery/justin" passHref>
-                <span className="dropdown-items">Justin Wright wedding</span>
+              <Link href="/gallery/flores" passHref>
+                <span className="dropdown-items">
+                  Flores Wedding on a Cruise Boat CDA
+                </span>
               </Link>
-              <Link href="/gallery/cataldo" passHref>
-                <span className="dropdown-items">Country barn Cataldo</span>
+              <Link href="/gallery/hirschel" passHref>
+                <span className="dropdown-items">
+                  Hirschel Wedding at The Hagadone Event Center
+                </span>
+              </Link>
+              <Link href="/gallery/jewett" passHref>
+                <span className="dropdown-items">
+                  Ross wedding at The Jewett House
+                </span>
+              </Link>
+              <Link href="/gallery/justin" passHref>
+                <span className="dropdown-items">
+                  A Wright wedding in Rathdrum, ID
+                </span>
+              </Link>
+              <Link href="/gallery/knox" passHref>
+                <span className="dropdown-items">
+                  Knox/Farley Wedding at the CDA Casino
+                </span>
+              </Link>
+              <Link href="/gallery/koho" passHref>
+                <span className="dropdown-items">
+                  Koho Wedding at Firebrand Cocallala
+                </span>
+              </Link>
+
+              <Link href="/gallery/suko" passHref>
+                <span className="dropdown-items">
+                  Suko Wedding at Firebrand cocalala
+                </span>
+              </Link>
+              <Link href="/gallery/trezzi" passHref>
+                <span className="dropdown-items">
+                  Knox wedding at Trezzi Farm Winery, WA
+                </span>
+              </Link>
+              <Link href="/gallery/wabs" passHref>
+                <span className="dropdown-items">The Wabs Wedding Idaho</span>
+              </Link>
+              <Link href="/gallery/webster" passHref>
+                <span className="dropdown-items">
+                  Webster wedding at The Mountain Sky Guest Ranch, MO
+                </span>
+              </Link>
+              <Link href="/gallery/wright" passHref>
+                <span className="dropdown-items">
+                  Wright wedding at Idaho Shakespeare Festival Park, Boise
+                </span>
               </Link>
               <Link href="/gallery/misc" passHref>
                 <span className="dropdown-items">
-                  Miscelanious smaller weddings
+                  Miscellaneous smaller weddings
                 </span>
               </Link>
               {/* Add links to other gallery subpages here */}
             </div>
           )}
           <Link href="/pricing" passHref>
-            <div className="nav-link mb-2" onClick={toggleNavbar}>
+            <div
+              className={`nav-link ${
+                pathname === "/pricing" ? "active-link" : ""
+              }`}
+            >
               <FontAwesomeIcon
                 icon={faDollarSign}
-                className="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-1"
               />
               Pricing
             </div>
           </Link>
           <Link href="/about" passHref>
-            <div className="nav-link">
+            <div
+              className={`nav-link ${
+                pathname === "/about" ? "active-link" : ""
+              }`}
+            >
               <FontAwesomeIcon
                 icon={faUser}
-                className="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-1"
               />
               About Us
             </div>
           </Link>
 
           <Link href="/contact" passHref>
-            <div className="nav-link">
+            <div
+              className={`nav-link ${
+                pathname === "/contact" ? "active-link" : ""
+              }`}
+            >
               <FontAwesomeIcon
                 icon={faEnvelopeOpenText}
-                className="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-1"
               />
               Contact Us
             </div>
           </Link>
           <Link href="/faqs" passHref>
-            <div className="nav-link">
+            <div
+              className={`nav-link ${
+                pathname === "/faqs" ? "active-link" : ""
+              }`}
+            >
               <FontAwesomeIcon
                 icon={faQuestionCircle}
-                className="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-1"
               />
               Q&A
             </div>

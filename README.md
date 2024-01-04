@@ -1,3 +1,5 @@
+[![Website Status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://www.florasweddings.com/)
+
 # Floras Weddings Website
 
 Welcome to the official repository for "Floras Weddings," a sophisticated and elegant online destination catering to all your wedding floristry needs. This Next.js-powered website is the digital showcase of our exquisite floral arrangements and designs, specially crafted to add a touch of elegance to your special day.
@@ -26,4 +28,4 @@ The "Floras Weddings" website is continually evolving, with regular updates and 
 
 ---
 
-We appreciate your interest in "Floras Weddings" and hope our website inspires your wedding plans. For the latest updates and more information about our services, please visit [Floras Weddings](http://localhost:3000).
+We appreciate your interest in "Floras Weddings" and hope our website inspires your wedding plans. For the latest updates and more information about our services, please visit [Floras Weddings](https://www.florasweddings.com/).

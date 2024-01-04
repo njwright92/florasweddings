@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "🌹 Floras Weddings",
+  title: "Floras Weddings",
   description:
     "Discover bespoke floral arrangements and bouquets crafted with love and expertise at Floras Weddings. Perfect for weddings, anniversaries, and all your memorable occasions.",
   keywords:
@@ -21,6 +21,13 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.className}`}>
       <Head>
         <title>{metadata.title}</title>
+        <link
+          rel="icon"
+          href="/icon.png"
+          type="image/png"
+          sizes="any"
+          className="rounded-xl"
+        />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

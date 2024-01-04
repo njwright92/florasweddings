@@ -448,3 +448,14 @@ form {
   margin: 2rem auto; /* Margin for top, bottom, and auto for left, right */
   max-width: 100%; /* Limit the maximum width of the carousel */
 }
+
+.image-overlay1 {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}

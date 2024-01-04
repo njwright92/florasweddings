@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Collage from "../components/collage";
 
 export default function Contact() {
   return (
@@ -350,6 +351,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
+      <Collage />
       <Footer />
     </>
   );

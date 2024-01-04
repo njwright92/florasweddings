@@ -16,7 +16,7 @@ export default function Gallery() {
       <h1 className="subtitle gallery">
         Chelsey and Tim Ditrich Backyard Wedding in Athol, Idaho
       </h1>
-      <p className="gallery text-center">Photos by Light Cast Photography</p>
+      <p className="body-text text-center">Photos by Light Cast Photography</p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

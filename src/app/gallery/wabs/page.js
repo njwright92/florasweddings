@@ -14,7 +14,7 @@ export default function Gallery() {
     <div>
       <Header />
       <h1 className="subtitle gallery">The Wabs Wedding.</h1>
-      <p className="gallery text-center">
+      <p className="body-text text-center">
         Yasmina Rose Photography White Barn Ranch
       </p>
       <div className="grid">

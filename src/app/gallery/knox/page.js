@@ -16,7 +16,7 @@ export default function Gallery() {
       <h1 className="subtitle gallery">
         Knox/Farley Wedding Coeurd&apos;Alene Casino
       </h1>
-      <p className="gallery text-center">Photos by Meagan Mylan Photography</p>
+      <p className="body-text text-center">Photos by Meagan Mylan Photography</p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

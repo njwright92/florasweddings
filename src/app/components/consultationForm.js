@@ -20,7 +20,7 @@ export default function ConsultationForm() {
         your inspiration board, our creativity, and our knowledge of flowers,
         you&#39;ll have the wedding flowers of your dreams!
       </p>
-      <div className="md:flex md:flex-row md:justify-between horizontal-line">
+      <div className="md:flex md:flex-row md:justify-between">
         <form className="form p-6 mb-4 md:w-1/2">
           <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!

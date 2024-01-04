@@ -16,7 +16,7 @@ export default function Gallery() {
       <h1 className="subtitle gallery">
         A Collage of Random Smaller weddings I&apos;ve done
       </h1>
-      <p className="body-text text-center">photographer unknown</p>
+      
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

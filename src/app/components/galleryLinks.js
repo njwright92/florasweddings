@@ -9,7 +9,7 @@ export default function GalleryLinks() {
         North Idaho, showcasing unique floral designs and memorable
         celebrations.
       </p>
-      <p className="body-text">
+      <p className="body-text text-center">
         Select an image to see the full gallery of that event.
       </p>
       <div className="grid">

@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="title-container text-center">
-          <h3 className="subtitle">
+          <h1 className="subtitle">
             Thanks for visiting Floras Flowers wedding page!
             <img
               src="../img/flower-PhotoRoom.webp"
@@ -23,7 +23,7 @@ export default function Footer() {
               alt="Flower"
               className="-mt-20 -mb-10"
             />
-          </h3>
+          </h1>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Image - Flex Start */}
@@ -42,9 +42,9 @@ export default function Footer() {
           {/* Social Media Links - Flex Center */}
           <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:flex-grow">
             <div className="flex flex-col items-center">
-              <h3 className="body-text text-center">
+              <h2 className="body-text text-center">
                 Follow me on social media:
-              </h3>
+              </h2>
               <div className="flex gap-1">
                 <Link
                   href="https://www.instagram.com/florasflower4u/"
@@ -85,10 +85,10 @@ export default function Footer() {
           {/* Site Link - Flex End */}
           <div className="flex flex-col items-end md:flex-row md:justify-end md:flex-grow-0">
             <div className="flex flex-col items-center">
-              <h4 className="body-text text-center">
+              <h2 className="body-text text-center">
                 Looking for fresh flowers for your everydy occssions? visit
                 Visit my florist eCommerce site here:
-              </h4>
+              </h2>
               <Link
                 href="https://www.florasflowers.com"
                 className="footer-link text-xl"

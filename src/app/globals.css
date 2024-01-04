@@ -154,7 +154,7 @@ body {
 @media (max-width: 767px) {
   .button {
     padding: 0.5rem 1rem;
-    font-size: 0.875rem; 
+    font-size: 0.875rem;
   }
 }
 
@@ -164,13 +164,26 @@ body {
 
 .image-title {
   position: absolute;
-  bottom: 10px;
+  bottom: 1rem; /* updated from 10px to 1rem */
   left: 50%;
   background-color: rgba(0, 0, 0, 0.7);
   transform: translateX(-50%);
   color: #fff;
-  padding: 5px 10px;
+  padding: 0.3125rem; /* reduced from 5px */
   border-radius: var(--soft-radius);
+  max-width: calc(100% - 0.625rem); /* full width with padding */
+  box-sizing: border-box;
+  white-space: nowrap; /* prevents wrapping to next line */
+  overflow: hidden;
+  text-overflow: ellipsis; /* adds an ellipsis if the text is too long */
+}
+
+@media (max-width: 700px) {
+  /* 700px in rem */
+  .image-title {
+    font-size: .875rem; /* smaller text on smaller screens */
+    padding: 0.25rem; /* even smaller padding */
+  }
 }
 
 .image-placeholder {
@@ -457,16 +470,15 @@ form {
 
 .carousel-wrapper {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  padding: 2rem; 
-  margin: 2rem auto; 
-  max-width: 100%; 
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
 }
 
 .image-overlay1 {
   position: absolute;
-  font-size: 1rem;
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);

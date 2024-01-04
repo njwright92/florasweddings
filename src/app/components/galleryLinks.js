@@ -23,7 +23,9 @@ export default function GalleryLinks() {
               loading="lazy"
             />
             <div className="image-overlay1">
-              <span className="image-title">Damschen Wedding at Lumen Hall CDA</span>
+              <span className="image-title">
+                Damschen Wedding at Lumen Hall CDA
+              </span>
             </div>
           </div>
         </Link>

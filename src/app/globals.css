@@ -270,7 +270,7 @@ body {
 .footer {
   width: 100%;
   padding: 1rem;
-  background-color: rgb(var(--color-primary), 0.8);
+  background-color: rgb(var(--color-primary), 0.85);
   color: rgb(var(--color-secondary));
   text-align: center;
 }
@@ -299,7 +299,7 @@ body {
   width: 100%;
   padding: 0.5rem;
   border-radius: var(--soft-radius);
-  background-color: rgb(var(--color-primary), 0.8);
+  background-color: rgb(var(--color-primary), 0.85);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -445,12 +445,6 @@ form {
   /* lg-xl breakpoint */
   .grid1 {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .grid1 {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 

@@ -1,7 +1,7 @@
 export default function PricingGuide() {
   return (
     <>
-      <div className="pricing-container">
+      <div className="pricing-container mx-auto">
         <div className="title-container">
           <h1 className="title-alt">Full Service Floral Guide</h1>
           <img

@@ -33,52 +33,7 @@ export default function AboutUs() {
           original arrangements with an artistic flair!
         </p>
       </div>
-      <div className="flex justify-between">
-        <div>
-          <h3 className="body-text ml-2">
-            Serving Rathdrum, Coeur d&apos;Alene, Post Falls, & Surrounding
-            Areas.
-          </h3>
-          <p className="text-black m-2 p-2 text-left">
-            <span className="icon-text">
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                className="custom-button"
-              />
-              <span>Rathdrum, ID</span>
-            </span>
-            <br />
-            <span className="icon-text">
-              <FontAwesomeIcon icon={faPhone} className="custom-button" />
-              <span>(208) 755-9409</span>
-            </span>
-            <br />
-            <span className="icon-text">
-              <FontAwesomeIcon icon={faEnvelope} className="custom-button" />
-              <span>stacimw@yahoo.com</span>
-            </span>
-          </p>
-        </div>
-        <div>
-          <h3 className="body-text text-right">Hours of Operation</h3>
-          <p className="text-black text-right m-2 p-2">
-            Monday: 9 AM - 5 PM
-            <br />
-            Tuesday: 9 AM - 5 PM
-            <br />
-            Wednesday: 9 AM - 5 PM
-            <br />
-            Thursday: 9 AM - 5 PM
-            <br />
-            Friday: 9 AM - 4 PM
-            <br />
-            Saturday: 9 AM - 12 PM
-            <br />
-            Sunday: Closed
-          </p>
-        </div>
-      </div>
-      <br />
+
       <br />
       <p className="body-text p-2">
         {" "}
@@ -107,13 +62,10 @@ export default function AboutUs() {
         Thank you for considering Flora&apos;s Flowers for your next floral
         moment!
       </p>
-      <br />
-      <br />
-
       <img
         src="/img/map.webp"
         alt="Map"
-        className="w-full my-4 h-auto border-white border-2 rounded-xl"
+        className="w-full my-4 h-auto border-white border-2 rounded-lg"
       />
     </>
   );

@@ -19,7 +19,7 @@ export default function AboutUs() {
 
       <div className="flex flex-col md:flex-row items-center">
         <img src="/img/staci.webp" alt="Staci" className="rounded-full m-2" />
-        <h4 className="subtitle">Staci Huffman</h4>
+        <h3 className="subtitle">Staci Huffman</h3>
         <p className="body-text">
           I bring three decades of expertise in the floral industry, showcasing
           my skills as a formally trained professional floral designer. Renowned

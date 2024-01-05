@@ -479,10 +479,8 @@ form {
 
 .image-overlay1 {
   position: absolute;
+  top: 20%;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  text-align: center;
-  padding: 0.325rem;
+  
 }

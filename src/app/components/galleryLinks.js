@@ -21,7 +21,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/lumen">
           <div className="image">
             <img
-              src="/img/gallery/lumen1.webp"
+              src="/img/lumen/lumen8.webp"
               alt="Lumen hall cda wedding flowe"
               className="image-placeholder"
               loading="lazy"
@@ -38,7 +38,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/butterfield">
           <div className="image">
             <img
-              src="/img/gallery/butterfield17.webp"
+              src="/img/butterfield/butterfield17.webp"
               alt="Butterfield Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -54,7 +54,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/hauser">
           <div className="image">
             <img
-              src="/img/gallery/hauser7.webp"
+              src="/img/hauser/hauser7.webp"
               alt="Hauser Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -68,7 +68,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/homestead">
           <div className="image">
             <img
-              src="/img/gallery/homestead.webp"
+              src="/img/homestead/homestead9.webp"
               alt="Homestead Barn Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -84,7 +84,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/hoyer">
           <div className="image">
             <img
-              src="/img/gallery/hoyer4.webp"
+              src="/img/hoyer/hoyer1.webp"
               alt="Hoyer Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -99,7 +99,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/cataldo">
           <div className="image">
             <img
-              src="/img/gallery/cataldo5.webp"
+              src="/img/cataldo/cataldo2.webp"
               alt="Cataldo Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -115,7 +115,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/ditrich">
           <div className="image">
             <img
-              src="/img/gallery/ditrich9.webp"
+              src="/img/ditrich/ditrich4.webp"
               alt="Ditrich Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -130,7 +130,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/dretke">
           <div className="image">
             <img
-              src="/img/gallery/dretke7.webp"
+              src="/img/dretke/dretke7.webp"
               alt="Dretke Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -147,7 +147,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/flores">
           <div className="image">
             <img
-              src="/img/gallery/flores2.webp"
+              src="/img/flores/flores9.webp"
               alt="Flores Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -164,7 +164,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/hirschel">
           <div className="image">
             <img
-              src="/img/gallery/hirschel4.webp"
+              src="/img/hirschel/hirschel4.webp"
               alt="Hirschel Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -181,7 +181,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/jewett">
           <div className="image">
             <img
-              src="/img/gallery/jewett5.webp"
+              src="/img/jewett/jewett1.webp"
               alt="Jewett Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -198,7 +198,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/justin">
           <div className="image">
             <img
-              src="/img/gallery/justin6.webp"
+              src="/img/justin/justin1.webp"
               alt="Justin Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -215,7 +215,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/knox">
           <div className="image">
             <img
-              src="/img/gallery/knox7.webp"
+              src="/img/knox/knox7.webp"
               alt="Knox Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -232,7 +232,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/koho">
           <div className="image">
             <img
-              src="/img/gallery/koho6.webp"
+              src="/img/koho/koho6.webp"
               alt="Koho Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -251,7 +251,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/suko">
           <div className="image">
             <img
-              src="/img/gallery/suko6.webp"
+              src="/img/suko/suko5.webp"
               alt="Suko Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -268,7 +268,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/trezzi">
           <div className="image">
             <img
-              src="/img/gallery/trezzi1.webp"
+              src="/img/trezzi/trezzi14.webp"
               alt="Trezzi Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -284,7 +284,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/wabs">
           <div className="image">
             <img
-              src="/img/gallery/alter.webp"
+              src="/img/wabs/wabs2.webp"
               alt="Wabs Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -299,7 +299,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/webster">
           <div className="image">
             <img
-              src="/img/gallery/webster2.webp"
+              src="/img/webster/webster6.webp"
               alt="Webster Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -316,7 +316,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/wright">
           <div className="image">
             <img
-              src="/img/gallery/wright3.webp"
+              src="/img/wright/wright9.webp"
               alt="Wright Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -331,7 +331,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/misc">
           <div className="image">
             <img
-              src="/img/gallery/misc15.webp"
+              src="/img/misc/misc10.webp"
               alt="Miscellaneous Wedding Flowers"
               className="image-placeholder"
               loading="lazy"

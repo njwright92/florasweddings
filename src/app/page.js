@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AOS from "aos";
@@ -31,9 +32,9 @@ export default function Home() {
           <h4 className="img-title">
             Seeking a signature style? Let me create your exclusive look.
           </h4>
-          <button href="/contact" className="button">
-            Contact Us
-          </button>
+          <Link href="/contact" passHref>
+            <button className="button">Contact Us</button>
+          </Link>
         </div>
       </div>
       <>

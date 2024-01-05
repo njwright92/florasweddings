@@ -24,11 +24,12 @@ export default function Gallery() {
       </p>
 
       <p className="body-text text-center">
-        Lexi and Colton Gundlach&#39;s wedding at the Homestead Barn in Dover was a
-        beautiful blend of rustic charm and chic elegance. The idyllic barn
-        setting provided a perfect backdrop for their heartfelt celebration,
-        enhanced by unique floral arrangements. Jamie Lund Photography captured
-        each moment, showcasing the love and joy of their special day.
+        Lexi and Colton Gundlach&#39;s wedding at the Homestead Barn in Dover
+        was a beautiful blend of rustic charm and chic elegance. The idyllic
+        barn setting provided a perfect backdrop for their heartfelt
+        celebration, enhanced by unique floral arrangements. Jamie Lund
+        Photography captured each moment, showcasing the love and joy of their
+        special day.
       </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
@@ -47,6 +48,7 @@ export default function Gallery() {
             // Use the filename without the extension as alt text
             const altText =
               filename.replace(/\.[^/.]+$/, "") + " Wedding Florist";
+            const isRotateImage = filename === "homestead3.webp"; // Check if it's the specific image
 
             // Increment the current index for the next image
             currentIndex++;
@@ -56,7 +58,9 @@ export default function Gallery() {
                 <img
                   src={imagePath}
                   alt={altText}
-                  className="image-placeholder"
+                  className={`image-placeholder ${
+                    isRotateImage ? "rotate-90" : ""
+                  }`}
                   loading="lazy"
                 />
               </div>

@@ -86,8 +86,7 @@ export default function Footer() {
           <div className="flex flex-col items-end md:flex-row md:justify-end md:flex-grow-0">
             <div className="flex flex-col items-center">
               <h2 className="body-text text-center m-1">
-                Looking to send flowers for a special occasion? Visit our flower
-                shop for a beautiful selection and prompt delivery.
+                Looking to send flowers for a special occasion? Visit our online store for a beautiful selection and prompt delivery.
               </h2>
               <Link
                 href="https://www.florasflowers4u.com"

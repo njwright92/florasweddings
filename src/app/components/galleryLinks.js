@@ -68,8 +68,8 @@ export default function GalleryLinks() {
         <Link href="/gallery/homestead">
           <div className="image">
             <img
-              src="/img/gallery/homestead2.webp"
-              alt="Hauser Wedding Flowers"
+              src="/img/gallery/homestead.webp"
+              alt="Homestead Barn Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
             />

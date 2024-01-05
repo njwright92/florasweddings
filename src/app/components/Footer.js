@@ -85,13 +85,13 @@ export default function Footer() {
           {/* Site Link - Flex End */}
           <div className="flex flex-col items-end md:flex-row md:justify-end md:flex-grow-0">
             <div className="flex flex-col items-center">
-              <h2 className="body-text text-center">
-                Looking for fresh flowers for your everydy occssions?
-                Visit my florist eCommerce site here:
+              <h2 className="body-text text-center m-1">
+                Looking for to send flowers for a special occasion? Visit our
+                flower shop for a beautiful selection and prompt delivery.
               </h2>
               <Link
                 href="https://www.florasflowers4u.com"
-                className="footer-link text-xl"
+                className="footer-link text-lg"
               >
                 <button className="button">🌸 Floras Flowers</button>
               </Link>

@@ -133,15 +133,16 @@ export default function Header() {
           } md:hidden`}
           onClick={toggleNavbar}
         >
-          <FontAwesomeIcon icon={faBars} className="h-5 w-5 mt-2" /> Menu
+          <FontAwesomeIcon icon={faBars} className="h-5 w-5 mt-2" />
+          Menu
         </button>
 
         {/* Side-opening menu for small screens */}
         <div
-          className={`fixed top-0 left-0 h-screen w-3/8 z-50 transform ${
-            isNavbarOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed top-0 right-0 h-screen w-3/8 z-50 transform ${
+            isNavbarOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 ease-in-out flex flex-col p-4 md:hidden`}
-          style={{ backgroundColor: `rgba(var(--color-primary), 0.8)` }}
+          style={{ backgroundColor: `rgba(var(--color-primary))` }}
         >
           <button className="navbar-close text-right" onClick={toggleNavbar}>
             <FontAwesomeIcon icon={faTimes} className="h-5 w-5" />
@@ -262,7 +263,7 @@ export default function Header() {
                 <span className="dropdown-items">
                   Flores Wedding on a Cruise Boat CDA
                 </span>
-              </Link> 
+              </Link>
               <Link href="/gallery/hauser" passHref>
                 <span className="dropdown-items">
                   The Lee Wedding Private resdience Hauser, ID

@@ -1,10 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faEnvelope,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
-
 export default function AboutUs() {
   return (
     <>
@@ -28,15 +21,13 @@ export default function AboutUs() {
         <img src="/img/staci.webp" alt="Staci" className="rounded-full m-2" />
         <h4 className="subtitle">Staci Huffman</h4>
         <p className="body-text">
-          With 30 years of experience in the floral industry, I&apos;m a
-          formally trained professional floral designer known for crafting
-          original arrangements with an artistic flair!
+          I bring three decades of expertise in the floral industry, showcasing
+          my skills as a formally trained professional floral designer. Renowned
+          for creating unique arrangements with an artistic touch.
         </p>
       </div>
-
       <br />
       <p className="body-text p-2">
-        {" "}
         With a passion for floral design cultivated at JJ Neville&apos;s School
         of Floral Design in Vancouver, Canada, I&apos;ve embarked on a journey
         to bring the beauty of flowers to Rathdrum, Idaho. Inspired by my
@@ -59,9 +50,11 @@ export default function AboutUs() {
         Your support means the world to me, and I can&apos;t wait to bring a
         burst of beauty into your life.
         <br />
+        <br />
         Thank you for considering Flora&apos;s Flowers for your next floral
         moment!
       </p>
+      <br />
       <img
         src="/img/map.webp"
         alt="Map"

@@ -54,7 +54,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/hauser">
           <div className="image">
             <img
-              src="/img/hauser/hauser7.webp"
+              src="/img/hauser/hauser1.webp"
               alt="Hauser Wedding Flowers"
               className="image-placeholder"
               loading="lazy"

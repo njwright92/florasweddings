@@ -262,10 +262,20 @@ export default function Header() {
                 <span className="dropdown-items">
                   Flores Wedding on a Cruise Boat CDA
                 </span>
+              </Link> 
+              <Link href="/gallery/hauser" passHref>
+                <span className="dropdown-items">
+                  The Lee Wedding Private resdience Hauser, ID
+                </span>
               </Link>
               <Link href="/gallery/hirschel" passHref>
                 <span className="dropdown-items">
                   Hirschel Wedding at The Hagadone Event Center
+                </span>
+              </Link>
+              <Link href="/gallery/hoyer" passHref>
+                <span className="dropdown-items">
+                  Hoyer Wedding at Farm in Mica, Washington
                 </span>
               </Link>
               <Link href="/gallery/jewett" passHref>

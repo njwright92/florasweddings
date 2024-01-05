@@ -47,6 +47,34 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
+        <Link href="/gallery/hauser">
+          <div className="image">
+            <img
+              src="/img/gallery/hauser7.webp"
+              alt="Hauser Wedding Flowers"
+              className="image-placeholder"
+              loading="lazy"
+            />
+            <div className="image-overlay1">
+              <span className="image-title">Lee Wedding in Hauser, ID</span>
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/gallery/hoyer">
+          <div className="image">
+            <img
+              src="/img/gallery/hoyer4.webp"
+              alt="Hoyer Wedding Flowers"
+              className="image-placeholder"
+              loading="lazy"
+            />
+            <div className="image-overlay1">
+              <span className="image-title">Hoyer Wedding in Mica, WA</span>
+            </div>
+          </div>
+        </Link>
+
         {/* Cataldo5 Wedding */}
         <Link href="/gallery/cataldo">
           <div className="image">

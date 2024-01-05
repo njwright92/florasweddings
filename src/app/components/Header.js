@@ -12,7 +12,6 @@ import {
   faHome,
   faQuestionCircle,
   faUser,
-  faAngleDown,
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -220,7 +219,6 @@ export default function Header() {
                 className="h-5 w-5 inline-block mr-1"
               />
               Galleries
-              <FontAwesomeIcon icon={faAngleDown} className="fa-lg" />
             </div>
           </Link>
           {showGalleryDropdown && (

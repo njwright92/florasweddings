@@ -14,11 +14,11 @@ export default function Gallery() {
     <div>
       <Header />
       <h1 className="title gallery">Enchanted Evening at Firebrand Venue</h1>
-      Subtitle:
+    
       <p className="subtitle text-center">
         Stanley and Sydney Koho: A Rustic Romance in Cocolalla, Idaho.
       </p>
-      Body Text:
+      
       <p className="body-text text-center">
         Stanley and Sydney Koho&#39;s wedding at the Firebrand Venue was a
         captivating blend of rustic elegance and personal flair. Set in the

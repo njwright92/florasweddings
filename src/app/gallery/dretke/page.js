@@ -14,11 +14,11 @@ export default function Gallery() {
     <div>
       <Header />
       <h1 className="title gallery">Elkins Resort Elegance</h1>
-      Subtitle:
+   
       <p className="subtitle text-center">
         Jessica and Ian Dretke: Lakeside Romance Unfolds, Priest Lake ID.
       </p>
-      Body Text:
+    
       <p className="body-text text-center">
         Jessica and Ian Dretke&#39;s wedding at Elkins Resort embodied the
         perfect lakeside romance. Surrounded by Priest Lake&#39;s pristine

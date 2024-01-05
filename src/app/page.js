@@ -18,8 +18,39 @@ export default function Home() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const businessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    name: "Flora's Weddings",
+    description:
+      "Local florist specializing in beautiful, unique wedding florals. Catering to all your wedding flower needs.",
+    telephone: "208-755-9409",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Rathdrum",
+      addressRegion: "ID",
+      postalCode: "83858",
+      addressCountry: "USA",
+    },
+
+    areaServed: [
+      {
+        "@type": "Place",
+        name: "Kootenai County",
+      },
+      {
+        "@type": "Place",
+        name: "Surrounding areas",
+      },
+    ],
+  };
+
   return (
     <main className="main" id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+      />
       <Header />
       <div style={{ position: "relative", width: "100%" }}>
         <img

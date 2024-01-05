@@ -32,10 +32,6 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-6695615601481816"
-        ></meta>
       </Head>
       <body>
         {children}

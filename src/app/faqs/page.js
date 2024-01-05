@@ -5,7 +5,17 @@ export default function Faqs() {
   return (
     <>
       <Header />
-      <h1 className="title">Q & A</h1>
+      <div className="title-container">
+        <h1 className="title">Frequently Asked Questions</h1>
+        <img
+          src="./img/flower-PhotoRoom.webp"
+          width={200}
+          height={100}
+          loading="lazy"
+          alt="Flower"
+          className="-mt-20"
+        />
+      </div>
       <h2 className="subtitle">You have questions, I have answers!</h2>
 
       <div className="body-text pricing-list mx-6">

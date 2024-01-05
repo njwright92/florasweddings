@@ -1,4 +1,81 @@
+"use client";
+
 export default function ConsultationForm() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {};
+
+    // Iterate over all form elements
+    new FormData(e.target).forEach((value, key) => {
+      // If the key already exists, it means it's a checkbox. Accumulate its values into an array.
+      if (formData[key]) {
+        formData[key] = [...formData[key], value];
+      } else {
+        formData[key] = value;
+      }
+    });
+
+    window.location.href = composeEmailLink(formData);
+
+    e.target.reset();
+    alert(
+      "The email client has been opened. Please send the email to complete your request."
+    );
+  };
+  const composeEmailLink = (formData) => {
+    const subject = encodeURIComponent("Wedding Consultation Request");
+
+    // Handle style checkboxes
+    const styles = Array.isArray(formData.style)
+      ? formData.style.join(", ")
+      : formData.style;
+
+    const body = encodeURIComponent(`
+      Bride's Name: ${formData.firstName}
+      Groom's Name: ${formData.groomName}
+      Planner's Name: ${formData.plannerName}
+      Bride's Email: ${formData.email}
+      Planner Email: ${formData.email1}
+      Bride's Phone: ${formData.phone}
+      Planner Phone: ${formData.phone1}
+      Venue: ${formData.venue}
+      Reception Venue: ${formData.venue1}
+      Date of Event: ${formData.date}
+      Floral Budget: ${formData.Budget}
+      Preferred Style: ${styles}
+      Additional Information: ${formData.additionalInfo}
+    `);
+    return `mailto:stacimw@yahoo.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleFloralEssentialsSubmit = (e) => {
+    e.preventDefault();
+    const formData = {};
+    new FormData(e.target).forEach((value, key) => (formData[key] = value));
+
+    // Open mail client
+    window.location.href = composeFloralEssentialsEmailLink(formData);
+
+    // Reset form and alert user
+    e.target.reset();
+    alert(
+      "The email client has been opened. Please send the email to complete your request."
+    );
+  };
+
+  const composeFloralEssentialsEmailLink = (formData) => {
+    const subject = encodeURIComponent("Wedding Floral Essentials Request");
+    const body = encodeURIComponent(`
+      Bridal Bouquets: ${formData.bridal_bouquets}
+      Bridesmaids Bouquets: ${formData.bridesmaids_bouquets}
+      Boutonnieres: ${formData.boutonnieres}
+      Centerpieces Needed: ${formData.centerpiecesNeeded}
+      Color Palette: ${formData.colorPalette}
+      Additional Needs: ${formData.additionalNeeds}
+    `);
+    return `mailto:stacimw@yahoo.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <>
       <div className="title-container">
@@ -21,7 +98,7 @@ export default function ConsultationForm() {
         you&#39;ll have the wedding flowers of your dreams!
       </p>
       <div className="md:flex md:flex-row md:justify-between">
-        <form className="form p-6 mb-4 md:w-1/2">
+        <form onSubmit={handleSubmit} className="form p-6 mb-4 md:w-1/2">
           <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
           </h2>
@@ -34,6 +111,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="firstName"
+                name="firstName"
                 type="text"
                 placeholder="Bride"
                 required
@@ -46,6 +124,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="groomName"
+                name="groomName"
                 type="text"
                 placeholder="Groom"
                 required
@@ -59,6 +138,7 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded py-2 px-3 text-gray-700"
               id="plannerName"
+              name="plannerName"
               type="text"
               placeholder="Planner"
             />
@@ -72,6 +152,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="email"
+                name="email"
                 type="email"
                 placeholder="email@.com"
                 autoComplete="email"
@@ -85,6 +166,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="email1"
+                name="email1"
                 type="email"
                 placeholder="email@.com"
                 autoComplete="email"
@@ -99,8 +181,9 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="phone"
+                name="phone"
                 type="tel"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                pattern="(\(?\d{3}\)?|\d{3})([-]?\d{3})([-]?\d{4})"
                 placeholder="###-###-####"
                 autoComplete="tel"
                 required
@@ -113,8 +196,9 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="phone1"
+                name="phone1"
                 type="tel"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                pattern="(\(?\d{3}\)?|\d{3})([-]?\d{3})([-]?\d{4})"
                 autoComplete="tel"
                 placeholder="###-###-####"
               />
@@ -128,6 +212,7 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
               id="venue"
+              name="venue"
               type="text"
               placeholder="Venue Name"
               required
@@ -141,9 +226,9 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
               id="venue1"
+              name="venue1"
               type="text"
               placeholder="Venue Name"
-              required
             />
           </div>
 
@@ -154,6 +239,7 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
               id="date"
+              name="date"
               type="date"
               required
             />
@@ -166,6 +252,7 @@ export default function ConsultationForm() {
             <textarea
               className="shadow border rounded md:w-full py-3 px-3 text-gray-700"
               id="Budget"
+              name="Budget"
               type="number"
               required
               placeholder="2500"
@@ -186,7 +273,7 @@ export default function ConsultationForm() {
                   value="modern"
                   id="modern"
                 />
-                <span className=" text-gray-700">Modern</span>
+                <span className="ml-2 text-gray-700">Modern</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -196,7 +283,7 @@ export default function ConsultationForm() {
                   value="garden"
                   id="garden"
                 />
-                <span className=" text-gray-700">Garden</span>
+                <span className="ml-2 text-gray-700">Garden</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -206,7 +293,7 @@ export default function ConsultationForm() {
                   value="classic"
                   id="classic"
                 />
-                <span className=" text-gray-700">Classic</span>
+                <span className="ml-2 text-gray-700">Classic</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -216,7 +303,7 @@ export default function ConsultationForm() {
                   value="fairytale"
                   id="fairytale"
                 />
-                <span className=" text-gray-700">Fairytale</span>
+                <span className="ml-2 text-gray-700">Fairytale</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -226,7 +313,7 @@ export default function ConsultationForm() {
                   value="wildflower"
                   id="wildflower"
                 />
-                <span className=" text-gray-700">Wildflower</span>
+                <span className="ml-2 text-gray-700">Wildflower</span>
               </label>
               <label className="inline-flex items-center">
                 <input
@@ -236,7 +323,7 @@ export default function ConsultationForm() {
                   value="sophisticated"
                   id="sophisticated"
                 />
-                <span className=" text-gray-700">Sophisticated</span>
+                <span className="ml-2 text-gray-700">Sophisticated</span>
               </label>
             </div>
             <p className="secondary-label text-gray-700">
@@ -251,6 +338,8 @@ export default function ConsultationForm() {
             <textarea
               className="shadow border rounded md:w-full py-3 px-3 text-gray-700"
               id="additionalInfo"
+              type="text"
+              name="additionalInfo"
               required
               placeholder="Any addition details you want me to know!"
               rows={4}
@@ -264,7 +353,10 @@ export default function ConsultationForm() {
           </div>
         </form>
         <div className="form-container md:w-1/2">
-          <form className="form p-6 mb-4">
+          <form
+            onSubmit={handleFloralEssentialsSubmit}
+            className="form p-6 mb-4"
+          >
             <h3 className="subtitle text-center mb-2">
               Specify Your Wedding Floral Essentials
             </h3>
@@ -276,6 +368,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="bridal_bouquets"
+                name="bridal_bouquets"
                 type="text"
                 placeholder="Bridal Bouquets"
               />
@@ -288,6 +381,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="bridesmaids_bouquets"
+                name="bridesmaids_bouquets"
                 type="text"
                 placeholder="Bridesmaids Bouquets"
               />
@@ -300,6 +394,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="boutonnieres"
+                name="boutonnieres"
                 type="text"
                 placeholder="Boutonnieres"
               />
@@ -312,6 +407,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="centerpiecesNeeded"
+                name="centerpiecesNeeded"
                 type="number"
                 required
               />
@@ -324,6 +420,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="colorPalette"
+                name="colorPalette"
                 type="text"
                 required
               />
@@ -336,6 +433,7 @@ export default function ConsultationForm() {
               <textarea
                 className="shadow border rounded w-full py-3 px-3 text-gray-700"
                 id="additionalNeeds"
+                name="additionalNeeds"
                 rows="4"
                 placeholder="Installations, Design Concepts, or anything else we need to know!"
               ></textarea>

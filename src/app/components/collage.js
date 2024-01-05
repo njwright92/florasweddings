@@ -14,7 +14,7 @@ export default function Collage() {
     <div className="grid">
       {collageImages.map((filename, index) => {
         const imagePath = `/img/collage/${filename}`;
-        const altText = `Collage Image ${index + 1}`;
+        const altText = filename.replace(/\.[^/.]+$/, "") + " Wedding Florals";
         return (
           <div key={index} className="image1">
             <img

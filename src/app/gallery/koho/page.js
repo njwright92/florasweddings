@@ -42,7 +42,7 @@ export default function Gallery() {
           if (imageExists) {
             // Use the filename without the extension as alt text
             const altText =
-              filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
+              filename.replace(/\.[^/.]+$/, "") + " Wedding florist";
 
             // Increment the current index for the next image
             currentIndex++;

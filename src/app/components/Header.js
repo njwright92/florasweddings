@@ -55,17 +55,15 @@ export default function Header() {
     <header className="header flex-col">
       {/* Header - Image Row with Social Links */}
       <div className="flex flex-col md:flex-row items-center">
-        <div className="flex">
-          <Link href="/" passHref>
-            <img
-              src="/img/logo.webp"
-              alt="Floras Flowers"
-              className="cursor-pointer logo"
-              height="auto"
-              width={400}
-            />
-          </Link>
-        </div>
+        <Link href="/" passHref>
+          <img
+            src="/img/logo.webp"
+            alt="Floras Flowers"
+            className="cursor-pointer logo -mt-6 -mb-6 md:-mt-0 md:-mb-0 lg:-ml-10"
+            height="auto"
+            width={400}
+          />
+        </Link>
 
         {/* Social Links */}
         <div className="flex gap-2 mt-2 md:ml-10">
@@ -106,7 +104,7 @@ export default function Header() {
         {/* Image */}
 
         {/* Email and Phone Links */}
-        <div className="flex flex-col md:ml-20">
+        <div className="md:ml-20 text-center">
           <p className="body-text">Email or call me now at:</p>
 
           <a href="mailto:stacimw@yahoo.com" className="nav-link text-center">
@@ -115,12 +113,6 @@ export default function Header() {
           <a href="tel:+12087559409" className="nav-link text-center">
             (208)-755-9409
           </a>
-          <Link
-            href="https://www.florasflowers4u.com"
-            className="nav-link text-lg text-center"
-          >
-            <button className="button">🌸 Floras Flowers</button>
-          </Link>
         </div>
       </div>
 

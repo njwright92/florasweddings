@@ -31,9 +31,9 @@ export default function Faqs() {
           </li>
           <li>
             4. The full payment is due 30 days prior to the wedding. At that
-            time we'll reconnect to address if you need any adjustments to your
-            wedding order. Adding a few items is never a problem but big changes
-            need to be made 1 month prior to the wedding date.
+            time we&apos;ll reconnect to address if you need any adjustments to
+            your wedding order. Adding a few items is never a problem but big
+            changes need to be made 1 month prior to the wedding date.
           </li>
           <li>
             5. Travel and installation fees vary depending on location and time

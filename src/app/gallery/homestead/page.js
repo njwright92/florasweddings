@@ -1,7 +1,7 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
 import fs from "fs";
 import path from "path";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 
 export default function Gallery() {
   // Read the image filenames from the directory
@@ -9,7 +9,7 @@ export default function Gallery() {
     process.cwd(),
     "public",
     "img",
-    "butterfield"
+    "homestead"
   );
   const imageFilenames = fs.readdirSync(imagesDirectory);
 
@@ -18,16 +18,17 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="title gallery">The Willows</h1>
-      <h2 className="subtitle text-center">
-        Zoe and Joey Butterfield: A Celebration of Love and Nature, Coeur d&#39;Alene, ID
-      </h2>
+      <h1 className="title gallery">Rustic Romance at Homestead Barn</h1>
+      <p className="subtitle text-center">
+        Lexi and Colton Gundlach: A Day of Country Elegance, Dover, ID
+      </p>
+
       <p className="body-text text-center">
-        At The Willows, Zoe and Joey&#39;s wedding was a harmonious blend of natural
-        beauty and elegant florals. Each arrangement complemented the couple&#39;s
-        vision, creating a uniquely romantic atmosphere. Captured with artistry
-        by Shaena Sullivan Photography, these moments are a testament to love&#39;s
-        timeless elegance.{" "}
+        Lexi and Colton Gundlach&#39;s wedding at the Homestead Barn in Dover was a
+        beautiful blend of rustic charm and chic elegance. The idyllic barn
+        setting provided a perfect backdrop for their heartfelt celebration,
+        enhanced by unique floral arrangements. Jamie Lund Photography captured
+        each moment, showcasing the love and joy of their special day.
       </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
@@ -37,7 +38,7 @@ export default function Gallery() {
           }
 
           // Check if the image file exists
-          const imagePath = `/img/butterfield/${filename}`;
+          const imagePath = `/img/homestead/${filename}`;
           const imageExists = fs.existsSync(
             path.join(imagesDirectory, filename)
           );

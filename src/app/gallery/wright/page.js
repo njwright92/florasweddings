@@ -13,10 +13,20 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Seth and Michaelene Wright Idaho Shakespeare Festival park Boise, Idaho
-      </h1>
-      <p className="body-text text-center">Phone pictures from family</p>
+      <h1 className="title gallery">Idaho Shakespeare Festival Park</h1>
+
+      <p className="subtitle text-center">
+        Dramatic Elegance Seth and Michaelene Wright: A Theatrical Romance in
+        Boise, ID.
+      </p>
+
+      <p className="body-text text-center">
+        Seth and Michaelene Wright&#39;s wedding at the Idaho Shakespeare
+        Festival Park in Boise was a captivating blend of drama and elegance.
+        The unique setting lent a theatrical backdrop to their special day,
+        enhanced by lovingly captured phone pictures from family, which added a
+        personal and intimate touch to their memorable celebration.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

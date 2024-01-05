@@ -13,10 +13,19 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Sammy and Hunter Damschen Lumen Hall, Cda
-      </h1>
-      <p className="body-text text-center">Photos by Jesy Lee photograpy </p>
+      <h1 className="title gallery">Modern Elegance at Lumen Hall</h1>
+
+      <p className="subtitle text-center">
+        Sammy and Hunter Damschen: Chic Urban Celebration in Coeur d&#39;Alene,
+        Idaho
+      </p>
+      <p className="body-text text-center">
+        Sammy and Hunter Damschen&#39;s wedding at Lumen Hall showcased modern
+        elegance in the heart of Coeur d&#39;Alene. The venue&#39;s chic urban
+        atmosphere provided the perfect backdrop for their vibrant and stylish
+        celebration. Captured with artistic flair by Jesy Lee Photography, each
+        photo radiates the joy and sophistication of their special day.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

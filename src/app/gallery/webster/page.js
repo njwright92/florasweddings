@@ -13,10 +13,20 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Joe and Kassidy Webster Mountain Sky Guest Ranch Emigrant, Montana
-      </h1>
-      <p className="body-text text-center">Photos by Evelina Cole Photography</p>
+      <h1 className="title gallery"> Mountain Sky Guest Ranch</h1>
+  
+      <p className="subtitle text-center">
+        Joe and Kassidy Webster: Love Peaks at Emigrant, Montana
+      </p>
+  
+      <p className="body-text text-center">
+        Joe and Kassidy Webster&#39;s wedding at Mountain Sky Guest Ranch
+        unfolded amidst the breathtaking landscapes of Emigrant, Montana. Their
+        celebration, a harmonious blend of nature&#39;s grandeur and rustic
+        elegance, was exquisitely captured by Evelina Cole Photography. Each
+        photograph tells a story of love, adventure, and the majestic beauty of
+        Montana&#39;s mountains.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

@@ -13,10 +13,21 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Flores Wedding Coeurd&apos;Alene Resort Mish-an-nock Cruise boat
+      <h1 className="title gallery">
+        Nautical Nuptials: Coeur d&#39;Alene Resort
       </h1>
-      <p className="body-text text-center">Photos by Light Cast Photography</p>
+
+      <p className="subtitle text-center">
+        Flores Wedding: A Voyage of Love on the Mish-an-nock, Coeur d&#39;Alene, ID.
+      </p>
+
+      <p className="body-text text-center">
+        The Flores wedding aboard the Mish-an-nock cruise boat was a splendid
+        fusion of elegance and adventure. Cruising along the waters of Coeur
+        d&#39;Alene, the celebration captivated guests with stunning lake views
+        and exquisite floral arrangements. Light Cast Photography skillfully
+        captured the romance and beauty of this unique lakeside journey.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

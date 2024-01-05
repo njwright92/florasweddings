@@ -13,8 +13,20 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">Jewett House, CDA The Ross Wedding</h1>
-      <p className="body-text text-center">Photos by Amy Lynn</p>
+      <h1 className="title gallery">Historic Elegance at Jewett House</h1>
+ 
+      <p className="subtitle text-center">
+        The Ross Wedding: A Blend of Tradition and Modern Grace, Coeur d&#39;Alene, ID
+      </p>
+  
+      <p className="body-text text-center">
+        The Ross Wedding at the historic Jewett House in Coeur d&#39;Alene was a
+        beautiful fusion of traditional elegance and contemporary style. The
+        venue&#39;s classic charm provided a stunning backdrop, while the thoughtful
+        floral arrangements added a modern touch. Amy Lynn&#39;s photography
+        skillfully captured the essence of their special day, reflecting the
+        couple&#39;s unique love story.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

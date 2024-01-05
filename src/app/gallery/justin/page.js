@@ -13,11 +13,18 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Justin and Kaylee Wright Rathdrum, Idaho
-      </h1>
+      <h1 className="title gallery">Rustic Charm</h1>
+      <p className="subtitle text-center">
+        Justin and Kaylee Wright: Celebrating Love Amidst Nature, Rathdrum, ID.
+      </p>
+ 
       <p className="body-text text-center">
-        Photos by kaitlynanne.photography{" "}
+        Justin and Kaylee Wright&#39;s wedding in Rathdrum, Idaho, was a
+        delightful showcase of rustic charm and natural beauty. The outdoor
+        setting provided a picturesque canvas for their love, complemented by
+        elegant floral arrangements. Captured beautifully by
+        kaitlynanne.photography, each photo resonates with the joy and warmth of
+        their special day.
       </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {

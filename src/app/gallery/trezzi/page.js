@@ -13,10 +13,19 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Trezzi Farm Winery Colbert, Washington 2022 Knox wedding
-      </h1>
-      <p className="body-text text-center">Photographer unkown</p>
+      <h1 className="title gallery">Vineyard Vows at Trezzi Farm Winery</h1>
+
+      <p className="subtitle text-center">
+        2022 Knox Wedding: Rustic Elegance in Colbert, Washington
+      </p>
+
+      <p className="body-text text-center">
+        The 2022 Knox wedding at Trezzi Farm Winery in Colbert, Washington, was
+        a beautiful blend of rustic charm and vineyard elegance. Set amidst
+        rolling vineyards, the celebration was marked by an air of romantic
+        sophistication. Though the photographer remains unknown, the day&#39;s
+        enchanting moments are vividly remembered for their joy and beauty.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

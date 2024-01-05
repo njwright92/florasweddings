@@ -13,11 +13,18 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Stanley and Sydney Koho Firebrand Venue, Cocolalla Idaho
-      </h1>
+      <h1 className="title gallery">Enchanted Evening at Firebrand Venue</h1>
+      Subtitle:
+      <p className="subtitle text-center">
+        Stanley and Sydney Koho: A Rustic Romance in Cocolalla, Idaho.
+      </p>
+      Body Text:
       <p className="body-text text-center">
-        Photos by Ethan Leibrant photography{" "}
+        Stanley and Sydney Koho&#39;s wedding at the Firebrand Venue was a
+        captivating blend of rustic elegance and personal flair. Set in the
+        scenic town of Cocolalla, Idaho, their special day was beautifully
+        captured by Ethan Leibrant Photography, showcasing the unique charm and
+        heartfelt moments that made their celebration truly unforgettable.
       </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {

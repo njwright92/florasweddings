@@ -13,10 +13,19 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Jessica and Ian Dretke Elkins Resort Priest Lake, Idaho
-      </h1>
-      <p className="body-text text-center">Photos by TSutton Photography</p>
+      <h1 className="title gallery">Elkins Resort Elegance</h1>
+      Subtitle:
+      <p className="subtitle text-center">
+        Jessica and Ian Dretke: Lakeside Romance Unfolds, Priest Lake ID.
+      </p>
+      Body Text:
+      <p className="body-text text-center">
+        Jessica and Ian Dretke&#39;s wedding at Elkins Resort embodied the
+        perfect lakeside romance. Surrounded by Priest Lake&#39;s pristine
+        beauty, their celebration featured elegant floral designs, enhancing the
+        natural scenery. TSutton Photography captured their love&#39;s essence
+        and the picturesque setting, creating lasting memories.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

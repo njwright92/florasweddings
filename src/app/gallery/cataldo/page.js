@@ -13,10 +13,19 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Country Barn Bed and Breakfast Cataldo, Idaho 2 Booth Family weddings
-      </h1>
-      <p className="body-text text-center">Photographer unknown</p>
+      <h1 className="title  gallery">Country Barn Bed and Breakfast</h1>
+
+      <p className="subtitle text-center">
+        Booth Family Weddings: Rustic Charm Meets Elegance, Cataldo, Idaho
+      </p>
+
+      <p className="body-text text-center">
+        Celebrating love at Cataldo&#39;s Country Barn Bed and Breakfast, the
+        Booth families embraced the blend of rustic beauty and elegant florals.
+        Each wedding showcased unique, heartfelt details, echoing the barn&#39;s
+        rustic allure. Unphotographed, yet vivid in memory, these days remain a
+        testament to joy and elegance.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

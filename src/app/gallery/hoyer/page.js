@@ -13,10 +13,21 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Farm in Mica, Washington Ellen and Kenny Hoyer
+      <h1 className="title gallery">
+        Country Charm: Farm Wedding in Mica, Washington
       </h1>
-      <p className="body-text text-center">Photographer unkown</p>
+
+      <p className="subtitle text-center">
+        Ellen and Kenny Hoyer: Love in a Rustic Setting
+      </p>
+      <p className="body-text text-center">
+        Ellen and Kenny Hoyer&#39;s wedding at a charming farm in Mica,
+        Washington, was the epitome of country elegance. Set against a backdrop
+        of rolling fields and rustic scenery, their special day combined natural
+        beauty with sophisticated floral details. Though the photographer
+        remains unknown, the memories of their joyous celebration are vivid and
+        enduring.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

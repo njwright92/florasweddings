@@ -13,11 +13,18 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Sabre and Spencer Suko Firebrand Cocolalla, Idaho
-      </h1>
+      <h1 className="title gallery">Rustic Charm at Firebrand, Cocolalla</h1>
+
+      <p className="subtitle text-center">
+        Sabre and Spencer Suko: A Heartfelt Celebration in Cocolalla, Idaho
+      </p>
+
       <p className="body-text text-center">
-        Photos by Roaming Rose Photography
+        Sabre and Spencer Suko&#39;s wedding at Firebrand in Cocolalla, Idaho,
+        was a heartwarming display of rustic charm and intimate elegance. The
+        venue&#39;s natural beauty provided a picturesque setting, perfectly
+        captured by Roaming Rose Photography. Every moment reflected the
+        couple&#39;s love and the joyous spirit of their special day.
       </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {

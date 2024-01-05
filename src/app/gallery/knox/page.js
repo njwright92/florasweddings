@@ -13,10 +13,22 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Knox/Farley Wedding Coeurd&apos;Alene Casino
+      <h1 className="title gallery">
+        Glamorous Celebration at Coeur d&#39;Alene Casino
       </h1>
-      <p className="body-text text-center">Photos by Meagan Mylan Photography</p>
+
+      <p className="subtitle text-center">
+        Knox/Farley Wedding: Elegance in Worley, Idaho
+      </p>
+
+      <p className="body-text text-center">
+        The Knox/Farley wedding at the Coeur d&#39;Alene Casino in Worley,
+        Idaho, was a splendid event of glamour and sophistication. The
+        casino&#39;s exquisite setting enhanced the celebration&#39;s allure,
+        with each floral arrangement adding to its elegance. Meagan Mylan
+        Photography captured the essence of this grand affair, showcasing the
+        couple&#39;s joyous moments.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file
@@ -32,7 +44,8 @@ export default function Gallery() {
 
           if (imageExists) {
             // Use the filename without the extension as alt text
-            const altText = filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
+            const altText =
+              filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
 
             // Increment the current index for the next image
             currentIndex++;

@@ -13,10 +13,19 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Chelsey and Tim Ditrich Backyard Wedding in Athol, Idaho
-      </h1>
-      <p className="body-text text-center">Photos by Light Cast Photography</p>
+      <h1 className="title gallery">Intimate Backyard Bliss</h1>
+
+      <p className="subtitle text-center">
+        Chelsey and Tim Ditrich: A Personal Celebration of Love, Athol, Idaho
+      </p>
+
+      <p className="body-text text-center">
+        Chelsey and Tim Ditrich&#39;s backyard wedding in Athol was a
+        picturesque scene of intimacy and affection. Set against Idaho&#39;s
+        natural beauty, their special day featured personalized floral touches,
+        enhancing the cozy ambiance. Light Cast Photography masterfully captured
+        each moment, reflecting the joy and love present.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file
@@ -32,22 +41,20 @@ export default function Gallery() {
 
           if (imageExists) {
             // Use the filename without the extension as alt text
-            const altText = filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
-
+            const altText =
+              filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
 
             // Increment the current index for the next image
             currentIndex++;
 
             return (
               <div key={index} className="image">
-              
-                  <img
-                    src={imagePath}
-                    alt={altText}
-                    className="image-placeholder"
-                    loading="lazy"
-                  />
-                  
+                <img
+                  src={imagePath}
+                  alt={altText}
+                  className="image-placeholder"
+                  loading="lazy"
+                />
               </div>
             );
           }

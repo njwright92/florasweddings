@@ -13,11 +13,22 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Chantel and Jason Hirschel at the Hadadone Event Center, Coeur
-        D&apos;Alene, Idaho.
+      <h1 className="title gallery">
+        Elegance at Hadadone Event Center
       </h1>
-      <p className="body-text text-center">Photographer unkown</p>
+  
+      <p className="subtitle text-center">
+        Chantel and Jason Hirschel: Celebrating Love in Style, Coeur d&#39;Alene, ID
+      </p>
+  
+      <p className="body-text text-center">
+        Chantel and Jason Hirschel&#39;s wedding at the Hadadone Event Center
+        was a showcase of elegance and romance. In the heart of Coeur
+        d&#39;Alene, their special day was adorned with tasteful floral
+        arrangements that added to the venue&#39;s sophisticated ambiance.
+        Despite the photographer remaining unknown, each moment resonated with
+        beauty and joy, vivid in memory.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

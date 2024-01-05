@@ -13,9 +13,21 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">The Wabs Wedding.</h1>
+      <h1 className="title gallery">
+        A Timeless Celebration at White Barn Ranch
+      </h1>
+
+      <p className="subtitle text-center">
+        Country Elegance: The Wabs Wedding, ID.
+      </p>
+
       <p className="body-text text-center">
-        Yasmina Rose Photography White Barn Ranch
+        The Wabs wedding at the White Barn Ranch was a perfect blend of country
+        charm and timeless elegance. Each moment, beautifully captured by
+        Yasmina Rose Photography, tells a story of love and celebration, set
+        against the rustic backdrop of the ranch. Their special day was filled
+        with heartfelt memories and picturesque scenes, creating a truly
+        unforgettable experience.
       </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
@@ -32,7 +44,8 @@ export default function Gallery() {
 
           if (imageExists) {
             // Use the filename without the extension as alt text
-            const altText = filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
+            const altText =
+              filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
 
             // Increment the current index for the next image
             currentIndex++;

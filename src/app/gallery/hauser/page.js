@@ -13,10 +13,21 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        Kelsie and Quinton Lee Hauser Lake Private Residence
+      <h1 className="title gallery">
+        Hauser Lake Serenity: A Private Affair
       </h1>
-      <p className="body-text text-center">Photographer unkown</p>
+   
+      <p className="subtitle text-center">
+        Kelsie and Quinton Lee: Intimate Lakeside Matrimony, Hauser, ID
+      </p>
+     
+      <p className="body-text text-center">
+        Kelsie and Quinton Lee&#39;s wedding at their Hauser Lake private
+        residence was a picturesque embodiment of intimate elegance. Against the
+        serene backdrop of the lake, the day featured personal touches and
+        floral arrangements that harmonized with the natural setting, creating
+        an intimately unique celebration of their love.
+      </p>
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

@@ -273,6 +273,11 @@ export default function Header() {
                   Hirschel Wedding at The Hagadone Event Center
                 </span>
               </Link>
+              <Link href="/gallery/homestead" passHref>
+                <span className="dropdown-items">
+                  Gundland Wedding at Homestead barn, Dover, ID
+                </span>
+              </Link>
               <Link href="/gallery/hoyer" passHref>
                 <span className="dropdown-items">
                   Hoyer Wedding at Farm in Mica, Washington

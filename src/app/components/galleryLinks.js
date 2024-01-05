@@ -5,12 +5,16 @@ export default function GalleryLinks() {
     <>
       <h1 className="title">Captivating Wedding Moments</h1>
       <p className="subtitle">
-        Explore a curated selection of weddings across Montana, Washington, and
-        North Idaho, showcasing unique floral designs and memorable
-        celebrations.
+        {" "}
+        Discover the Art of Floral Elegance: Diverse and Beautiful Weddings from
+        Montana to North Idaho. Each celebration, a unique story of love and
+        design.{" "}
       </p>
       <p className="body-text text-center">
-        Select an image to see the full gallery of that event.
+        {" "}
+        Venture into each gallery to witness the distinct charm and bespoke
+        floral artistry that made every wedding unforgettable. Select an image
+        to see the full gallery of that event.{" "}
       </p>
       <div className="grid">
         {/*Lumen wedding */}
@@ -57,6 +61,22 @@ export default function GalleryLinks() {
             />
             <div className="image-overlay1">
               <span className="image-title">Lee Wedding in Hauser, ID</span>
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/gallery/homestead">
+          <div className="image">
+            <img
+              src="/img/gallery/homestead2.webp"
+              alt="Hauser Wedding Flowers"
+              className="image-placeholder"
+              loading="lazy"
+            />
+            <div className="image-overlay1">
+              <span className="image-title">
+                Homestead Barn Wedding Dover, ID
+              </span>
             </div>
           </div>
         </Link>

@@ -13,10 +13,10 @@ export default function Gallery() {
   return (
     <div>
       <Header />
-      <h1 className="subtitle gallery">
-        A Collage of Random Smaller weddings I&apos;ve done
+      <h1 className="title gallery">
+        Collage of custom florals from intimate weddings.
       </h1>
-      
+
       <div className="grid">
         {imageFilenames.map((filename, index) => {
           // Exclude the .DS_Store file

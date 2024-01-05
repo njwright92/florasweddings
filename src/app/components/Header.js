@@ -119,6 +119,7 @@ export default function Header() {
       <nav className="relative">
         {/* Navbar toggler for small screens */}
         <button
+        aria-label="Open Menu"
           className={`navbar-toggler ${
             isNavbarOpen ? "hidden" : "block"
           } md:hidden`}
@@ -135,7 +136,7 @@ export default function Header() {
           } transition-transform duration-300 ease-in-out flex flex-col p-4 md:hidden`}
           style={{ backgroundColor: `rgba(var(--color-primary))` }}
         >
-          <button className="navbar-close text-right" onClick={toggleNavbar}>
+          <button className="navbar-close text-right" aria-label="Close Menu" onClick={toggleNavbar}>
             <FontAwesomeIcon icon={faTimes} className="h-5 w-5" />
           </button>
           <Link href="/" passHref>

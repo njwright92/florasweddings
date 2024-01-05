@@ -482,5 +482,24 @@ form {
   top: 20%;
   left: 0;
   width: 100%;
-  
+}
+
+.form-checkbox {
+  width: 20px; /* Adjust as necessary */
+  height: 20px; /* Adjust as necessary */
+  min-width: 20px;
+  min-height: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Adjust breakpoint as needed */
+  .navbar-toggler,
+  .navbar-close {
+    padding: 15px; /* Increases touch area */
+  }
+  .form-checkbox {
+    width: 24px; /* Larger on mobile */
+    height: 24px;
+    margin: .2rem;
+  }
 }

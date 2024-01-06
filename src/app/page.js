@@ -64,7 +64,9 @@ export default function Home() {
             Seeking a signature style? Let me create your exclusive look.
           </h4>
           <Link href="/contact" passHref>
-            <button className="button">Contact Us</button>
+            <button className="button" aria-label="Contact Us">
+              Contact Us
+            </button>
           </Link>
         </div>
       </div>
@@ -113,7 +115,6 @@ export default function Home() {
           </p>
           <ReviewsCarousel />
         </section>
-
         <section className="section" id="collage" data-aos="fade-up">
           <Collage />
         </section>

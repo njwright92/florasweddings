@@ -1,6 +1,36 @@
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function GalleryLinks() {
+  const pathname = usePathname();
+
+  const scrollToCollage = () => {
+    const collageElement = document.getElementById("collage");
+    if (collageElement) {
+      collageElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navigateToCollage = () => {
+    if (pathname === "/") {
+      // If we are on the home page, scroll to the collage section
+      scrollToCollage();
+    } else {
+      // If we are not on the home page, navigate there
+      window.location.href = "/#collage";
+    }
+  };
+
+  // useEffect is still needed for cases where the component mounts
+  // and the URL already has #collage
+  useEffect(() => {
+    if (pathname === "/" && window.location.hash === "#collage") {
+      scrollToCollage();
+    }
+  }, [pathname]);
   return (
     <>
       <h1 className="title">Captivating Wedding Moments</h1>
@@ -38,7 +68,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/butterfield">
           <div className="image">
             <img
-              src="/img/butterfield/butterfield18.webp"
+              src="/img/butterfield/butterfield5.webp"
               alt="Butterfield Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -130,7 +160,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/dretke">
           <div className="image">
             <img
-              src="/img/dretke/dretke6.webp"
+              src="/img/dretke/dretke4.webp"
               alt="Dretke Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -268,7 +298,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/trezzi">
           <div className="image">
             <img
-              src="/img/trezzi/trezzi14.webp"
+              src="/img/trezzi/trezzi4.webp"
               alt="Trezzi Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -331,7 +361,7 @@ export default function GalleryLinks() {
         <Link href="/gallery/misc">
           <div className="image">
             <img
-              src="/img/misc/misc23.webp"
+              src="/img/misc/misc17.webp"
               alt="Miscellaneous Wedding Flowers"
               className="image-placeholder"
               loading="lazy"
@@ -341,6 +371,17 @@ export default function GalleryLinks() {
             </div>
           </div>
         </Link>
+        <div className="image" onClick={navigateToCollage}>
+          <img
+            src="/img/collage/collage4.webp"
+            alt="collage of custom florals Flowers"
+            className="image-placeholder"
+            loading="lazy"
+          />
+          <div className="image-overlay1">
+            <span className="image-title">Collage of custom florals</span>
+          </div>
+        </div>
       </div>
     </>
   );

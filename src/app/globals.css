@@ -485,10 +485,12 @@ form {
 }
 
 .form-checkbox {
-  width: 20px; /* Adjust as necessary */
-  height: 20px; /* Adjust as necessary */
+  width: 24px; /* Adjust as necessary */
+  height: 24px; /* Adjust as necessary */
   min-width: 20px;
   min-height: 20px;
+  border-radius: var(--soft-radius);
+  margin: 0.1rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -500,6 +502,34 @@ form {
   .form-checkbox {
     width: 24px; /* Larger on mobile */
     height: 24px;
-    margin: .2rem;
+    margin: 0.2rem;
+    border-radius: var(--soft-radius);
+  }
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  /* md breakpoint */
+  .grid2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  /* lg-xl breakpoint */
+  .grid2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  /* lg-xl breakpoint */
+  .grid2 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

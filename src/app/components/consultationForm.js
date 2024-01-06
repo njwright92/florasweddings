@@ -347,7 +347,7 @@ export default function ConsultationForm() {
           </div>
 
           <div className="flex justify-end ">
-            <button className="button" type="submit">
+            <button className="button" type="submit" aria-label="Submit Form">
               Submit
             </button>
           </div>
@@ -439,8 +439,8 @@ export default function ConsultationForm() {
               ></textarea>
             </div>
 
-            <div className="flex justify-end">
-              <button className="button" type="submit">
+            <div className="flex justify-end ">
+              <button className="button" type="submit" aria-label="Submit Form">
                 Submit
               </button>
             </div>

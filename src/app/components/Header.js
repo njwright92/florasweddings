@@ -60,7 +60,7 @@ export default function Header() {
             className="footer-link custom-button"
             aria-label="Visit our Instagram page"
           >
-            <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
+            <FontAwesomeIcon icon={faSquareInstagram} className="fa-lg" />
             <span className="sr-only">Instagram</span>
           </Link>
           <Link
@@ -68,7 +68,7 @@ export default function Header() {
             className="footer-link custom-button"
             aria-label="Visit our Facebook page"
           >
-            <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
+            <FontAwesomeIcon icon={faSquareFacebook} className="fa-lg" />
             <span className="sr-only">Facebook</span>
           </Link>
           <Link
@@ -76,15 +76,15 @@ export default function Header() {
             className="footer-link custom-button"
             aria-label="Check out our reviews on Yelp"
           >
-            <FontAwesomeIcon icon={faYelp} className="fa-xl" />
+            <FontAwesomeIcon icon={faYelp} className="fa-lg" />
             <span className="sr-only">Yelp</span>
           </Link>
           <Link
-            href="https://www.google.com/search?q=florasweddings"
+            href="https://www.google.com/search?sca_esv=596423552&sxsrf=ACQVn09gpbrwwD8VldD4ljK2Zd6apOvpOg:1704670363664&q=florasweddings&nfpr=1&sa=X&ved=2ahUKEwjz1_D7t8yDAxWtATQIHXEaAfgQvgUoAXoECBEQAw&biw=1287&bih=771&dpr=2"
             className="footer-link custom-button"
             aria-label="Find us on Google"
           >
-            <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
+            <FontAwesomeIcon icon={faGoogle} className="fa-lg" />
             <span className="sr-only">Google</span>
           </Link>
         </div>
@@ -93,7 +93,7 @@ export default function Header() {
 
         {/* Email and Phone Links */}
         <div className="md:ml-20 text-center">
-          <a href="mailto:stacimw@yahoo.com" className="nav-link text-center">
+          <a href="mailto:FlorasProFlowers@gmail.com" className="nav-link text-center">
             FlorasProFlowers@gmail.com
           </a>
           <a href="tel:+12087559409" className="nav-link text-center">

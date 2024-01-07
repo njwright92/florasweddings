@@ -73,7 +73,7 @@ export default function Footer() {
                 <span className="sr-only">Yelp</span>
               </Link>
               <Link
-                href="https://www.google.com/search?q=florasweddings"
+                href="https://www.google.com/search?sca_esv=596423552&sxsrf=ACQVn09gpbrwwD8VldD4ljK2Zd6apOvpOg:1704670363664&q=florasweddings&nfpr=1&sa=X&ved=2ahUKEwjz1_D7t8yDAxWtATQIHXEaAfgQvgUoAXoECBEQAw&biw=1287&bih=771&dpr=2"
                 className="footer-link custom-button"
                 aria-label="Find us on Google"
               >
@@ -103,7 +103,7 @@ export default function Footer() {
         </div>
 
         <h3 className="body-text pt-2">Email or call me now at:</h3>
-        <a href="mailto:stacimw@yahoo.com" className="footer-link text-lg m-1">
+        <a href="mailto:FlorasProFlowers@gmail.com" className="footer-link text-lg m-1">
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-1" />
           FlorasProFlowers@gmail.com
         </a>

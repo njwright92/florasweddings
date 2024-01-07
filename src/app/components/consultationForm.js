@@ -3,19 +3,20 @@
 export default function ConsultationForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {};
+    const formData = e.target.elements;
+    const composedEmailLink = composeEmailLink(formData);
 
-    // Iterate over all form elements
-    new FormData(e.target).forEach((value, key) => {
-      // If the key already exists, it means it's a checkbox. Accumulate its values into an array.
-      if (formData[key]) {
-        formData[key] = [...formData[key], value];
-      } else {
-        formData[key] = value;
-      }
-    });
+    // Create a hidden link element
+    const link = document.createElement("a");
+    link.href = composedEmailLink;
+    link.style.display = "none";
+    document.body.appendChild(link);
 
-    window.location.href = composeEmailLink(formData);
+    // Programmatically click the link
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
 
     e.target.reset();
     alert(
@@ -26,37 +27,49 @@ export default function ConsultationForm() {
     const subject = encodeURIComponent("Wedding Consultation Request");
 
     // Handle style checkboxes
-    const styles = Array.isArray(formData.style)
-      ? formData.style.join(", ")
-      : formData.style;
+    const styleCheckboxes = document.querySelectorAll(
+      "input[name='style']:checked"
+    );
+    const styles = Array.from(styleCheckboxes)
+      .map((checkbox) => checkbox.value)
+      .join(", ");
 
-    const body = encodeURIComponent(`
-      Bride's Name: ${formData.firstName}
-      Groom's Name: ${formData.groomName}
-      Planner's Name: ${formData.plannerName}
-      Bride's Email: ${formData.email}
-      Planner Email: ${formData.email1}
-      Bride's Phone: ${formData.phone}
-      Planner Phone: ${formData.phone1}
-      Venue: ${formData.venue}
-      Reception Venue: ${formData.venue1}
-      Date of Event: ${formData.date}
-      Floral Budget: ${formData.Budget}
-      Preferred Style: ${styles}
-      Additional Information: ${formData.additionalInfo}
-    `);
-    return `mailto:stacimw@yahoo.com?subject=${subject}&body=${body}`;
+    const body = `
+      Bride's Name: ${encodeURIComponent(formData.firstName.value)}
+      Groom's Name: ${encodeURIComponent(formData.groomName.value)}
+      Planner's Name: ${encodeURIComponent(formData.plannerName.value)}
+      Bride's Email: ${encodeURIComponent(formData.email.value)}
+      Planner Email: ${encodeURIComponent(formData.email1.value)}
+      Bride's Phone: ${encodeURIComponent(formData.phone.value)}
+      Planner Phone: ${encodeURIComponent(formData.phone1.value)}
+      Venue: ${encodeURIComponent(formData.venue.value)}
+      Reception Venue: ${encodeURIComponent(formData.venue1.value)}
+      Date of Event: ${encodeURIComponent(formData.date.value)}
+      Preferred Style: ${encodeURIComponent(styles)}
+      Additional Information: ${encodeURIComponent(
+        formData.additionalInfo.value
+      )}
+    `.replace(/(\r\n|\n|\r)/gm, "%0D%0A");
+
+    return `mailto:florasproflowers@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleFloralEssentialsSubmit = (e) => {
     e.preventDefault();
-    const formData = {};
-    new FormData(e.target).forEach((value, key) => (formData[key] = value));
+    const formData = Object.fromEntries(new FormData(e.target));
 
-    // Open mail client
-    window.location.href = composeFloralEssentialsEmailLink(formData);
+    // Create a hidden link element
+    const link = document.createElement("a");
+    link.href = composeFloralEssentialsEmailLink(formData);
+    link.style.display = "none";
+    document.body.appendChild(link);
 
-    // Reset form and alert user
+    // Programmatically click the link
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
+
     e.target.reset();
     alert(
       "The email client has been opened. Please send the email to complete your request."
@@ -64,16 +77,25 @@ export default function ConsultationForm() {
   };
 
   const composeFloralEssentialsEmailLink = (formData) => {
+    const {
+      bridal_bouquets,
+      bridesmaids_bouquets,
+      boutonnieres,
+      centerpiecesNeeded,
+      colorPalette,
+      additionalNeeds,
+    } = formData;
     const subject = encodeURIComponent("Wedding Floral Essentials Request");
-    const body = encodeURIComponent(`
-      Bridal Bouquets: ${formData.bridal_bouquets}
-      Bridesmaids Bouquets: ${formData.bridesmaids_bouquets}
-      Boutonnieres: ${formData.boutonnieres}
-      Centerpieces Needed: ${formData.centerpiecesNeeded}
-      Color Palette: ${formData.colorPalette}
-      Additional Needs: ${formData.additionalNeeds}
-    `);
-    return `mailto:stacimw@yahoo.com?subject=${subject}&body=${body}`;
+    const body = `
+      Bridal Bouquets: ${encodeURIComponent(bridal_bouquets)}
+      Bridesmaids Bouquets: ${encodeURIComponent(bridesmaids_bouquets)}
+      Boutonnieres: ${encodeURIComponent(boutonnieres)}
+      Centerpieces Needed: ${encodeURIComponent(centerpiecesNeeded)}
+      Color Palette: ${encodeURIComponent(colorPalette)}
+      Additional Needs: ${encodeURIComponent(additionalNeeds)}
+    `.replace(/(\r\n|\n|\r)/gm, "%0D%0A");
+
+    return `mailto:florasproflowers@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -243,21 +265,6 @@ export default function ConsultationForm() {
               type="date"
               required
             />
-          </div>
-
-          <div className="mb-4">
-            <label className="label" htmlFor="Budget">
-              What is your floral budget?
-            </label>
-            <textarea
-              className="shadow border rounded md:w-full py-3 px-3 text-gray-700"
-              id="Budget"
-              name="Budget"
-              type="number"
-              required
-              placeholder="2500"
-              rows={2}
-            ></textarea>
           </div>
 
           <div className="mb-4">

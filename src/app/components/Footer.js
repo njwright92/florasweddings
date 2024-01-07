@@ -19,9 +19,8 @@ export default function Footer() {
               <img
                 src="/img/logo.webp"
                 alt="Floras Flowers"
-                className="cursor-pointer -mb-10 md:-mb-0"
-                width="250"
-                height="auto"
+                className="footer-img"
+                load="lazy"
               />
             </Link>
           </div>

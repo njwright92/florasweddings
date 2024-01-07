@@ -10,6 +10,18 @@
   --soft-radius: 0.625rem;
 }
 
+.footer-img {
+  border-radius: var(--soft-radius);
+  cursor: pointer;
+  width: 250px;
+  height: auto;
+  margin-bottom: -2.5rem; /* Equivalent to -mb-10 */
+  @media (min-width: 768px) {
+    /* Equivalent to md: */
+    margin-bottom: 0;
+  }
+}
+
 .title-container {
   text-align: center;
   display: flex;

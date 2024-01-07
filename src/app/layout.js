@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 import Head from "next/head";
 import "./globals.css";
@@ -37,6 +38,12 @@ export default function RootLayout({ children }) {
         {children}
         <Analytics />
       </body>
+      <Script
+        defer
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6695615601481816"
+        crossorigin="anonymous"
+      ></Script>
     </html>
   );
 }

@@ -74,7 +74,7 @@ export default function Home() {
       <>
         <section className="section" id="gallery" data-aos="fade-up">
           <div className="title-container">
-            <h2 className="title">Gallery</h2>
+            <h2 className="title">Weddings</h2>
             <img
               src="./img/flower-PhotoRoom.webp"
               width={200}

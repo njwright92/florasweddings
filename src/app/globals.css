@@ -4,8 +4,8 @@
 
 :root {
   --color-secondary: 247, 231, 206;
-  --color-primary: 255, 255, 255;
-  --color-accent: 0, 0, 0;
+  --color-primary: 251, 251, 251;
+  --color-accent: 10, 10, 10;
   --color-green: 101, 106, 54;
   --soft-radius: 0.625rem;
 }
@@ -84,14 +84,14 @@ body {
 
 .subtitle {
   font-size: 1.5rem;
-  color: black;
+  color: rgb(var(--color-accent));
   text-align: center;
   margin-bottom: 0.7rem;
 }
 
 .body-text {
   font-size: 1.25rem;
-  color: black;
+  color: rgb(var(--color-accent));
   text-align: center;
   justify-content: center;
 }
@@ -297,7 +297,7 @@ body {
 
 .footer-bottom {
   font-size: 0.8rem;
-  color: black;
+  color: rgb(var(--color-accent));
   margin-top: 0.3rem;
 }
 
@@ -325,7 +325,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: black;
+  color: rgb(var(--color-accent));
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -338,6 +338,9 @@ body {
   margin-right: 0.3rem;
   color: rgb(var(--color-green));
   transition: color 0.4s;
+  font-weight: 400;
+  font-size: large;
+  cursor: pointer;
 }
 
 .footer-link:hover,
@@ -358,8 +361,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(var(--color-primary));
-  color: black;
-  border: 0.125rem solid black;
+  color: rgb(var(--color-accent));
+  border: 0.125rem solid rgb(var(--color-accent));
   position: absolute;
   z-index: 50;
   width: max-content;
@@ -374,8 +377,8 @@ body {
 
 .dropdown-items {
   padding: 0.5rem;
-  color: black;
-  border-bottom: 0.125rem solid black;
+  color: rgb(var(--color-accent));
+  border-bottom: 0.125rem solid rgb(var(--color-accent));
   display: block;
   cursor: pointer;
 }
@@ -418,7 +421,7 @@ form {
 }
 
 .horizontal-line {
-  border-top: 0.1rem solid black;
+  border-top: 0.1rem solid rgb(var(--color-accent));
   margin: 1rem 0;
 }
 
@@ -432,7 +435,7 @@ form {
 .pricing-column {
   background-color: #e6e6e6;
   padding: 1rem;
-  border: 1px solid black;
+  border: 1px solid rgb(var(--color-accent));
   border-radius: var(--soft-radius);
 }
 
@@ -466,7 +469,7 @@ form {
 .pricing-list li {
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: Black;
+  color: rgb(var(--color-accent));
   font-weight: 500;
 }
 

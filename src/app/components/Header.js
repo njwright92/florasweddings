@@ -137,7 +137,7 @@ export default function Header() {
           </Link>
           <Link href="/gallery" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              Galleries
+              Weddings
             </div>
           </Link>
           <Link href="/pricing" passHref>
@@ -178,7 +178,7 @@ export default function Header() {
               }`}
               onMouseEnter={() => setShowGalleryDropdown(!showGalleryDropdown)}
             >
-              Galleries
+              Weddings
             </div>
           </Link>
           {showGalleryDropdown && (

@@ -206,7 +206,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: var(--soft-radius);
-  margin: 0.625rem;
+  margin: 0.125rem;
   transition: transform 0.3s ease-in-out;
 }
 

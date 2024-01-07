@@ -25,7 +25,7 @@ export default function ReviewsCarousel() {
       >
         {images.map((src, index) => (
           <div key={index} style={{ borderRadius: "var(--soft-radius)" }}>
-            <img src={src} alt={`Review ${index + 1}`} />
+            <img src={src} alt={`Review ${index + 1}`} loading="lazy" />
           </div>
         ))}
       </Carousel>

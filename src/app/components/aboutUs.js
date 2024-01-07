@@ -18,7 +18,12 @@ export default function AboutUs() {
       </h2>
 
       <div className="flex flex-col md:flex-row items-center">
-        <img src="/img/staci.webp" alt="Staci" className="rounded-full m-2" />
+        <img
+          src="/img/staci.webp"
+          alt="Staci"
+          className="rounded-full m-2"
+          loading="lazy"
+        />
         <h3 className="subtitle">Staci Huffman</h3>
         <p className="body-text">
           I bring three decades of expertise in the floral industry, showcasing
@@ -58,6 +63,7 @@ export default function AboutUs() {
       <img
         src="/img/map.webp"
         alt="Map"
+        loading="lazy"
         className="w-full my-4 h-auto border-white border-2 rounded-lg"
       />
     </>

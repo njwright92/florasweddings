@@ -49,7 +49,7 @@ export default function Header() {
           <img
             src="/img/logo.webp"
             alt="Floras Flowers"
-            className="cursor-pointer logo -mt-6 -mb-6 md:-mt-0 md:-mb-0 xl:-ml-10"
+            className="cursor-pointer logo -mt-4 -mb-4 md:-mt-0 md:-mb-0 xl:-ml-10"
           />
         </Link>
 

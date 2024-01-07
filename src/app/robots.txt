@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /private/
 
-sitemap: "https://florasweddings.com/sitemap.xml",
+Sitemap: https://florasweddings.com/sitemap.xml

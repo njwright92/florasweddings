@@ -56,10 +56,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Damschen Wedding at Lumen Hall CDA
-              </span>
+
+            <div className="image-title">
+              Damschen Wedding at Lumen Hall CDA
             </div>
           </div>
         </Link>
@@ -73,10 +72,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Butterfield Wedding at the Willows CDA
-              </span>
+
+            <div className="image-title">
+              Butterfield Wedding at the Willows CDA
             </div>
           </div>
         </Link>
@@ -89,9 +87,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">Lee Wedding in Hauser, ID</span>
-            </div>
+
+            <div className="image-title">Lee Wedding in Hauser, ID</div>
           </div>
         </Link>
 
@@ -103,11 +100,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Homestead Barn Wedding Dover, ID
-              </span>
-            </div>
+
+            <div className="image-title">Homestead Barn Wedding Dover, ID</div>
           </div>
         </Link>
 
@@ -119,9 +113,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">Hoyer Wedding in Mica, WA</span>
-            </div>
+
+            <div className="image-title">Hoyer Wedding in Mica, WA</div>
           </div>
         </Link>
 
@@ -134,10 +127,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Weddings at Country barn bed and breakfast Cataldo ID
-              </span>
+
+            <div className="image-title">
+              Weddings at Country barn bed and breakfast Cataldo ID
             </div>
           </div>
         </Link>
@@ -150,9 +142,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">Ditrich Wedding in Athol, ID</span>
-            </div>
+
+            <div className="image-title">Ditrich Wedding in Athol, ID</div>
           </div>
         </Link>
 
@@ -165,10 +156,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Dretke Wedding at The Elkins Resort
-              </span>
+
+            <div className="image-title">
+              Dretke Wedding at The Elkins Resort
             </div>
           </div>
         </Link>
@@ -182,10 +172,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Flores Wedding on a Cruise Boat CDA
-              </span>
+
+            <div className="image-title">
+              Flores Wedding on a Cruise Boat CDA
             </div>
           </div>
         </Link>
@@ -199,10 +188,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Hirschel Wedding at the Hagadone Event Center
-              </span>
+
+            <div className="image-title">
+              Hirschel Wedding at the Hagadone Event Center
             </div>
           </div>
         </Link>
@@ -216,11 +204,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Ross wedding at The Jewett House
-              </span>
-            </div>
+
+            <div className="image-title">Ross wedding at The Jewett House</div>
           </div>
         </Link>
 
@@ -233,11 +218,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                A Wright wedding in Rathdrum, ID
-              </span>
-            </div>
+
+            <div className="image-title">A Wright wedding in Rathdrum, ID</div>
           </div>
         </Link>
 
@@ -250,11 +232,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Knox Wedding at the CDA Casino
-              </span>
-            </div>
+
+            <div className="image-title">Knox Wedding at the CDA Casino</div>
           </div>
         </Link>
 
@@ -267,11 +246,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Koho Wedding Firebrand Cocallala
-              </span>
-            </div>
+
+            <div className="image-title">Koho Wedding Firebrand Cocallala</div>
           </div>
         </Link>
 
@@ -286,11 +262,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Suko Wedding Firebrand Cocallala
-              </span>
-            </div>
+
+            <div className="image-title">Suko Wedding Firebrand Cocallala</div>
           </div>
         </Link>
 
@@ -303,10 +276,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Knox Wedding at Trezzi Farm Winery WA
-              </span>
+
+            <div className="image-title">
+              Knox Wedding at Trezzi Farm Winery WA
             </div>
           </div>
         </Link>
@@ -319,9 +291,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">The Wabs Wedding Idaho</span>
-            </div>
+
+            <div className="image-title">The Wabs Wedding Idaho</div>
           </div>
         </Link>
 
@@ -334,10 +305,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Webster Wedding at the mountain sky guest ranch, MO
-              </span>
+
+            <div className="image-title">
+              Webster Wedding at the mountain sky guest ranch, MO
             </div>
           </div>
         </Link>
@@ -351,10 +321,9 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">
-                Another Wright Wedding at Idaho Shakespeare Festival park, Boise
-              </span>
+
+            <div className="image-title">
+              Another Wright Wedding at Idaho Shakespeare Festival park, Boise
             </div>
           </div>
         </Link>
@@ -366,9 +335,8 @@ export default function GalleryLinks() {
               className="image-placeholder"
               loading="lazy"
             />
-            <div className="image-overlay1">
-              <span className="image-title">Miscellaneous Small Weddings</span>
-            </div>
+
+            <div className="image-title">Miscellaneous Small Weddings</div>
           </div>
         </Link>
         <div className="image" onClick={navigateToCollage}>
@@ -378,9 +346,8 @@ export default function GalleryLinks() {
             className="image-placeholder"
             loading="lazy"
           />
-          <div className="image-overlay1">
-            <span className="image-title">Collage of custom florals</span>
-          </div>
+
+          <div className="image-title">Collage of custom florals</div>
         </div>
       </div>
     </>

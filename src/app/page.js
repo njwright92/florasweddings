@@ -48,6 +48,7 @@ export default function Home() {
   return (
     <main className="main" id="main">
       <script
+        key="businessJsonLd"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
       />

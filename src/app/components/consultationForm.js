@@ -98,7 +98,7 @@ export default function ConsultationForm() {
         you&#39;ll have the wedding flowers of your dreams!
       </p>
       <div className="md:flex md:flex-row md:justify-between">
-        <form onSubmit={handleSubmit} className="form p-6 mb-4 md:w-1/2">
+        <form onSubmit={handleSubmit} className="form m-2 p-6  md:w-1/2">
           <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
           </h2>
@@ -355,7 +355,7 @@ export default function ConsultationForm() {
         <div className="form-container md:w-1/2">
           <form
             onSubmit={handleFloralEssentialsSubmit}
-            className="form p-6 mb-4"
+            className="form p-6 m-2"
           >
             <h3 className="subtitle text-center mb-2">
               Specify Your Wedding Floral Essentials

@@ -20,7 +20,7 @@ export default function PricingGuide() {
         </p>
 
         <div className="grid1">
-          <div className="pricing-column">
+          <div className="pricing-column md:mr-2">
             <h2 className="subtitle">Ceremony</h2>
             <hr className="mb-4 horizontal-line" />
             <ul className="pricing-list">
@@ -30,7 +30,7 @@ export default function PricingGuide() {
               <li>Garland (per foot) - $15/ft</li>
             </ul>
           </div>
-          <div className="pricing-column">
+          <div className="pricing-column md:mr-2">
             <h2 className="subtitle">Reception</h2>
             <hr className="mb-4 horizontal-line" />
             <ul className="pricing-list">
@@ -41,7 +41,7 @@ export default function PricingGuide() {
               <li>Floor Head Table - $250</li>
             </ul>
           </div>
-          <div className="pricing-column">
+          <div className="pricing-column md:mr-2">
             <h2 className="subtitle">Bridal Party</h2>
             <hr className="mb-4 horizontal-line" />
             <ul className="pricing-list">

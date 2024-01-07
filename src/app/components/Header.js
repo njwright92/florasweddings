@@ -4,16 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faImages,
-  faEnvelopeOpenText,
-  faBars,
-  faTimes,
-  faHome,
-  faQuestionCircle,
-  faUser,
-  faDollarSign,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareInstagram,
   faSquareFacebook,
@@ -58,9 +49,7 @@ export default function Header() {
           <img
             src="/img/logo.webp"
             alt="Floras Flowers"
-            className="cursor-pointer logo -mt-6 -mb-6 md:-mt-0 md:-mb-0 lg:-ml-10"
-            height="auto"
-            width={400}
+            className="cursor-pointer logo -mt-6 -mb-6 md:-mt-0 md:-mb-0 xl:-ml-10"
           />
         </Link>
 
@@ -104,8 +93,6 @@ export default function Header() {
 
         {/* Email and Phone Links */}
         <div className="md:ml-20 text-center">
-          <p className="body-text">Email or call me now at:</p>
-
           <a href="mailto:stacimw@yahoo.com" className="nav-link text-center">
             FlorasProFlowers@gmail.com
           </a>
@@ -118,16 +105,16 @@ export default function Header() {
       {/* Navbar Row */}
       <nav className="relative">
         {/* Navbar toggler for small screens */}
-        <button
-        aria-label="Open Menu"
+        <div
+          aria-label="Open Menu"
           className={`navbar-toggler ${
             isNavbarOpen ? "hidden" : "block"
           } md:hidden`}
           onClick={toggleNavbar}
         >
-          <FontAwesomeIcon icon={faBars} className="h-5 w-5 mt-2" />
+          <FontAwesomeIcon icon={faBars} className="h-5 w-5" />
           Menu
-        </button>
+        </div>
 
         {/* Side-opening menu for small screens */}
         <div
@@ -136,61 +123,41 @@ export default function Header() {
           } transition-transform duration-300 ease-in-out flex flex-col p-4 md:hidden`}
           style={{ backgroundColor: `rgba(var(--color-primary))` }}
         >
-          <button className="navbar-close text-right" aria-label="Close Menu" onClick={toggleNavbar}>
+          <button
+            className="navbar-close text-right"
+            aria-label="Close Menu"
+            onClick={toggleNavbar}
+          >
             <FontAwesomeIcon icon={faTimes} className="h-5 w-5" />
           </button>
           <Link href="/" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faHome}
-                className="h-5 w-5 inline-block mr-2"
-              />
               Home
             </div>
           </Link>
           <Link href="/gallery" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faImages}
-                className="h-5 w-5 inline-block mr-2"
-              />
               Galleries
             </div>
           </Link>
           <Link href="/pricing" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faDollarSign}
-                className="h-5 w-5 inline-block mr-2"
-              />
               Pricing
             </div>
           </Link>
           <Link href="/about" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faUser}
-                className="h-5 w-5 inline-block mr-2"
-              />
               About US
             </div>
           </Link>
 
           <Link href="/contact" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faEnvelopeOpenText}
-                className="h-5 w-5 inline-block mr-2"
-              />
               Contact Us
             </div>
           </Link>
           <Link href="/faqs" passHref>
             <div className="nav-link mt-2 mb-2" onClick={toggleNavbar}>
-              <FontAwesomeIcon
-                icon={faQuestionCircle}
-                className="h-5 w-5 inline-block mr-2"
-              />
               Q&A
             </div>
           </Link>
@@ -201,10 +168,6 @@ export default function Header() {
             <div
               className={`nav-link ${pathname === "/" ? "active-link" : ""}`}
             >
-              <FontAwesomeIcon
-                icon={faHome}
-                className="h-5 w-5 inline-block mr-1"
-              />
               Home
             </div>
           </Link>
@@ -215,10 +178,6 @@ export default function Header() {
               }`}
               onMouseEnter={() => setShowGalleryDropdown(!showGalleryDropdown)}
             >
-              <FontAwesomeIcon
-                icon={faImages}
-                className="h-5 w-5 inline-block mr-1"
-              />
               Galleries
             </div>
           </Link>
@@ -333,10 +292,6 @@ export default function Header() {
                 pathname === "/pricing" ? "active-link" : ""
               }`}
             >
-              <FontAwesomeIcon
-                icon={faDollarSign}
-                className="h-5 w-5 inline-block mr-1"
-              />
               Pricing
             </div>
           </Link>
@@ -346,10 +301,6 @@ export default function Header() {
                 pathname === "/about" ? "active-link" : ""
               }`}
             >
-              <FontAwesomeIcon
-                icon={faUser}
-                className="h-5 w-5 inline-block mr-1"
-              />
               About Us
             </div>
           </Link>
@@ -360,10 +311,6 @@ export default function Header() {
                 pathname === "/contact" ? "active-link" : ""
               }`}
             >
-              <FontAwesomeIcon
-                icon={faEnvelopeOpenText}
-                className="h-5 w-5 inline-block mr-1"
-              />
               Contact Us
             </div>
           </Link>
@@ -373,10 +320,6 @@ export default function Header() {
                 pathname === "/faqs" ? "active-link" : ""
               }`}
             >
-              <FontAwesomeIcon
-                icon={faQuestionCircle}
-                className="h-5 w-5 inline-block mr-1"
-              />
               Q&A
             </div>
           </Link>

@@ -14,36 +14,31 @@ import {
 
 export default function Header() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  const pathname = usePathname();
   const [showGalleryDropdown, setShowGalleryDropdown] = useState(false);
-
-  const handleOutsideClick = (e) => {
-    if (!e.target.closest(".gallery-dropdown-menu")) {
-      setShowGalleryDropdown(false);
-    }
-  };
+  const pathname = usePathname();
 
   const toggleNavbar = () => {
-    setIsNavbarOpen(!isNavbarOpen);
+    setIsNavbarOpen((prevIsNavbarOpen) => !prevIsNavbarOpen);
   };
 
   useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!e.target.closest(".gallery-dropdown-menu")) {
+        setShowGalleryDropdown(false);
+      }
+    };
+
+    if (showGalleryDropdown) {
+      document.addEventListener("click", handleOutsideClick);
+    }
+
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, []);
-
-  useEffect(() => {
-    if (showGalleryDropdown) {
-      document.addEventListener("click", handleOutsideClick);
-    } else {
-      document.removeEventListener("click", handleOutsideClick);
-    }
   }, [showGalleryDropdown]);
 
   return (
     <header className="header flex-col">
-      {/* Header - Image Row with Social Links */}
       <div className="flex flex-col md:flex-row items-center">
         <Link href="/" passHref>
           <img
@@ -53,7 +48,6 @@ export default function Header() {
           />
         </Link>
 
-        {/* Social Links */}
         <div className="flex gap-2 mt-2 md:ml-10">
           <Link
             href="https://www.instagram.com/florasflower4u/"
@@ -89,11 +83,11 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Image */}
-
-        {/* Email and Phone Links */}
         <div className="md:ml-20 text-center">
-          <a href="mailto:FlorasProFlowers@gmail.com" className="nav-link text-center">
+          <a
+            href="mailto:FlorasProFlowers@gmail.com"
+            className="nav-link text-center"
+          >
             FlorasProFlowers@gmail.com
           </a>
           <a href="tel:+12087559409" className="nav-link text-center">
@@ -102,9 +96,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Navbar Row */}
       <nav className="relative">
-        {/* Navbar toggler for small screens */}
         <div
           aria-label="Open Menu"
           className={`navbar-toggler ${
@@ -116,7 +108,6 @@ export default function Header() {
           Menu
         </div>
 
-        {/* Side-opening menu for small screens */}
         <div
           className={`fixed top-0 right-0 h-screen w-3/8 z-50 transform ${
             isNavbarOpen ? "translate-x-0" : "translate-x-full"
@@ -283,7 +274,6 @@ export default function Header() {
                   Miscellaneous smaller weddings
                 </span>
               </Link>
-              {/* Add links to other gallery subpages here */}
             </div>
           )}
           <Link href="/pricing" passHref>

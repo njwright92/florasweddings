@@ -3,16 +3,11 @@ import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(
-    process.cwd(),
-    "public",
-    "img",
-    "homestead"
-  );
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "homestead");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (

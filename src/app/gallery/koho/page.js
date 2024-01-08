@@ -3,22 +3,22 @@ import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "koho");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "koho");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (
     <div>
       <Header />
       <h1 className="title gallery">Enchanted Evening at Firebrand Venue</h1>
-    
+
       <p className="subtitle text-center">
         Stanley and Sydney Koho: A Rustic Romance in Cocolalla, Idaho.
       </p>
-      
+
       <p className="body-text text-center">
         Stanley and Sydney Koho&#39;s wedding at the Firebrand Venue was a
         captivating blend of rustic elegance and personal flair. Set in the

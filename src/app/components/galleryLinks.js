@@ -1,36 +1,33 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function GalleryLinks() {
   const pathname = usePathname();
 
-  const scrollToCollage = () => {
+  const scrollToCollage = useCallback(() => {
     const collageElement = document.getElementById("collage");
     if (collageElement) {
       collageElement.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, []);
 
-  const navigateToCollage = () => {
+  const navigateToCollage = useCallback(() => {
     if (pathname === "/") {
-      // If we are on the home page, scroll to the collage section
       scrollToCollage();
     } else {
-      // If we are not on the home page, navigate there
       window.location.href = "/#collage";
     }
-  };
+  }, [pathname, scrollToCollage]);
 
-  // useEffect is still needed for cases where the component mounts
-  // and the URL already has #collage
   useEffect(() => {
     if (pathname === "/" && window.location.hash === "#collage") {
       scrollToCollage();
     }
-  }, [pathname]);
+  }, [pathname, scrollToCollage]);
+
   return (
     <>
       <h1 className="title">Captivating Wedding Moments</h1>
@@ -47,7 +44,6 @@ export default function GalleryLinks() {
         to see the full gallery of that event.{" "}
       </p>
       <div className="grid">
-        {/*Lumen wedding */}
         <Link href="/gallery/lumen">
           <div className="image">
             <img
@@ -63,7 +59,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Butterfield17 Wedding */}
         <Link href="/gallery/butterfield">
           <div className="image">
             <img
@@ -118,7 +113,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Cataldo5 Wedding */}
         <Link href="/gallery/cataldo">
           <div className="image">
             <img
@@ -133,7 +127,7 @@ export default function GalleryLinks() {
             </div>
           </div>
         </Link>
-        {/* Ditrich9 Wedding */}
+
         <Link href="/gallery/ditrich">
           <div className="image">
             <img
@@ -147,7 +141,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Dretke7 Wedding */}
         <Link href="/gallery/dretke">
           <div className="image">
             <img
@@ -163,7 +156,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Flores2 Wedding */}
         <Link href="/gallery/flores">
           <div className="image">
             <img
@@ -179,7 +171,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Hirschel4 Wedding */}
         <Link href="/gallery/hirschel">
           <div className="image">
             <img
@@ -195,7 +186,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Jewett5 Wedding */}
         <Link href="/gallery/jewett">
           <div className="image">
             <img
@@ -209,7 +199,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Justin6 Wedding */}
         <Link href="/gallery/justin">
           <div className="image">
             <img
@@ -223,7 +212,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Knox7 Wedding */}
         <Link href="/gallery/knox">
           <div className="image">
             <img
@@ -237,7 +225,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Koho6 Wedding */}
         <Link href="/gallery/koho">
           <div className="image">
             <img
@@ -251,9 +238,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Misc15 Wedding */}
-
-        {/* Suko6 Wedding */}
         <Link href="/gallery/suko">
           <div className="image">
             <img
@@ -267,7 +251,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Trezzi1 Wedding */}
         <Link href="/gallery/trezzi">
           <div className="image">
             <img
@@ -296,7 +279,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Webster2 Wedding */}
         <Link href="/gallery/webster">
           <div className="image">
             <img
@@ -312,7 +294,6 @@ export default function GalleryLinks() {
           </div>
         </Link>
 
-        {/* Wright3 Wedding */}
         <Link href="/gallery/wright">
           <div className="image">
             <img

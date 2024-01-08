@@ -3,11 +3,11 @@ import Header from "@/app/components/Header";
 import fs from "fs";
 import path from "path";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "flores");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "flores");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (
@@ -18,7 +18,8 @@ export default function Gallery() {
       </h1>
 
       <p className="subtitle text-center">
-        Flores Wedding: A Voyage of Love on the Mish-an-nock, Coeur d&#39;Alene, ID.
+        Flores Wedding: A Voyage of Love on the Mish-an-nock, Coeur d&#39;Alene,
+        ID.
       </p>
 
       <p className="body-text text-center">

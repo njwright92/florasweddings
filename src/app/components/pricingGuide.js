@@ -5,7 +5,7 @@ export default function PricingGuide() {
         <div className="title-container">
           <h1 className="title-alt">Full Service Floral Guide</h1>
           <img
-            src="./img/flower-PhotoRoom.webp"
+            src="/img/flower-PhotoRoom.webp"
             width={200}
             height={100}
             loading="lazy"

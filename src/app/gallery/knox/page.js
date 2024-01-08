@@ -3,11 +3,11 @@ import Header from "@/app/components/Header";
 import fs from "fs";
 import path from "path";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "knox");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "knox");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (

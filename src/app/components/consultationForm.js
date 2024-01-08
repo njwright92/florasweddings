@@ -6,16 +6,12 @@ export default function ConsultationForm() {
     const formData = e.target.elements;
     const composedEmailLink = composeEmailLink(formData);
 
-    // Create a hidden link element
     const link = document.createElement("a");
     link.href = composedEmailLink;
     link.style.display = "none";
     document.body.appendChild(link);
 
-    // Programmatically click the link
     link.click();
-
-    // Remove the link from the document
     document.body.removeChild(link);
 
     e.target.reset();
@@ -25,8 +21,6 @@ export default function ConsultationForm() {
   };
   const composeEmailLink = (formData) => {
     const subject = encodeURIComponent("Wedding Consultation Request");
-
-    // Handle style checkboxes
     const styleCheckboxes = document.querySelectorAll(
       "input[name='style']:checked"
     );
@@ -57,17 +51,13 @@ export default function ConsultationForm() {
   const handleFloralEssentialsSubmit = (e) => {
     e.preventDefault();
     const formData = Object.fromEntries(new FormData(e.target));
-
-    // Create a hidden link element
     const link = document.createElement("a");
     link.href = composeFloralEssentialsEmailLink(formData);
     link.style.display = "none";
     document.body.appendChild(link);
 
-    // Programmatically click the link
     link.click();
 
-    // Remove the link from the document
     document.body.removeChild(link);
 
     e.target.reset();
@@ -103,7 +93,7 @@ export default function ConsultationForm() {
       <div className="title-container">
         <h1 className="title">Contact Us for a Consultation</h1>
         <img
-          src="./img/flower-PhotoRoom.webp"
+          src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
           loading="lazy"

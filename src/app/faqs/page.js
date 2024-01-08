@@ -8,7 +8,7 @@ export default function Faqs() {
       <div className="title-container">
         <h1 className="title">Frequently Asked Questions</h1>
         <img
-          src="./img/flower-PhotoRoom.webp"
+          src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
           loading="lazy"

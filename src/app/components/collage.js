@@ -1,14 +1,19 @@
+import { useMemo } from "react";
+
 export default function Collage() {
-  const collageImages = [
-    "collage10.webp",
-    "collage6.webp",
-    "collage7.webp",
-    "collage2.webp",
-    "collage4.webp",
-    "collage9.webp",
-    "collage8.webp",
-    "collage1.webp",
-  ];
+  const collageImages = useMemo(
+    () => [
+      "collage10.webp",
+      "collage6.webp",
+      "collage7.webp",
+      "collage2.webp",
+      "collage4.webp",
+      "collage9.webp",
+      "collage8.webp",
+      "collage1.webp",
+    ],
+    []
+  );
 
   return (
     <div className="grid">

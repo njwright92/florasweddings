@@ -3,24 +3,23 @@ import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "hirschel");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "hirschel");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (
     <div>
       <Header />
-      <h1 className="title gallery">
-        Elegance at Hadadone Event Center
-      </h1>
-  
+      <h1 className="title gallery">Elegance at Hadadone Event Center</h1>
+
       <p className="subtitle text-center">
-        Chantel and Jason Hirschel: Celebrating Love in Style, Coeur d&#39;Alene, ID
+        Chantel and Jason Hirschel: Celebrating Love in Style, Coeur
+        d&#39;Alene, ID
       </p>
-  
+
       <p className="body-text text-center">
         Chantel and Jason Hirschel&#39;s wedding at the Hadadone Event Center
         was a showcase of elegance and romance. In the heart of Coeur

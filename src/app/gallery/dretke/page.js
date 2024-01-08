@@ -3,22 +3,22 @@ import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "dretke");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "dretke");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (
     <div>
       <Header />
       <h1 className="title gallery">Elkins Resort Elegance</h1>
-   
+
       <p className="subtitle text-center">
         Jessica and Ian Dretke: Lakeside Romance Unfolds, Priest Lake ID.
       </p>
-    
+
       <p className="body-text text-center">
         Jessica and Ian Dretke&#39;s wedding at Elkins Resort embodied the
         perfect lakeside romance. Surrounded by Priest Lake&#39;s pristine

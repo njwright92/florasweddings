@@ -13,7 +13,7 @@ export default function About() {
       <div className="title-container">
         <h1 className="title">Reviews</h1>
         <img
-          src="./img/flower-PhotoRoom.webp"
+          src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
           loading="lazy"

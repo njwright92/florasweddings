@@ -25,24 +25,24 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Title Container - Center */}
+        
           <div className="title-container text-center md:flex-grow">
             <h1 className="subtitle">
               Thanks for visiting Floras Flowers wedding page!
-              <img
-                src="../img/flower-PhotoRoom.webp"
-                width={200}
-                height={100}
-                loading="lazy"
-                alt="Flower"
-                className="-mt-20 -mb-10"
-              />
             </h1>
+            <img
+              src="/img/flower-PhotoRoom.webp"
+              width={200}
+              height={100}
+              loading="lazy"
+              alt="Flower"
+              className="-mt-20 -mb-10"
+            />
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 w-full">
-          {/* Social Media Links - Flex Center */}
+        
           <div className="flex flex-col items-center md:flex-grow">
             <h2 className="body-text text-center">
               Follow me on social media:
@@ -103,7 +103,10 @@ export default function Footer() {
         </div>
 
         <h3 className="body-text pt-2">Email or call me now at:</h3>
-        <a href="mailto:FlorasProFlowers@gmail.com" className="footer-link text-lg m-1">
+        <a
+          href="mailto:FlorasProFlowers@gmail.com"
+          className="footer-link text-lg m-1"
+        >
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-1" />
           FlorasProFlowers@gmail.com
         </a>

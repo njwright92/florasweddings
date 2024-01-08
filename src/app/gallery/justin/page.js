@@ -3,11 +3,11 @@ import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 
-export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "justin");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
+// Read the image filenames from the directory
+const imagesDirectory = path.join(process.cwd(), "public", "img", "justin");
+const imageFilenames = fs.readdirSync(imagesDirectory);
 
+export default function Gallery() {
   let currentIndex = 0;
 
   return (
@@ -17,7 +17,7 @@ export default function Gallery() {
       <p className="subtitle text-center">
         Justin and Kaylee Wright: Celebrating Love Amidst Nature, Rathdrum, ID.
       </p>
- 
+
       <p className="body-text text-center">
         Justin and Kaylee Wright&#39;s wedding in Rathdrum, Idaho, was a
         delightful showcase of rustic charm and natural beauty. The outdoor

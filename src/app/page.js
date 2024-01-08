@@ -55,7 +55,7 @@ export default function Home() {
       <Header />
       <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="./img/banner2.webp"
+          src="/img/banner2.webp"
           alt="Floras Weddings Banner"
           className="banner-img"
           load="eager"
@@ -76,7 +76,7 @@ export default function Home() {
           <div className="title-container">
             <h2 className="title">Weddings</h2>
             <img
-              src="./img/flower-PhotoRoom.webp"
+              src="/img/flower-PhotoRoom.webp"
               width={200}
               height={100}
               loading="lazy"
@@ -103,7 +103,7 @@ export default function Home() {
           <div className="title-container">
             <h2 className="title">Reviews</h2>
             <img
-              src="./img/flower-PhotoRoom.webp"
+              src="/img/flower-PhotoRoom.webp"
               width={200}
               height={100}
               loading="lazy"

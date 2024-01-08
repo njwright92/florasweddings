@@ -19,7 +19,8 @@ export default function Faqs() {
       <h2 className="subtitle">You have questions, I have answers!</h2>
 
       <div className="body-text pricing-list mx-6">
-        <h3>Q: Where to start:</h3>
+        <h3>Q:</h3>
+        <h4>Where to start?</h4>
         <ol>
           <h3>A:</h3>
           <li>

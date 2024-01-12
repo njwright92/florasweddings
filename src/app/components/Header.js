@@ -50,7 +50,7 @@ export default function Header() {
 
         <div className="flex gap-2 mt-2 md:ml-10">
           <Link
-            href="https://www.instagram.com/floras_flowers4u/?hl=en"
+            href="https://www.instagram.com/floras_flowers4u/"
             className="footer-link custom-button"
             aria-label="Visit our Instagram page"
           >

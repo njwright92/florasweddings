@@ -49,7 +49,7 @@ export default function Footer() {
             </h2>
             <div className="flex gap-1">
               <Link
-                href="https://www.instagram.com/florasflower4u/"
+                href="https://www.instagram.com/floras_flowers4u/?hl=en"
                 className="footer-link custom-button"
                 aria-label="Visit our Instagram page"
               >

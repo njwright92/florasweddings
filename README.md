@@ -29,3 +29,5 @@ The "Floras Weddings" website is continually evolving, with regular updates and 
 ---
 
 We appreciate your interest in "Floras Weddings" and hope our website inspires your wedding plans. For the latest updates and more information about our services, please visit [Floras Weddings](https://www.florasweddings.com/).
+
+"coded & designed by me nate wright"

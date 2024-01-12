@@ -53,7 +53,7 @@ export default function Footer() {
                 className="footer-link custom-button"
                 aria-label="Visit our Instagram page"
               >
-                <FontAwesomeIcon icon={faSquareInstagram} className="fa-2xl" />
+                <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
@@ -61,7 +61,7 @@ export default function Footer() {
                 className="footer-link custom-button"
                 aria-label="Visit our Facebook page"
               >
-                <FontAwesomeIcon icon={faSquareFacebook} className="fa-2xl" />
+                <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
@@ -69,7 +69,7 @@ export default function Footer() {
                 className="footer-link custom-button"
                 aria-label="Check out our reviews on Yelp"
               >
-                <FontAwesomeIcon icon={faYelp} className="fa-2xl" />
+                <FontAwesomeIcon icon={faYelp} className="fa-xl" />
                 <span className="sr-only">Yelp</span>
               </Link>
               <Link
@@ -77,7 +77,7 @@ export default function Footer() {
                 className="footer-link custom-button"
                 aria-label="Find us on Google"
               >
-                <FontAwesomeIcon icon={faGoogle} className="fa-2xl" />
+                <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
                 <span className="sr-only">Google</span>
               </Link>
             </div>

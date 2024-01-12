@@ -48,14 +48,14 @@ export default function Footer() {
               Follow me on social media:
             </h2>
             <div className="flex gap-1">
-              {/* <Link
+              <Link
                 href="https://www.instagram.com/floras_flowers4u/"
                 className="footer-link custom-button"
                 aria-label="Visit our Instagram page"
               >
                 <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
                 <span className="sr-only">Instagram</span>
-              </Link> */}
+              </Link>
               <Link
                 href="https://www.facebook.com/happytrailsfloral"
                 className="footer-link custom-button"

@@ -32,8 +32,8 @@ export default function Footer() {
             </h1>
             <img
               src="/img/flower-PhotoRoom.webp"
-              width={200}
-              height={100}
+              width={160}
+              height={70}
               loading="lazy"
               alt="Flower"
               className="-mt-20 -mb-10"

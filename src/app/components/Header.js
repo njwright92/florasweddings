@@ -40,50 +40,52 @@ export default function Header() {
   return (
     <header className="header flex-col">
       <div className="flex flex-col md:flex-row items-center">
-        <Link href="/" passHref>
-          <img
-            src="/img/logo.webp"
-            alt="Floras Flowers"
-            className="cursor-pointer logo -mt-4 -mb-4 md:-mt-0 md:-mb-0 xl:-ml-10"
-          />
-        </Link>
+        <div className="flex flex-row items-center gap-1">
+          <Link href="/" passHref>
+            <img
+              src="/img/logo.webp"
+              alt="Floras Flowers"
+              className="cursor-pointer logo -mt-4 -mb-4 md:-mt-0 md:-mb-0 xl:-ml-10"
+            />
+          </Link>
 
-        <div className="flex gap-2 mt-2 md:ml-10">
-          <Link
-            href="https://www.instagram.com/floras_flowers4u/"
-            className="footer-link custom-button"
-            aria-label="Visit our Instagram page"
-          >
-            <FontAwesomeIcon icon={faSquareInstagram} className="fa-lg" />
-            <span className="sr-only">Instagram</span>
-          </Link>
-          <Link
-            href="https://www.facebook.com/happytrailsfloral"
-            className="footer-link custom-button"
-            aria-label="Visit our Facebook page"
-          >
-            <FontAwesomeIcon icon={faSquareFacebook} className="fa-lg" />
-            <span className="sr-only">Facebook</span>
-          </Link>
-          <Link
-            href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
-            className="footer-link custom-button"
-            aria-label="Check out our reviews on Yelp"
-          >
-            <FontAwesomeIcon icon={faYelp} className="fa-lg" />
-            <span className="sr-only">Yelp</span>
-          </Link>
-          <Link
-            href="https://www.google.com/search?sca_esv=596423552&sxsrf=ACQVn09gpbrwwD8VldD4ljK2Zd6apOvpOg:1704670363664&q=florasweddings&nfpr=1&sa=X&ved=2ahUKEwjz1_D7t8yDAxWtATQIHXEaAfgQvgUoAXoECBEQAw&biw=1287&bih=771&dpr=2"
-            className="footer-link custom-button"
-            aria-label="Find us on Google"
-          >
-            <FontAwesomeIcon icon={faGoogle} className="fa-lg" />
-            <span className="sr-only">Google</span>
-          </Link>
+          <div className="flex gap-1 lg:ml-10">
+            <Link
+              href="https://www.instagram.com/floras_flowers4u/"
+              className="footer-link custom-button"
+              aria-label="Visit our Instagram page"
+            >
+              <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link
+              href="https://www.facebook.com/happytrailsfloral"
+              className="footer-link custom-button"
+              aria-label="Visit our Facebook page"
+            >
+              <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link
+              href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
+              className="footer-link custom-button"
+              aria-label="Check out our reviews on Yelp"
+            >
+              <FontAwesomeIcon icon={faYelp} className="fa-xl" />
+              <span className="sr-only">Yelp</span>
+            </Link>
+            <Link
+              href="https://www.google.com/search?sca_esv=596423552&sxsrf=ACQVn09gpbrwwD8VldD4ljK2Zd6apOvpOg:1704670363664&q=florasweddings&nfpr=1&sa=X&ved=2ahUKEwjz1_D7t8yDAxWtATQIHXEaAfgQvgUoAXoECBEQAw&biw=1287&bih=771&dpr=2"
+              className="footer-link custom-button"
+              aria-label="Find us on Google"
+            >
+              <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
+              <span className="sr-only">Google</span>
+            </Link>
+          </div>
         </div>
 
-        <div className="md:ml-20 text-center">
+        <div className="flex flex-col lg:pl-10 text-center">
           <a
             href="mailto:FlorasProFlowers@gmail.com"
             className="nav-link text-center"

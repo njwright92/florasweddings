@@ -7,8 +7,8 @@ export default function Collage() {
       "collage9.webp",
       "collage4.webp",
       "collage10.webp",
-      "collage7.webp",
       "collage6.webp",
+      "collage7.webp",
       "collage8.webp",
     ],
     []

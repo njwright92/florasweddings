@@ -19,13 +19,12 @@ export default function Footer() {
               <img
                 src="/img/logo.webp"
                 alt="Floras Flowers"
-                className="footer-img"
+                className="logo"
                 load="lazy"
               />
             </Link>
           </div>
 
-        
           <div className="title-container text-center md:flex-grow">
             <h1 className="subtitle">
               Thanks for visiting Floras Flowers wedding page!
@@ -42,7 +41,6 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 w-full">
-        
           <div className="flex flex-col items-center md:flex-grow">
             <h2 className="body-text text-center">
               Follow me on social media:
@@ -120,7 +118,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} Floras Weddings. All rights reserved.
           <br />
-          Designed and Coded by: Nathan Wright visit my portfolio:
+          Designed and Coded by: Nathan Wright visit my{" "}
           <Link
             href="https://njwright92.github.io/paper-kit-portfolio"
             target="_blank"

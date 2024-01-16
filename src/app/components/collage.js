@@ -3,12 +3,12 @@ import { useMemo } from "react";
 export default function Collage() {
   const collageImages = useMemo(
     () => [
-      "collage10.webp",
-      "collage6.webp",
-      "collage7.webp",
       "collage2.webp",
-      "collage4.webp",
       "collage9.webp",
+      "collage4.webp",
+      "collage10.webp",
+      "collage7.webp",
+      "collage6.webp",
       "collage8.webp",
     ],
     []

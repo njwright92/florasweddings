@@ -64,7 +64,7 @@ export default function AboutUs() {
         src="/img/map.webp"
         alt="Map"
         loading="lazy"
-        className="w-full my-4 h-auto border-white border-2 rounded-lg"
+        className="w-full h-auto rounded-lg shadow-md"
       />
     </>
   );

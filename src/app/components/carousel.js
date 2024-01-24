@@ -20,10 +20,10 @@ export default function ReviewsCarousel() {
         showArrows={true}
         infiniteLoop={true}
         autoPlay={true}
-        interval={3000}
+        interval={5000}
         stopOnHover={true}
         dynamicHeight={true}
-        showStatus={false}
+        showStatus={true}
         showThumbs={false}
         emulateTouch={true}
       >

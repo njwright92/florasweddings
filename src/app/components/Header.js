@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,23 +17,31 @@ export default function Header() {
   const [showGalleryDropdown, setShowGalleryDropdown] = useState(false);
   const pathname = usePathname();
 
-  const toggleNavbar = () => {
+  const toggleNavbar = useCallback(() => {
     setIsNavbarOpen((prevIsNavbarOpen) => !prevIsNavbarOpen);
-  };
+  }, []);
+
+  const handleOutsideClick = useCallback((e) => {
+    if (!e.target.closest(".gallery-dropdown-menu")) {
+      setShowGalleryDropdown(false);
+    }
+  }, []);
+
+  const handleOutsideClickRef = useRef(handleOutsideClick);
 
   useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (!e.target.closest(".gallery-dropdown-menu")) {
-        setShowGalleryDropdown(false);
-      }
-    };
+    handleOutsideClickRef.current = handleOutsideClick;
+  }, [handleOutsideClick]);
+
+  useEffect(() => {
+    const eventListener = (e) => handleOutsideClickRef.current(e);
 
     if (showGalleryDropdown) {
-      document.addEventListener("click", handleOutsideClick);
+      document.addEventListener("click", eventListener);
     }
 
     return () => {
-      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("click", eventListener);
     };
   }, [showGalleryDropdown]);
 

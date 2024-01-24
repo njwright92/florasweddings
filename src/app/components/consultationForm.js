@@ -333,7 +333,7 @@ export default function ConsultationForm() {
               Additional Information
             </label>
             <textarea
-              className="shadow border rounded md:w-full py-3 px-3 text-gray-700"
+              className="shadow border rounded w-full py-3 px-3 text-gray-700"
               id="additionalInfo"
               type="text"
               name="additionalInfo"

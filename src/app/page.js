@@ -58,7 +58,7 @@ export default function Home() {
           src="/img/banner2.webp"
           alt="Floras Weddings Banner"
           className="banner-img"
-          load="eager"
+          loading="eager"
         />
         <div className="image-overlay">
           <h4 className="img-title">

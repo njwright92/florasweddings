@@ -1,32 +1,30 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function GalleryLinks() {
   const pathname = usePathname();
+  const collageRef = useRef(null);
 
-  const scrollToCollage = useCallback(() => {
-    const collageElement = document.getElementById("collage");
-    if (collageElement) {
-      collageElement.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    // Reference the collage element once
+    collageRef.current = document.getElementById("collage");
+
+    // Navigate to collage
+    if (pathname === "/" && window.location.hash === "#collage") {
+      collageRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, []);
+  }, [pathname]);
 
-  const navigateToCollage = useCallback(() => {
+  const navigateToCollage = () => {
     if (pathname === "/") {
-      scrollToCollage();
+      collageRef.current?.scrollIntoView({ behavior: "smooth" });
     } else {
       window.location.href = "/#collage";
     }
-  }, [pathname, scrollToCollage]);
-
-  useEffect(() => {
-    if (pathname === "/" && window.location.hash === "#collage") {
-      scrollToCollage();
-    }
-  }, [pathname, scrollToCollage]);
+  };
 
   return (
     <>

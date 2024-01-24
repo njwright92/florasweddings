@@ -20,7 +20,7 @@ export default function Footer() {
                 src="/img/logo.webp"
                 alt="Floras Flowers"
                 className="logo"
-                load="lazy"
+                loading="lazy"
               />
             </Link>
           </div>

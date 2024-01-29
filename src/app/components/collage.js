@@ -10,6 +10,7 @@ export default function Collage() {
       "collage6.webp",
       "collage7.webp",
       "collage8.webp",
+      "banner2.webp",
     ],
     []
   );

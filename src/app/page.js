@@ -55,7 +55,7 @@ export default function Home() {
       <Header />
       <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="/img/banner2.webp"
+          src="/img/justin/justin4.webp"
           alt="Floras Weddings Banner"
           className="banner-img"
           loading="eager"

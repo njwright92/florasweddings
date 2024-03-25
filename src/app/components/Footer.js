@@ -91,7 +91,7 @@ export default function Footer() {
               className="footer-link text-lg"
             >
               <button
-                className="button"
+                className="drop-shadow-xl rounded-lg border border-black p-2"
                 aria-label="Visit Floras Flowers Website"
               >
                 🌸 Floras Flowers
@@ -103,12 +103,12 @@ export default function Footer() {
         <h3 className="body-text pt-2">Email or call me now at:</h3>
         <a
           href="mailto:FlorasProFlowers@gmail.com"
-          className="footer-link text-lg m-1"
+          className="footer-link text-md m-1"
         >
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-1" />
           FlorasProFlowers@gmail.com
         </a>
-        <a href="tel:+12087559409" className="footer-link text-lg m-1">
+        <a href="tel:+12087559409" className="footer-link text-md m-1">
           <FontAwesomeIcon icon={faPhone} className="h-5 w-5 mr-1" />
           (208)-755-9409
         </a>

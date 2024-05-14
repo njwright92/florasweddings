@@ -19,6 +19,7 @@ export default function ConsultationForm() {
       "The email client has been opened. Please send the email to complete your request."
     );
   };
+
   const composeEmailLink = (formData) => {
     const subject = encodeURIComponent("Wedding Consultation Request");
     const styleCheckboxes = document.querySelectorAll(
@@ -28,22 +29,25 @@ export default function ConsultationForm() {
       .map((checkbox) => checkbox.value)
       .join(", ");
 
-    const body = `
-      Bride's Name: ${encodeURIComponent(formData.firstName.value)}
-      Groom's Name: ${encodeURIComponent(formData.groomName.value)}
-      Planner's Name: ${encodeURIComponent(formData.plannerName.value)}
-      Bride's Email: ${encodeURIComponent(formData.email.value)}
-      Planner Email: ${encodeURIComponent(formData.email1.value)}
-      Bride's Phone: ${encodeURIComponent(formData.phone.value)}
-      Planner Phone: ${encodeURIComponent(formData.phone1.value)}
-      Venue: ${encodeURIComponent(formData.venue.value)}
-      Reception Venue: ${encodeURIComponent(formData.venue1.value)}
-      Date of Event: ${encodeURIComponent(formData.date.value)}
-      Preferred Style: ${encodeURIComponent(styles)}
-      Additional Information: ${encodeURIComponent(
-        formData.additionalInfo.value
-      )}
-    `.replace(/(\r\n|\n|\r)/gm, "%0D%0A");
+    const bodyParams = new URLSearchParams({
+      "Bride's Name": formData.firstName.value,
+      "Groom's Name": formData.groomName.value,
+      "Planner's Name": formData.plannerName.value,
+      "Bride's Email": formData.email.value,
+      "Planner Email": formData.email1.value,
+      "Bride's Phone": formData.phone.value,
+      "Planner Phone": formData.phone1.value,
+      Venue: formData.venue.value,
+      "Reception Venue": formData.venue1.value,
+      "Date of Event": formData.date.value,
+      "Preferred Style": styles,
+      "Additional Information": formData.additionalInfo.value,
+    });
+
+    const body = bodyParams
+      .toString()
+      .replace(/&/g, "%0D%0A")
+      .replace(/=/g, "%3D");
 
     return `mailto:florasproflowers@gmail.com?subject=${subject}&body=${body}`;
   };
@@ -76,14 +80,16 @@ export default function ConsultationForm() {
       additionalNeeds,
     } = formData;
     const subject = encodeURIComponent("Wedding Floral Essentials Request");
-    const body = `
-      Bridal Bouquets: ${encodeURIComponent(bridal_bouquets)}
-      Bridesmaids Bouquets: ${encodeURIComponent(bridesmaids_bouquets)}
-      Boutonnieres: ${encodeURIComponent(boutonnieres)}
-      Centerpieces Needed: ${encodeURIComponent(centerpiecesNeeded)}
-      Color Palette: ${encodeURIComponent(colorPalette)}
-      Additional Needs: ${encodeURIComponent(additionalNeeds)}
-    `.replace(/(\r\n|\n|\r)/gm, "%0D%0A");
+    const bodyParams = new URLSearchParams({
+      "Bridal Bouquets": bridal_bouquets,
+      "Bridesmaids Bouquets": bridesmaids_bouquets,
+      Boutonnieres: boutonnieres,
+      "Centerpieces Needed": centerpiecesNeeded,
+      "Color Palette": colorPalette,
+      "Additional Needs": additionalNeeds,
+    });
+
+    const body = bodyParams.toString().replace(/&/g, "%0D%0A");
 
     return `mailto:florasproflowers@gmail.com?subject=${subject}&body=${body}`;
   };

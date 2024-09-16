@@ -102,7 +102,7 @@ export default function Footer() {
 
         <h3 className="body-text pt-2">Email or call me now at:</h3>
         <a
-          href="mailto:FlorasProFlowers@gmail.com"
+          href="mailto:Florasproflowers@gmail.com"
           className="footer-link text-md m-1"
         >
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-1" />

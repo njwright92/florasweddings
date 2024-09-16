@@ -95,10 +95,10 @@ export default function Header() {
 
         <div className="flex flex-col lg:pl-10 text-center">
           <a
-            href="mailto:FlorasProFlowers@gmail.com"
+            href="mailto:Florasproflowers@gmail.com"
             className="nav-link text-center"
           >
-            FlorasProFlowers@gmail.com
+            Florasproflowers@gmail.com
           </a>
           <a href="tel:+12087559409" className="nav-link text-center">
             (208)-755-9409

@@ -49,7 +49,7 @@ export default function ConsultationForm() {
       .replace(/&/g, "%0D%0A")
       .replace(/=/g, "%3D");
 
-    return `mailto:florasproflowers@gmail.com?subject=${subject}&body=${body}`;
+    return `mailto:Florasproflowers@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleFloralEssentialsSubmit = (e) => {
@@ -91,7 +91,7 @@ export default function ConsultationForm() {
 
     const body = bodyParams.toString().replace(/&/g, "%0D%0A");
 
-    return `mailto:florasproflowers@gmail.com?subject=${subject}&body=${body}`;
+    return `mailto:Florasproflowers@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (

@@ -106,7 +106,7 @@ export default function Footer() {
           className="footer-link text-md m-1"
         >
           <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-1" />
-          FlorasProFlowers@gmail.com
+          Florasproflowers@gmail.com
         </a>
         <a href="tel:+12087559409" className="footer-link text-md m-1">
           <FontAwesomeIcon icon={faPhone} className="h-5 w-5 mr-1" />

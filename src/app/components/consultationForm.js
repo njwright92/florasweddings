@@ -1,99 +1,6 @@
 "use client";
 
 export default function ConsultationForm() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = e.target.elements;
-    const composedEmailLink = composeEmailLink(formData);
-
-    const link = document.createElement("a");
-    link.href = composedEmailLink;
-    link.style.display = "none";
-    document.body.appendChild(link);
-
-    link.click();
-    document.body.removeChild(link);
-
-    e.target.reset();
-    alert(
-      "The email client has been opened. Please send the email to complete your request."
-    );
-  };
-
-  const composeEmailLink = (formData) => {
-    const subject = encodeURIComponent("Wedding Consultation Request");
-    const styleCheckboxes = document.querySelectorAll(
-      "input[name='style']:checked"
-    );
-    const styles = Array.from(styleCheckboxes)
-      .map((checkbox) => checkbox.value)
-      .join(", ");
-
-    const bodyParams = new URLSearchParams({
-      "Bride's Name": formData.firstName.value,
-      "Groom's Name": formData.groomName.value,
-      "Planner's Name": formData.plannerName.value,
-      "Bride's Email": formData.email.value,
-      "Planner Email": formData.email1.value,
-      "Bride's Phone": formData.phone.value,
-      "Planner Phone": formData.phone1.value,
-      Venue: formData.venue.value,
-      "Reception Venue": formData.venue1.value,
-      "Date of Event": formData.date.value,
-      "Preferred Style": styles,
-      "Additional Information": formData.additionalInfo.value,
-    });
-
-    const body = bodyParams
-      .toString()
-      .replace(/&/g, "%0D%0A")
-      .replace(/=/g, "%3D");
-
-    return `mailto:Florasproflowers@gmail.com?subject=${subject}&body=${body}`;
-  };
-
-  const handleFloralEssentialsSubmit = (e) => {
-    e.preventDefault();
-    const formData = Object.fromEntries(new FormData(e.target));
-    const link = document.createElement("a");
-    link.href = composeFloralEssentialsEmailLink(formData);
-    link.style.display = "none";
-    document.body.appendChild(link);
-
-    link.click();
-
-    document.body.removeChild(link);
-
-    e.target.reset();
-    alert(
-      "The email client has been opened. Please send the email to complete your request."
-    );
-  };
-
-  const composeFloralEssentialsEmailLink = (formData) => {
-    const {
-      bridal_bouquets,
-      bridesmaids_bouquets,
-      boutonnieres,
-      centerpiecesNeeded,
-      colorPalette,
-      additionalNeeds,
-    } = formData;
-    const subject = encodeURIComponent("Wedding Floral Essentials Request");
-    const bodyParams = new URLSearchParams({
-      "Bridal Bouquets": bridal_bouquets,
-      "Bridesmaids Bouquets": bridesmaids_bouquets,
-      Boutonnieres: boutonnieres,
-      "Centerpieces Needed": centerpiecesNeeded,
-      "Color Palette": colorPalette,
-      "Additional Needs": additionalNeeds,
-    });
-
-    const body = bodyParams.toString().replace(/&/g, "%0D%0A");
-
-    return `mailto:Florasproflowers@gmail.com?subject=${subject}&body=${body}`;
-  };
-
   return (
     <>
       <div className="title-container">
@@ -116,11 +23,25 @@ export default function ConsultationForm() {
         you&#39;ll have the wedding flowers of your dreams!
       </p>
       <div className="md:flex md:flex-row md:justify-between">
-        <form onSubmit={handleSubmit} className="form m-2 p-6  md:w-1/2">
+        {/* First Form */}
+        <form
+          action="https://formsubmit.co/Florasproflowers@gmail.com"
+          method="POST"
+          className="form m-2 p-6 md:w-1/2"
+        >
           <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
           </h2>
           <hr className="mb-4" />
+          {/* Add hidden inputs for configuration */}
+          <input
+            type="hidden"
+            name="_subject"
+            value="Wedding Consultation Request"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
           <div className="mb-4 md:flex">
             <div className="md:mr-2 mb-4 md:mb-0">
               <label className="label" htmlFor="firstName">
@@ -129,26 +50,27 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="firstName"
-                name="firstName"
+                name="bride_name"
                 type="text"
                 placeholder="Bride"
                 required
               />
             </div>
-            <div className="md:">
+            <div>
               <label className="label" htmlFor="groomName">
                 Groom&apos;s Name
               </label>
               <input
                 className="shadow border rounded py-2 px-3 text-gray-700"
                 id="groomName"
-                name="groomName"
+                name="groom_name"
                 type="text"
                 placeholder="Groom"
                 required
               />
             </div>
           </div>
+
           <div className="mb-4">
             <label className="label" htmlFor="plannerName">
               Planner&apos;s Name
@@ -156,7 +78,7 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded py-2 px-3 text-gray-700"
               id="plannerName"
-              name="plannerName"
+              name="planner_name"
               type="text"
               placeholder="Planner"
             />
@@ -170,27 +92,28 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="email"
-                name="email"
+                name="bride_email"
                 type="email"
                 placeholder="email@.com"
                 autoComplete="email"
                 required
               />
             </div>
-            <div className="md:">
+            <div>
               <label className="label" htmlFor="email1">
                 Planner Email
               </label>
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="email1"
-                name="email1"
+                name="planner_email"
                 type="email"
                 placeholder="email@.com"
                 autoComplete="email"
               />
             </div>
           </div>
+
           <div className="mb-4 md:flex">
             <div className="md:mr-2 mb-4 md:mb-0">
               <label className="label" htmlFor="phone">
@@ -199,7 +122,7 @@ export default function ConsultationForm() {
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="phone"
-                name="phone"
+                name="bride_phone"
                 type="tel"
                 pattern="(\(?\d{3}\)?|\d{3})([-]?\d{3})([-]?\d{4})"
                 placeholder="###-###-####"
@@ -207,14 +130,14 @@ export default function ConsultationForm() {
                 required
               />
             </div>
-            <div className="md:">
+            <div>
               <label className="label" htmlFor="phone1">
                 Planner Phone
               </label>
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
                 id="phone1"
-                name="phone1"
+                name="planner_phone"
                 type="tel"
                 pattern="(\(?\d{3}\)?|\d{3})([-]?\d{3})([-]?\d{4})"
                 autoComplete="tel"
@@ -223,6 +146,7 @@ export default function ConsultationForm() {
             </div>
           </div>
 
+          {/* Additional fields */}
           <div className="mb-4">
             <label className="label" htmlFor="venue">
               Venue
@@ -244,7 +168,7 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
               id="venue1"
-              name="venue1"
+              name="reception_venue"
               type="text"
               placeholder="Venue Name"
             />
@@ -257,7 +181,7 @@ export default function ConsultationForm() {
             <input
               className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
               id="date"
-              name="date"
+              name="event_date"
               type="date"
               required
             />
@@ -265,73 +189,28 @@ export default function ConsultationForm() {
 
           <div className="mb-4">
             <label className="label" htmlFor="preferredStyle">
-              Which best describes your preferred style?
+              Preferred Style
             </label>
             <div className="flex flex-col max-w-md">
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox"
-                  name="style"
-                  value="modern"
-                  id="modern"
-                />
-                <span className="ml-2 text-gray-700">Modern</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox"
-                  name="style"
-                  value="garden"
-                  id="garden"
-                />
-                <span className="ml-2 text-gray-700">Garden</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox"
-                  name="style"
-                  value="classic"
-                  id="classic"
-                />
-                <span className="ml-2 text-gray-700">Classic</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox"
-                  name="style"
-                  value="fairytale"
-                  id="fairytale"
-                />
-                <span className="ml-2 text-gray-700">Fairytale</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox"
-                  name="style"
-                  value="wildflower"
-                  id="wildflower"
-                />
-                <span className="ml-2 text-gray-700">Wildflower</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox"
-                  name="style"
-                  value="sophisticated"
-                  id="sophisticated"
-                />
-                <span className="ml-2 text-gray-700">Sophisticated</span>
-              </label>
+              {[
+                "modern",
+                "garden",
+                "classic",
+                "fairytale",
+                "wildflower",
+                "sophisticated",
+              ].map((style) => (
+                <label key={style} className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox"
+                    name="preferred_style"
+                    value={style}
+                  />
+                  <span className="ml-2 text-gray-700 capitalize">{style}</span>
+                </label>
+              ))}
             </div>
-            <p className="secondary-label text-gray-700">
-              Please check all that apply.
-            </p>
           </div>
 
           <div className="mb-4">
@@ -341,29 +220,47 @@ export default function ConsultationForm() {
             <textarea
               className="shadow border rounded w-full py-3 px-3 text-gray-700"
               id="additionalInfo"
-              type="text"
-              name="additionalInfo"
-              required
-              placeholder="Any addition details you want me to know!"
+              name="additional_info"
+              placeholder="Any additional details you want me to know!"
               rows={4}
+              required
             ></textarea>
           </div>
 
-          <div className="flex justify-end ">
-            <button className="button" type="submit" aria-label="Submit Form">
+          <div className="flex justify-end">
+            <button
+              className="button"
+              type="submit"
+              aria-label="Submit Form"
+              style={{
+                backgroundColor: "rgb(var(--color-green))",
+                color: "rgb(var(--color-primary))",
+              }}
+            >
               Submit
             </button>
           </div>
         </form>
         <div className="form-container md:w-1/2">
           <form
-            onSubmit={handleFloralEssentialsSubmit}
+            action="https://formsubmit.co/Florasproflowers@gmail.com"
+            method="POST"
             className="form p-6 m-2"
           >
             <h3 className="subtitle text-center mb-2">
               Specify Your Wedding Floral Essentials
             </h3>
             <hr className="mb-4" />
+
+            {/* Add hidden inputs for configuration */}
+            <input
+              type="hidden"
+              name="_subject"
+              value="Wedding Floral Essentials Request"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
             <div className="mb-4">
               <label className="label" htmlFor="bridal_bouquets">
                 Bridal Bouquets
@@ -443,7 +340,15 @@ export default function ConsultationForm() {
             </div>
 
             <div className="flex justify-end ">
-              <button className="button" type="submit" aria-label="Submit Form">
+              <button
+                className="button"
+                type="submit"
+                aria-label="Submit Form"
+                style={{
+                  backgroundColor: "rgb(var(--color-green))",
+                  color: "rgb(var(--color-primary))",
+                }}
+              >
                 Submit
               </button>
             </div>

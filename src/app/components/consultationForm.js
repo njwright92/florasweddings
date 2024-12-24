@@ -1,6 +1,34 @@
 "use client";
 
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+
 export default function ConsultationForm() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    emailjs
+      .sendForm(
+        "service_2izjn67", // Your EmailJS service ID
+        "template_mkjsg5j", // Your EmailJS template ID
+        form.current, // Pass the form reference
+        "l_dBdAXi6ypIv9WaA" // Your EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully!", result.text);
+          alert("Form submitted successfully!");
+          form.current.reset(); // Reset the form after submission
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+          alert("Failed to send the form. Please try again.");
+        }
+      );
+  };
+
   return (
     <>
       <div className="title-container">
@@ -22,18 +50,17 @@ export default function ConsultationForm() {
         your inspiration board, our creativity, and our knowledge of flowers,
         you&#39;ll have the wedding flowers of your dreams!
       </p>
-      <div className="md:flex md:flex-row md:justify-between">
-        {/* First Form */}
+      <div className="m-2">
         <form
-          action="https://formsubmit.co/Florasproflowers@gmail.com"
-          method="POST"
-          className="form m-2 p-6 md:w-1/2"
+          ref={form}
+          onSubmit={sendEmail}
+          className="form m-2 p-6 md:w-1/2 mx-auto"
         >
           <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
           </h2>
           <hr className="mb-4" />
-          {/* Add hidden inputs for configuration */}
+
           <input
             type="hidden"
             name="_subject"
@@ -80,14 +107,14 @@ export default function ConsultationForm() {
               id="plannerName"
               name="planner_name"
               type="text"
-              placeholder="Planner"
+              placeholder="optional"
             />
           </div>
 
           <div className="mb-4 md:flex">
             <div className="md:mr-2 mb-4 md:mb-0">
               <label className="label" htmlFor="email">
-                Bride&apos;s Email
+                Email
               </label>
               <input
                 className="shadow border rounded w-full py-2 px-3 text-gray-700"
@@ -108,7 +135,7 @@ export default function ConsultationForm() {
                 id="email1"
                 name="planner_email"
                 type="email"
-                placeholder="email@.com"
+                placeholder="optional"
                 autoComplete="email"
               />
             </div>
@@ -141,7 +168,7 @@ export default function ConsultationForm() {
                 type="tel"
                 pattern="(\(?\d{3}\)?|\d{3})([-]?\d{3})([-]?\d{4})"
                 autoComplete="tel"
-                placeholder="###-###-####"
+                placeholder="optional"
               />
             </div>
           </div>
@@ -170,7 +197,7 @@ export default function ConsultationForm() {
               id="venue1"
               name="reception_venue"
               type="text"
-              placeholder="Venue Name"
+              placeholder="optional"
             />
           </div>
 
@@ -212,7 +239,6 @@ export default function ConsultationForm() {
               ))}
             </div>
           </div>
-
           <div className="mb-4">
             <label className="label" htmlFor="additionalInfo">
               Additional Information
@@ -226,7 +252,6 @@ export default function ConsultationForm() {
               required
             ></textarea>
           </div>
-
           <div className="flex justify-end">
             <button
               className="button"
@@ -241,119 +266,6 @@ export default function ConsultationForm() {
             </button>
           </div>
         </form>
-        <div className="form-container md:w-1/2">
-          <form
-            action="https://formsubmit.co/Florasproflowers@gmail.com"
-            method="POST"
-            className="form p-6 m-2"
-          >
-            <h3 className="subtitle text-center mb-2">
-              Specify Your Wedding Floral Essentials
-            </h3>
-            <hr className="mb-4" />
-
-            {/* Add hidden inputs for configuration */}
-            <input
-              type="hidden"
-              name="_subject"
-              value="Wedding Floral Essentials Request"
-            />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-
-            <div className="mb-4">
-              <label className="label" htmlFor="bridal_bouquets">
-                Bridal Bouquets
-              </label>
-              <input
-                className="shadow border rounded py-2 px-3 text-gray-700"
-                id="bridal_bouquets"
-                name="bridal_bouquets"
-                type="text"
-                placeholder="Bridal Bouquets"
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="label" htmlFor="bridesmaids_bouquets">
-                Bridesmaids Bouquets
-              </label>
-              <input
-                className="shadow border rounded py-2 px-3 text-gray-700"
-                id="bridesmaids_bouquets"
-                name="bridesmaids_bouquets"
-                type="text"
-                placeholder="Bridesmaids Bouquets"
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="label" htmlFor="boutonnieres">
-                Boutonnieres
-              </label>
-              <input
-                className="shadow border rounded py-2 px-3 text-gray-700"
-                id="boutonnieres"
-                name="boutonnieres"
-                type="text"
-                placeholder="Boutonnieres"
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="label" htmlFor="centerpiecesNeeded">
-                Centerpieces Needed
-              </label>
-              <input
-                className="shadow border rounded w-full py-2 px-3 text-gray-700"
-                id="centerpiecesNeeded"
-                name="centerpiecesNeeded"
-                type="number"
-                required
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="label" htmlFor="colorPalette">
-                Color Palette
-              </label>
-              <input
-                className="shadow border rounded w-full py-2 px-3 text-gray-700"
-                id="colorPalette"
-                name="colorPalette"
-                type="text"
-                required
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="label" htmlFor="additionalNeeds">
-                Additional Needs
-              </label>
-              <textarea
-                className="shadow border rounded w-full py-3 px-3 text-gray-700"
-                id="additionalNeeds"
-                name="additionalNeeds"
-                rows="4"
-                placeholder="Installations, Design Concepts, or anything else we need to know!"
-              ></textarea>
-            </div>
-
-            <div className="flex justify-end ">
-              <button
-                className="button"
-                type="submit"
-                aria-label="Submit Form"
-                style={{
-                  backgroundColor: "rgb(var(--color-green))",
-                  color: "rgb(var(--color-primary))",
-                }}
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
     </>
   );

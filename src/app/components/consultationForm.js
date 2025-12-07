@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 export default function ConsultationForm() {
   const form = useRef();

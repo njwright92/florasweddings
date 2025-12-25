@@ -101,13 +101,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-3 border-t border-gray-200 pt-2 text-center text-xs text-gray-500">
+        <div className="mt-3 border-t border-gray-500 pt-2 text-center text-xs text-gray-500">
           © {new Date().getFullYear()} Flora&apos;s Weddings • Built by{" "}
           <Link
-            href="https://njwright92.github.io/paper-kit-portfolio"
+            href="https://www.instagram.com/natewrightcomedy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[rgb(var(--color-green))] hover:underline"
+            className="text-[rgb(var(--color-green))] underline hover:scale-105"
           >
             Nathan Wright
           </Link>

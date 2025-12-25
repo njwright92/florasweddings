@@ -20,7 +20,7 @@ Explore our site to discover the beauty of _"Floras Weddings."_ For inquiries an
 
 ### Credits and Acknowledgments
 
-Built with Next.js, our website represents the power and flexibility of modern web frameworks. Special thanks to the Next.js community and to the creators of the "Great Vibes" and "Roboto" fonts for enhancing our site's aesthetic.
+Built with Next.js, our website represents the power and flexibility of modern web frameworks. Special thanks to the Next.js community and to the creators of the "Inter" and "Playfair Display" fonts for enhancing our site's aesthetic.
 
 ## Technical Stack & Dependencies
 
@@ -30,32 +30,31 @@ Built with Next.js, our website represents the power and flexibility of modern w
 
 | Technology | Version |
 | ---------- | ------- |
-| Next.js    | 14.0.4  |
-| React      | 18.2.0  |
-| React-DOM  | 18.2.0  |
+| Next.js    | 16.1.1  |
+| React      | 19.2.1  |
+| React-DOM  | 19.2.1  |
 
 ### Main Dependencies
 
 | Package                            | Version |
 | ---------------------------------- | ------- |
-| @fortawesome/fontawesome-svg-core  | 6.5.1   |
-| @fortawesome/free-brands-svg-icons | 6.5.1   |
-| @fortawesome/free-solid-svg-icons  | 6.5.1   |
-| @fortawesome/react-fontawesome     | 0.2.0   |
-| @vercel/analytics                  | 1.1.1   |
+| @emailjs/browser                   | 3.2.0   |
+| @fortawesome/fontawesome-svg-core  | 7.0.0   |
+| @fortawesome/free-brands-svg-icons | 7.0.0   |
+| @fortawesome/free-solid-svg-icons  | 7.0.0   |
+| @fortawesome/react-fontawesome     | 3.0.1   |
+| @tailwindcss/postcss               | 4.1.18  |
 | aos                                | 2.3.4   |
-| react-responsive-carousel          | 3.2.23  |
+| tailwindcss                        | 4.1.18  |
 
 ### Development Dependencies
 
-| Package                 | Version |
-| ----------------------- | ------- |
-| @tailwindcss/typography | 0.5.10  |
-| autoprefixer            | 10.0.1  |
-| eslint                  | 8       |
-| eslint-config-next      | 14.0.4  |
-| postcss                 | 8       |
-| tailwindcss             | 3.3.0   |
+| Package                     | Version |
+| --------------------------- | ------- |
+| eslint                      | 9.39.2  |
+| postcss                     | 8.5.6   |
+| prettier                    | 3.7.4   |
+| prettier-plugin-tailwindcss | 0.7.2   |
 
 ### Deployment and Updates
 

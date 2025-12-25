@@ -1,16 +1,28 @@
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+
 config.autoAddCss = false;
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
 });
 
 export const metadata = {
-  title: "Floras Weddings - Wedding Florist for North Idaho & Spokane Area",
+  metadataBase: new URL("https://florasweddings.com"),
+  title: {
+    default: "Floras Weddings - Wedding Florist for North Idaho & Spokane Area",
+    template: "%s | Floras Weddings",
+  },
   description:
     "Custom bridal bouquets, wedding flowers, and floral designs for North Idaho and Spokane. Floras Weddings specializes in unique floral arrangements for ceremonies and receptions.",
   keywords: [
@@ -56,12 +68,13 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#f7e7ce",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>{children}</body>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

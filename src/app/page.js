@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// Components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Collage from "./components/collage";
@@ -16,7 +14,6 @@ import PricingGuide from "./components/pricingGuide";
 import ConsultationForm from "./components/consultationForm";
 import AboutUs from "./components/aboutUs";
 
-// Static Data (Moved outside to prevent re-creation)
 const BUSINESS_DATA = {
   "@context": "https://schema.org",
   "@type": "Florist",
@@ -37,7 +34,6 @@ const BUSINESS_DATA = {
   ],
 };
 
-// Reusable Section Wrapper to reduce JSX
 const Section = ({ id, children }) => (
   <section className="section" id={id} data-aos="fade-up">
     {children}

@@ -109,7 +109,7 @@ const SocialLink = memo(function SocialLink({ href, icon, label }) {
 });
 
 // Memoized nav link component
-const NavLink = memo(function NavLink({ href, label, isActive, onClick }) {
+const NavLink = memo(function NavLink({ href, label, onClick }) {
   return (
     <Link href={href} className="nav-link mt-2 mb-2 block" onClick={onClick}>
       {label}
@@ -174,7 +174,7 @@ export default function Header() {
         {/* Logo and Socials Container */}
         <div className="flex flex-row items-center gap-1">
           <Link href="/" className="relative block">
-            <div className="relative -mt-4 -mb-4 h-[100px] w-[200px] md:-mt-0 md:-mb-0 xl:-ml-10">
+            <div className="relative -mt-4 -mb-4 h-25 w-50 md:mt-0 md:mb-0 xl:-ml-10">
               <Image
                 width={200}
                 height={100}
@@ -218,7 +218,7 @@ export default function Header() {
           onClick={toggleNavbar}
         >
           <FontAwesomeIcon icon={faBars} className="mr-1 h-8 w-8" />
-          <span className="justify-center pt-1">Menu</span>
+          <span className="justify-center">Menu</span>
         </button>
 
         {/* Mobile Menu Overlay */}

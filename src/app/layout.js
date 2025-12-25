@@ -74,6 +74,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <meta
+        name="google-site-verification"
+        content="Y74RLiVanlcOcG1jXh29Adqwu_L99Te5UmZZ3iq_J1c"
+      />
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

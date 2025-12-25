@@ -1,5 +1,6 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
+import Image from "next/image";
 import fs from "fs";
 import path from "path";
 
@@ -12,8 +13,6 @@ const imagesDirectory = path.join(
 const imageFilenames = fs.readdirSync(imagesDirectory);
 
 export default function Gallery() {
-  let currentIndex = 0;
-
   return (
     <div>
       <Header />
@@ -44,20 +43,18 @@ export default function Gallery() {
             const altText =
               filename.replace(/\.[^/.]+$/, "") + " Wedding boquettes";
 
-            currentIndex++;
-
             return (
               <div key={index} className="image">
-                <img
+                <Image
+                  width={400}
+                  height={300}
                   src={imagePath}
                   alt={altText}
                   className="image-placeholder"
-                  loading="lazy"
                 />
               </div>
             );
           }
-          currentIndex++;
           return null;
         })}
       </div>

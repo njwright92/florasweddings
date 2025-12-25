@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useMemo } from "react";
 
 export default function Collage() {
@@ -22,11 +23,12 @@ export default function Collage() {
         const altText = filename.replace(/\.[^/.]+$/, "") + " Wedding Florals";
         return (
           <div key={index} className="image1">
-            <img
+            <Image
+              width={400}
+              height={300}
               src={imagePath}
               alt={altText}
               className="image-placeholder"
-              loading="lazy"
             />
           </div>
         );

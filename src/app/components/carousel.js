@@ -1,6 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useMemo } from "react";
+import Image from "next/image";
 export default function ReviewsCarousel() {
   const images = useMemo(
     () => [
@@ -29,7 +30,12 @@ export default function ReviewsCarousel() {
       >
         {images.map((src, index) => (
           <div key={index} style={{ borderRadius: "var(--soft-radius)" }}>
-            <img src={src} alt={`Review ${index + 1}`} loading="lazy" />
+            <Image
+              width={400}
+              height={300}
+              src={src}
+              alt={`Review ${index + 1}`}
+            />
           </div>
         ))}
       </Carousel>

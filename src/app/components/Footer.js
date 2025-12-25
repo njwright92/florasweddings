@@ -7,21 +7,16 @@ import {
   faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
 import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo - Flex Start */}
+        <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="md:flex-grow-0">
             <Link href="/">
-              <img
-                src="/img/logo.webp"
-                alt="Floras Flowers"
-                className="logo"
-                loading="lazy"
-              />
+              <img src="/img/logo.webp" alt="Floras Flowers" className="logo" />
             </Link>
           </div>
 
@@ -29,18 +24,17 @@ export default function Footer() {
             <h1 className="subtitle">
               Thanks for visiting Floras Flowers wedding page!
             </h1>
-            <img
+            <Image
               src="/img/flower-PhotoRoom.webp"
               width={160}
-              height={70}
-              loading="lazy"
+              height={80}
               alt="Flower"
-              className="-mt-20 -mb-10"
+              className="-mb-10 -mt-20"
             />
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 w-full">
+        <div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
           <div className="flex flex-col items-center md:flex-grow">
             <h2 className="body-text text-center">
               Follow me on social media:
@@ -82,7 +76,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col items-center md:flex-grow-0">
-            <h2 className="body-text text-center m-1">
+            <h2 className="body-text m-1 text-center">
               Looking to send flowers for a special occasion? Visit our online
               store for a beautiful selection and prompt delivery.
             </h2>
@@ -91,7 +85,7 @@ export default function Footer() {
               className="footer-link text-lg"
             >
               <button
-                className="drop-shadow-xl rounded-lg border border-black p-2"
+                className="rounded-lg border border-black p-2 drop-shadow-xl"
                 aria-label="Visit Floras Flowers Website"
               >
                 🌸 Floras Flowers
@@ -105,11 +99,11 @@ export default function Footer() {
           href="mailto:Florasproflowers@gmail.com"
           className="footer-link text-md m-1"
         >
-          <FontAwesomeIcon icon={faMailBulk} className="h-5 w-5 mr-1" />
+          <FontAwesomeIcon icon={faMailBulk} className="mr-1 h-5 w-5" />
           Florasproflowers@gmail.com
         </a>
         <a href="tel:+12087559409" className="footer-link text-md m-1">
-          <FontAwesomeIcon icon={faPhone} className="h-5 w-5 mr-1" />
+          <FontAwesomeIcon icon={faPhone} className="mr-1 h-5 w-5" />
           (208)-755-9409
         </a>
       </div>

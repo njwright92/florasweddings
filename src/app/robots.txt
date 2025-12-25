@@ -1,5 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
 User-Agent: *
 Allow: /
+
+# Block non-content paths
+Disallow: /_next/
+Disallow: /api/
 Disallow: /private/
 
+# Sitemaps
 Sitemap: https://florasweddings.com/sitemap.xml

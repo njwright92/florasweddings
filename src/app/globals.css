@@ -21,7 +21,7 @@
 .logo {
   border-radius: var(--soft-radius);
   max-width: 25rem;
-  height: "auto";
+  height: auto;
   margin-bottom: -1rem;
   cursor: pointer;
 }
@@ -413,7 +413,9 @@ form {
 
 .input,
 .textarea {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border: 0.125rem solid rgba(var(--color-green));
   border-radius: var(--soft-radius);
   width: 50%;

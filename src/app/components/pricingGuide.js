@@ -1,14 +1,15 @@
+import Image from "next/image";
+
 export default function PricingGuide() {
   return (
     <>
       <div className="pricing-container mx-auto">
         <div className="title-container">
           <h1 className="title-alt">Full Service Floral Guide</h1>
-          <img
+          <Image
             src="/img/flower-PhotoRoom.webp"
             width={200}
             height={100}
-            loading="lazy"
             alt="Flower"
             className="-mt-20"
           />
@@ -22,7 +23,7 @@ export default function PricingGuide() {
         <div className="grid1">
           <div className="pricing-column md:mr-2">
             <h2 className="subtitle">Ceremony</h2>
-            <hr className="mb-4 horizontal-line" />
+            <hr className="horizontal-line mb-4" />
             <ul className="pricing-list">
               <li>Statement Piece - $175</li>
               <li>Pew Decor - $25</li>
@@ -32,7 +33,7 @@ export default function PricingGuide() {
           </div>
           <div className="pricing-column md:mr-2">
             <h2 className="subtitle">Reception</h2>
-            <hr className="mb-4 horizontal-line" />
+            <hr className="horizontal-line mb-4" />
             <ul className="pricing-list">
               <li>Centerpiece - $55</li>
               <li>Full Table Design - $125</li>
@@ -43,7 +44,7 @@ export default function PricingGuide() {
           </div>
           <div className="pricing-column md:mr-2">
             <h2 className="subtitle">Bridal Party</h2>
-            <hr className="mb-4 horizontal-line" />
+            <hr className="horizontal-line mb-4" />
             <ul className="pricing-list">
               <li>Bridal Bouquet - $155</li>
               <li>Bridesmaid Bouquet - $75</li>

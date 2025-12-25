@@ -2,12 +2,13 @@
 
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import Image from "next/image";
 
 export default function ConsultationForm() {
   const form = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
     emailjs
       .sendForm(
@@ -33,11 +34,10 @@ export default function ConsultationForm() {
     <>
       <div className="title-container">
         <h1 className="title">Contact Us for a Consultation</h1>
-        <img
+        <Image
           src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
-          loading="lazy"
           alt="Flower"
           className="-mt-20"
         />
@@ -54,28 +54,24 @@ export default function ConsultationForm() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="form m-2 p-6 md:w-1/2 mx-auto"
+          className="form m-2 mx-auto p-6 md:w-1/2"
         >
           <h2 className="subtitle mb-2">
             Create Your Dream Wedding with Custom Floral Designs!
           </h2>
           <hr className="mb-4" />
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="Wedding Consultation Request"
-          />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+          {/* Note: I removed the hidden inputs (_captcha, etc) as those are usually 
+              for FormSubmit.co, not EmailJS. If you are using them in your 
+              EmailJS template specifically, you can add them back. */}
 
           <div className="mb-4 md:flex">
-            <div className="md:mr-2 mb-4 md:mb-0">
+            <div className="mb-4 md:mb-0 md:mr-2">
               <label className="label" htmlFor="firstName">
                 Bride&apos;s Name
               </label>
               <input
-                className="shadow border rounded py-2 px-3 text-gray-700"
+                className="rounded border px-3 py-2 text-gray-700 shadow"
                 id="firstName"
                 name="bride_name"
                 type="text"
@@ -88,7 +84,7 @@ export default function ConsultationForm() {
                 Groom&apos;s Name
               </label>
               <input
-                className="shadow border rounded py-2 px-3 text-gray-700"
+                className="rounded border px-3 py-2 text-gray-700 shadow"
                 id="groomName"
                 name="groom_name"
                 type="text"
@@ -103,7 +99,7 @@ export default function ConsultationForm() {
               Planner&apos;s Name
             </label>
             <input
-              className="shadow border rounded py-2 px-3 text-gray-700"
+              className="rounded border px-3 py-2 text-gray-700 shadow"
               id="plannerName"
               name="planner_name"
               type="text"
@@ -112,12 +108,12 @@ export default function ConsultationForm() {
           </div>
 
           <div className="mb-4 md:flex">
-            <div className="md:mr-2 mb-4 md:mb-0">
+            <div className="mb-4 md:mb-0 md:mr-2">
               <label className="label" htmlFor="email">
                 Email
               </label>
               <input
-                className="shadow border rounded w-full py-2 px-3 text-gray-700"
+                className="w-full rounded border px-3 py-2 text-gray-700 shadow"
                 id="email"
                 name="bride_email"
                 type="email"
@@ -131,7 +127,7 @@ export default function ConsultationForm() {
                 Planner Email
               </label>
               <input
-                className="shadow border rounded w-full py-2 px-3 text-gray-700"
+                className="w-full rounded border px-3 py-2 text-gray-700 shadow"
                 id="email1"
                 name="planner_email"
                 type="email"
@@ -142,12 +138,12 @@ export default function ConsultationForm() {
           </div>
 
           <div className="mb-4 md:flex">
-            <div className="md:mr-2 mb-4 md:mb-0">
+            <div className="mb-4 md:mb-0 md:mr-2">
               <label className="label" htmlFor="phone">
                 Bride&apos;s Phone
               </label>
               <input
-                className="shadow border rounded w-full py-2 px-3 text-gray-700"
+                className="w-full rounded border px-3 py-2 text-gray-700 shadow"
                 id="phone"
                 name="bride_phone"
                 type="tel"
@@ -162,7 +158,7 @@ export default function ConsultationForm() {
                 Planner Phone
               </label>
               <input
-                className="shadow border rounded w-full py-2 px-3 text-gray-700"
+                className="w-full rounded border px-3 py-2 text-gray-700 shadow"
                 id="phone1"
                 name="planner_phone"
                 type="tel"
@@ -179,7 +175,7 @@ export default function ConsultationForm() {
               Venue
             </label>
             <input
-              className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
+              className="max-w-md rounded border px-3 py-2 text-gray-700 shadow"
               id="venue"
               name="venue"
               type="text"
@@ -193,7 +189,7 @@ export default function ConsultationForm() {
               Reception Venue (if different)
             </label>
             <input
-              className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
+              className="max-w-md rounded border px-3 py-2 text-gray-700 shadow"
               id="venue1"
               name="reception_venue"
               type="text"
@@ -206,7 +202,7 @@ export default function ConsultationForm() {
               Date of Event
             </label>
             <input
-              className="shadow border rounded max-w-md py-2 px-3 text-gray-700"
+              className="max-w-md rounded border px-3 py-2 text-gray-700 shadow"
               id="date"
               name="event_date"
               type="date"
@@ -214,11 +210,10 @@ export default function ConsultationForm() {
             />
           </div>
 
-          <div className="mb-4">
-            <label className="label" htmlFor="preferredStyle">
-              Preferred Style
-            </label>
-            <div className="flex flex-col max-w-md">
+          {/* Accessibility Fix: fieldset groups the checkboxes properly */}
+          <fieldset className="mb-4">
+            <legend className="label">Preferred Style</legend>
+            <div className="flex max-w-md flex-col">
               {[
                 "modern",
                 "garden",
@@ -234,17 +229,18 @@ export default function ConsultationForm() {
                     name="preferred_style"
                     value={style}
                   />
-                  <span className="ml-2 text-gray-700 capitalize">{style}</span>
+                  <span className="ml-2 capitalize text-gray-700">{style}</span>
                 </label>
               ))}
             </div>
-          </div>
+          </fieldset>
+
           <div className="mb-4">
             <label className="label" htmlFor="additionalInfo">
               Additional Information
             </label>
             <textarea
-              className="shadow border rounded w-full py-3 px-3 text-gray-700"
+              className="w-full rounded border px-3 py-3 text-gray-700 shadow"
               id="additionalInfo"
               name="additional_info"
               placeholder="Any additional details you want me to know!"

@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ReviewsCarousel from "../components/carousel";
 import AboutUs from "../components/aboutUs";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -12,11 +13,10 @@ export default function About() {
       <AboutUs />
       <div className="title-container">
         <h1 className="title">Reviews</h1>
-        <img
+        <Image
           src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
-          loading="lazy"
           alt="Flower"
           className="-mt-20"
         />

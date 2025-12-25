@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -7,11 +8,10 @@ export default function Faqs() {
       <Header />
       <div className="title-container">
         <h1 className="title">Frequently Asked Questions</h1>
-        <img
+        <Image
           src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
-          loading="lazy"
           alt="Flower"
           className="-mt-20"
         />

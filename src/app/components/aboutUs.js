@@ -1,13 +1,14 @@
+import Image from "next/image";
+
 export default function AboutUs() {
   return (
     <>
       <div className="title-container">
         <h1 className="title">About Flora&apos;s Flowers</h1>
-        <img
+        <Image
           src="/img/flower-PhotoRoom.webp"
           width={200}
           height={100}
-          loading="lazy"
           alt="Flower"
           className="-mt-20"
         />
@@ -17,12 +18,13 @@ export default function AboutUs() {
         Flowers.
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center">
-        <img
+      <div className="flex flex-col items-center md:flex-row">
+        <Image
+          width={200}
+          height={200}
           src="/img/staci.webp"
           alt="Staci"
-          className="rounded-full m-2"
-          loading="lazy"
+          className="m-2 rounded-full"
         />
         <h3 className="subtitle">Staci Huffman</h3>
         <p className="body-text">
@@ -60,11 +62,12 @@ export default function AboutUs() {
         moment!
       </p>
       <br />
-      <img
+      <Image
+        width={1000}
+        height={1000}
         src="/img/map.webp"
         alt="Map"
-        loading="lazy"
-        className="w-full h-auto rounded-lg shadow-md"
+        className="h-auto w-full rounded-lg shadow-md"
       />
     </>
   );

@@ -2,14 +2,13 @@ import fs from "fs";
 import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
+import Image from "next/image";
 
 // Read the image filenames from the directory
 const imagesDirectory = path.join(process.cwd(), "public", "img", "hirschel");
 const imageFilenames = fs.readdirSync(imagesDirectory);
 
 export default function Gallery() {
-  let currentIndex = 0;
-
   return (
     <div>
       <Header />
@@ -47,20 +46,19 @@ export default function Gallery() {
               filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
 
             // Increment the current index for the next image
-            currentIndex++;
 
             return (
               <div key={index} className="image">
-                <img
+                <Image
+                  width={400}
+                  height={300}
                   src={imagePath}
                   alt={altText}
                   className="image-placeholder"
-                  loading="lazy"
                 />
               </div>
             );
           }
-          currentIndex++;
           return null;
         })}
       </div>

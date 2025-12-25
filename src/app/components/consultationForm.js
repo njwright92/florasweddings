@@ -78,9 +78,9 @@ export default function ConsultationForm({ headingLevel = "h2" }) {
         onSubmit={sendEmail}
         className="mx-auto mt-6 max-w-2xl rounded-lg border-2 border-green-700 bg-gray-100 p-6 shadow-md"
       >
-        <h3 className="subtitle mb-2">
+        <h2 className="subtitle mb-2">
           Create Your Dream Wedding with Custom Floral Designs!
-        </h3>
+        </h2>
         <hr className="mb-6" />
 
         {/* Status Message */}

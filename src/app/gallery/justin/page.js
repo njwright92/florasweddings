@@ -1,66 +1,73 @@
-import fs from "fs";
-import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Image from "next/image";
+import fs from "fs";
+import path from "path";
 
-// Read the image filenames from the directory
-const imagesDirectory = path.join(process.cwd(), "public", "img", "justin");
-const imageFilenames = fs.readdirSync(imagesDirectory);
+// Define gallery path once to avoid typos
+const galleryFolder = "justin";
+const imagesDirectory = path.join(
+  process.cwd(),
+  "public",
+  "img",
+  galleryFolder
+);
+
+// Filter out system files immediately
+const imageFilenames = fs
+  .readdirSync(imagesDirectory)
+  .filter((file) => file !== ".DS_Store");
+
+// Add SEO Metadata
+export const metadata = {
+  title:
+    "Justin & Kaylee Wright Wedding | Rustic Rathdrum ID | Flora's Weddings",
+  description:
+    "Rustic charm and natural beauty in Rathdrum, Idaho. View the wedding floral gallery of Justin and Kaylee Wright, captured by kaitlynanne.photography.",
+};
 
 export default function Gallery() {
   return (
-    <div>
+    <>
       <Header />
-      <h1 className="title gallery">Rustic Charm</h1>
-      <p className="subtitle text-center">
-        Justin and Kaylee Wright: Celebrating Love Amidst Nature, Rathdrum, ID.
-      </p>
+      <main>
+        <h1 className="title gallery">Rustic Charm</h1>
 
-      <p className="body-text text-center">
-        Justin and Kaylee Wright&#39;s wedding in Rathdrum, Idaho, was a
-        delightful showcase of rustic charm and natural beauty. The outdoor
-        setting provided a picturesque canvas for their love, complemented by
-        elegant floral arrangements. Captured beautifully by
-        kaitlynanne.photography, each photo resonates with the joy and warmth of
-        their special day.
-      </p>
-      <div className="grid">
-        {imageFilenames.map((filename, index) => {
-          // Exclude the .DS_Store file
-          if (filename === ".DS_Store") {
-            return null;
-          }
+        <h2 className="subtitle text-center">
+          Justin and Kaylee Wright: Celebrating Love Amidst Nature, Rathdrum,
+          ID.
+        </h2>
 
-          // Check if the image file exists
-          const imagePath = `/img/justin/${filename}`;
-          const imageExists = fs.existsSync(
-            path.join(imagesDirectory, filename)
-          );
+        <p className="body-text mb-4 text-center">
+          Justin and Kaylee Wright&#39;s wedding in Rathdrum, Idaho, was a
+          delightful showcase of rustic charm and natural beauty. The outdoor
+          setting provided a picturesque canvas for their love, complemented by
+          elegant floral arrangements. Captured beautifully by
+          kaitlynanne.photography, each photo resonates with the joy and warmth
+          of their special day.
+        </p>
 
-          if (imageExists) {
-            // Use the filename without the extension as alt text
-            const altText =
-              filename.replace(/\.[^/.]+$/, "") + " Wedding Flowers";
-
-            // Increment the current index for the next image
+        <div className="grid">
+          {imageFilenames.map((filename, index) => {
+            const imagePath = `/img/${galleryFolder}/${filename}`;
+            const altText = `${filename.replace(/\.[^/.]+$/, "")} Wedding bouquets`;
 
             return (
-              <div key={index} className="image">
+              <div key={filename} className="image">
                 <Image
-                  width={400}
-                  height={300}
                   src={imagePath}
                   alt={altText}
-                  className="image-placeholder"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                  className="image-placeholder object-cover"
+                  priority={index < 4}
                 />
               </div>
             );
-          }
-          return null;
-        })}
-      </div>
+          })}
+        </div>
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

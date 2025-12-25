@@ -1,67 +1,71 @@
-import fs from "fs";
-import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Image from "next/image";
+import fs from "fs";
+import path from "path";
+
+// Define gallery path once to avoid typos
+const galleryFolder = "wright";
+const imagesDirectory = path.join(
+  process.cwd(),
+  "public",
+  "img",
+  galleryFolder
+);
+
+// Filter out system files immediately
+const imageFilenames = fs
+  .readdirSync(imagesDirectory)
+  .filter((file) => file !== ".DS_Store");
+
+// Add SEO Metadata
+export const metadata = {
+  title:
+    "Seth & Michaelene Wright Wedding | Shakespeare Festival Boise | Flora's Weddings",
+  description:
+    "A theatrical romance at Idaho Shakespeare Festival Park in Boise. View the wedding floral gallery of Seth and Michaelene Wright.",
+};
 
 export default function Gallery() {
-  // Read the image filenames from the directory
-  const imagesDirectory = path.join(process.cwd(), "public", "img", "wright");
-  const imageFilenames = fs.readdirSync(imagesDirectory);
-
   return (
-    <div>
+    <>
       <Header />
-      <h1 className="title gallery">Idaho Shakespeare Festival Park</h1>
+      <main>
+        <h1 className="title gallery">Idaho Shakespeare Festival Park</h1>
 
-      <p className="subtitle text-center">
-        Dramatic Elegance Seth and Michaelene Wright: A Theatrical Romance in
-        Boise, ID.
-      </p>
+        <h2 className="subtitle text-center">
+          Seth and Michaelene Wright: A Theatrical Romance in Boise, ID.
+        </h2>
 
-      <p className="body-text text-center">
-        Seth and Michaelene Wright&#39;s wedding at the Idaho Shakespeare
-        Festival Park in Boise was a captivating blend of drama and elegance.
-        The unique setting lent a theatrical backdrop to their special day,
-        enhanced by lovingly captured phone pictures from family, which added a
-        personal and intimate touch to their memorable celebration.
-      </p>
-      <div className="grid">
-        {imageFilenames.map((filename, index) => {
-          // Exclude the .DS_Store file
-          if (filename === ".DS_Store") {
-            return null;
-          }
+        <p className="body-text mb-4 text-center">
+          Seth and Michaelene Wright&#39;s wedding at the Idaho Shakespeare
+          Festival Park in Boise was a captivating blend of drama and elegance.
+          The unique setting lent a theatrical backdrop to their special day,
+          enhanced by lovingly captured phone pictures from family, which added
+          a personal and intimate touch to their memorable celebration.
+        </p>
 
-          // Check if the image file exists
-          const imagePath = `/img/wright/${filename}`;
-          const imageExists = fs.existsSync(
-            path.join(imagesDirectory, filename)
-          );
-
-          if (imageExists) {
-            // Use the filename without the extension as alt text
-            const altText =
-              filename.replace(/\.[^/.]+$/, "") + " Wedding boquets";
-
-            // Increment the current index for the next image
+        <div className="grid">
+          {imageFilenames.map((filename, index) => {
+            const imagePath = `/img/${galleryFolder}/${filename}`;
+            const altText = `${filename.replace(/\.[^/.]+$/, "")} Wedding bouquets`;
 
             return (
-              <div key={index} className="image">
+              <div key={filename} className="image">
                 <Image
-                  width={400}
-                  height={300}
                   src={imagePath}
                   alt={altText}
-                  className="image-placeholder"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                  className="image-placeholder object-cover"
+                  priority={index < 4}
                 />
               </div>
             );
-          }
-          return null;
-        })}
-      </div>
+          })}
+        </div>
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

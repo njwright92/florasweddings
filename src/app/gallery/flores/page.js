@@ -4,66 +4,71 @@ import Image from "next/image";
 import fs from "fs";
 import path from "path";
 
-// Read the image filenames from the directory
-const imagesDirectory = path.join(process.cwd(), "public", "img", "flores");
-const imageFilenames = fs.readdirSync(imagesDirectory);
+// Define gallery path once to avoid typos
+const galleryFolder = "flores";
+const imagesDirectory = path.join(
+  process.cwd(),
+  "public",
+  "img",
+  galleryFolder
+);
+
+// Filter out system files immediately
+const imageFilenames = fs
+  .readdirSync(imagesDirectory)
+  .filter((file) => file !== ".DS_Store");
+
+// Add SEO Metadata
+export const metadata = {
+  title: "Flores Wedding | Mish-an-nock Cruise Boat CDA | Flora's Weddings",
+  description:
+    "A voyage of love aboard the Mish-an-nock cruise boat in Coeur d'Alene. View the nautical wedding floral gallery of the Flores wedding.",
+};
 
 export default function Gallery() {
   return (
-    <div>
+    <>
       <Header />
-      <h1 className="title gallery">
-        Nautical Nuptials: Coeur d&#39;Alene Resort
-      </h1>
+      <main>
+        <h1 className="title gallery">
+          Nautical Nuptials: Coeur d&#39;Alene Resort
+        </h1>
 
-      <p className="subtitle text-center">
-        Flores Wedding: A Voyage of Love on the Mish-an-nock, Coeur d&#39;Alene,
-        ID.
-      </p>
+        <h2 className="subtitle text-center">
+          Flores Wedding: A Voyage of Love on the Mish-an-nock, Coeur
+          d&#39;Alene, ID.
+        </h2>
 
-      <p className="body-text text-center">
-        The Flores wedding aboard the Mish-an-nock cruise boat was a splendid
-        fusion of elegance and adventure. Cruising along the waters of Coeur
-        d&#39;Alene, the celebration captivated guests with stunning lake views
-        and exquisite floral arrangements. Light Cast Photography skillfully
-        captured the romance and beauty of this unique lakeside journey.
-      </p>
-      <div className="grid">
-        {imageFilenames.map((filename, index) => {
-          // Exclude the .DS_Store file
-          if (filename === ".DS_Store") {
-            return null;
-          }
+        <p className="body-text mb-4 text-center">
+          The Flores wedding aboard the Mish-an-nock cruise boat was a splendid
+          fusion of elegance and adventure. Cruising along the waters of Coeur
+          d&#39;Alene, the celebration captivated guests with stunning lake
+          views and exquisite floral arrangements. Light Cast Photography
+          skillfully captured the romance and beauty of this unique lakeside
+          journey.
+        </p>
 
-          // Check if the image file exists
-          const imagePath = `/img/flores/${filename}`;
-          const imageExists = fs.existsSync(
-            path.join(imagesDirectory, filename)
-          );
-
-          if (imageExists) {
-            // Use the filename without the extension as alt text
-            const altText =
-              filename.replace(/\.[^/.]+$/, "") + "Wedding Flowers";
-
-            // Increment the current index for the next image
+        <div className="grid">
+          {imageFilenames.map((filename, index) => {
+            const imagePath = `/img/${galleryFolder}/${filename}`;
+            const altText = `${filename.replace(/\.[^/.]+$/, "")} Wedding flowers`;
 
             return (
-              <div key={index} className="image">
+              <div key={filename} className="image">
                 <Image
-                  width={400}
-                  height={300}
                   src={imagePath}
                   alt={altText}
-                  className="image-placeholder"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                  className="image-placeholder object-cover"
+                  priority={index < 4}
                 />
               </div>
             );
-          }
-          return null;
-        })}
-      </div>
+          })}
+        </div>
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

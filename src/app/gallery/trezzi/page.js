@@ -1,66 +1,71 @@
-import fs from "fs";
-import path from "path";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Image from "next/image";
+import fs from "fs";
+import path from "path";
 
-// Read the image filenames from the directory
-const imagesDirectory = path.join(process.cwd(), "public", "img", "trezzi");
-const imageFilenames = fs.readdirSync(imagesDirectory);
+// Define gallery path once to avoid typos
+const galleryFolder = "trezzi";
+const imagesDirectory = path.join(
+  process.cwd(),
+  "public",
+  "img",
+  galleryFolder
+);
+
+// Filter out system files immediately
+const imageFilenames = fs
+  .readdirSync(imagesDirectory)
+  .filter((file) => file !== ".DS_Store");
+
+// Add SEO Metadata
+export const metadata = {
+  title: "Knox Wedding | Trezzi Farm Winery Colbert WA | Flora's Weddings",
+  description:
+    "Vineyard vows at Trezzi Farm Winery in Colbert, Washington. View the rustic and elegant wedding floral gallery of the 2022 Knox wedding.",
+};
 
 export default function Gallery() {
   return (
-    <div>
+    <>
       <Header />
-      <h1 className="title gallery">Vineyard Vows at Trezzi Farm Winery</h1>
+      <main>
+        <h1 className="title gallery">Vineyard Vows at Trezzi Farm Winery</h1>
 
-      <p className="subtitle text-center">
-        2022 Knox Wedding: Rustic Elegance in Colbert, Washington
-      </p>
+        <h2 className="subtitle text-center">
+          2022 Knox Wedding: Rustic Elegance in Colbert, Washington
+        </h2>
 
-      <p className="body-text text-center">
-        The 2022 Knox wedding at Trezzi Farm Winery in Colbert, Washington, was
-        a beautiful blend of rustic charm and vineyard elegance. Set amidst
-        rolling vineyards, the celebration was marked by an air of romantic
-        sophistication. Though the photographer remains unknown, the day&#39;s
-        enchanting moments are vividly remembered for their joy and beauty.
-      </p>
-      <div className="grid">
-        {imageFilenames.map((filename, index) => {
-          // Exclude the .DS_Store file
-          if (filename === ".DS_Store") {
-            return null;
-          }
+        <p className="body-text mb-4 text-center">
+          The 2022 Knox wedding at Trezzi Farm Winery in Colbert, Washington,
+          was a beautiful blend of rustic charm and vineyard elegance. Set
+          amidst rolling vineyards, the celebration was marked by an air of
+          romantic sophistication. Though the photographer remains unknown, the
+          day&#39;s enchanting moments are vividly remembered for their joy and
+          beauty.
+        </p>
 
-          // Check if the image file exists
-          const imagePath = `/img/trezzi/${filename}`;
-          const imageExists = fs.existsSync(
-            path.join(imagesDirectory, filename)
-          );
-
-          if (imageExists) {
-            // Use the filename without the extension as alt text
-            const altText =
-              filename.replace(/\.[^/.]+$/, "") + " Wedding Florals";
-
-            // Increment the current index for the next image
+        <div className="grid">
+          {imageFilenames.map((filename, index) => {
+            const imagePath = `/img/${galleryFolder}/${filename}`;
+            const altText = `${filename.replace(/\.[^/.]+$/, "")} Wedding Florals`;
 
             return (
-              <div key={index} className="image">
+              <div key={filename} className="image">
                 <Image
-                  width={400}
-                  height={300}
                   src={imagePath}
                   alt={altText}
-                  className="image-placeholder"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                  className="image-placeholder object-cover"
+                  priority={index < 4}
                 />
               </div>
             );
-          }
-          return null;
-        })}
-      </div>
+          })}
+        </div>
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

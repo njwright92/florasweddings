@@ -46,7 +46,6 @@ const NAV_ITEMS = [
 ];
 
 const GALLERY_ITEMS = [
-  { href: "/gallery/lumen", label: "Damschen Wedding at The Lumen Hall CDA" },
   {
     href: "/gallery/butterfield",
     label: "Butterfield Wedding at The Willows CDA",
@@ -78,6 +77,7 @@ const GALLERY_ITEMS = [
   { href: "/gallery/justin", label: "A Wright wedding in Rathdrum, ID" },
   { href: "/gallery/knox", label: "Knox/Farley Wedding at the CDA Casino" },
   { href: "/gallery/koho", label: "Koho Wedding at Firebrand Cocallala" },
+  { href: "/gallery/lumen", label: "Damschen Wedding at The Lumen Hall CDA" },
   { href: "/gallery/suko", label: "Suko Wedding at Firebrand cocalala" },
   { href: "/gallery/trezzi", label: "Knox wedding at Trezzi Farm Winery, WA" },
   { href: "/gallery/wabs", label: "The Wabs Wedding Idaho" },

@@ -1,15 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* 
+  Link your custom variables to Tailwind Utilities 
+  This replaces tailwind.config.js
+*/
+@theme {
+  --color-primary: rgb(var(--color-primary));
+  --color-secondary: rgb(var(--color-secondary));
+  --color-accent: rgb(var(--color-accent));
+  --color-green: rgb(var(--color-green));
+
+  --radius-soft: var(--soft-radius);
+}
+
+/* Your Custom Variables */
 :root {
   --color-secondary: 247, 231, 206;
   --color-primary: 251, 251, 251;
   --color-accent: 10, 10, 10;
   --color-green: 101, 106, 54;
-  --soft-radius: 0.625rem;
+  --soft-radius: 0.75rem;
 }
 
+/* Your Custom CSS Classes (Unchanged) */
 .title-container {
   text-align: center;
   display: flex;
@@ -110,7 +123,7 @@ body {
 }
 
 .section {
-  padding: 0.75rem;
+  padding: 0.75rem 0.25rem;
   border-radius: var(--soft-radius);
 }
 
@@ -174,25 +187,24 @@ body {
 
 .image-title {
   position: absolute;
-  bottom: 0; /* updated from 10px to 1rem */
+  bottom: 0;
   left: 0;
   right: 0;
   background-color: rgba(240, 240, 240, 0.7);
   color: #3f3f3f;
-  padding: 0.3125rem; /* reduced from 5px */
+  padding: 0.3125rem;
   border-radius: var(--soft-radius);
   box-sizing: border-box;
   text-align: center;
-  white-space: nowrap; /* prevents wrapping to next line */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* adds an ellipsis if the text is too long */
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 700px) {
-  /* 700px in rem */
   .image-title {
-    font-size: 0.875rem; /* smaller text on smaller screens */
-    padding: 0.25rem; /* even smaller padding */
+    font-size: 0.875rem;
+    padding: 0.25rem;
   }
 }
 
@@ -245,7 +257,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background-color: rgb(var(--color-secondary));
 }
 
@@ -476,24 +487,9 @@ form {
   font-weight: 500;
 }
 
-.carousel .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--soft-radius);
-}
-
-.carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 100%;
-}
-
 .form-checkbox {
-  width: 24px; /* Adjust as necessary */
-  height: 24px; /* Adjust as necessary */
+  width: 24px;
+  height: 24px;
   min-width: 20px;
   min-height: 20px;
   border-radius: var(--soft-radius);

@@ -3,10 +3,12 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// Components
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Collage from "./components/collage";
 import ReviewsCarousel from "./components/carousel";
 import GalleryLinks from "./components/galleryLinks";
@@ -14,42 +16,47 @@ import PricingGuide from "./components/pricingGuide";
 import ConsultationForm from "./components/consultationForm";
 import AboutUs from "./components/aboutUs";
 
+// Static Data (Moved outside to prevent re-creation)
+const BUSINESS_DATA = {
+  "@context": "https://schema.org",
+  "@type": "Florist",
+  name: "Flora's Weddings",
+  description:
+    "Local florist specializing in beautiful, unique wedding florals. Catering to all your wedding flower needs.",
+  telephone: "208-755-9409",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Rathdrum",
+    addressRegion: "ID",
+    postalCode: "83858",
+    addressCountry: "USA",
+  },
+  areaServed: [
+    { "@type": "Place", name: "Kootenai County" },
+    { "@type": "Place", name: "Surrounding areas" },
+  ],
+};
+
+// Reusable Section Wrapper to reduce JSX
+const Section = ({ id, children }) => (
+  <section className="section" id={id} data-aos="fade-up">
+    {children}
+  </section>
+);
+
 export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 800,
       once: true,
-      offset: 50,
-      delay: 50,
-      easing: "ease-out-cubic",
     });
   }, []);
-
-  const businessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Florist",
-    name: "Flora's Weddings",
-    description:
-      "Local florist specializing in beautiful, unique wedding florals. Catering to all your wedding flower needs.",
-    telephone: "208-755-9409",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Rathdrum",
-      addressRegion: "ID",
-      postalCode: "83858",
-      addressCountry: "USA",
-    },
-    areaServed: [
-      { "@type": "Place", name: "Kootenai County" },
-      { "@type": "Place", name: "Surrounding areas" },
-    ],
-  };
 
   return (
     <main className="main" id="main">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_DATA) }}
       />
       <Header />
 
@@ -77,8 +84,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Gallery Section */}
-      <section className="section" id="gallery" data-aos="fade-up">
+      <Section id="gallery">
         <div className="title-container">
           <h2 className="title">Weddings</h2>
           <Image
@@ -91,25 +97,21 @@ export default function Home() {
           />
         </div>
         <GalleryLinks />
-      </section>
+      </Section>
 
-      {/* Pricing Section */}
-      <section className="section" id="pricing" data-aos="fade-up">
+      <Section id="pricing">
         <PricingGuide />
-      </section>
+      </Section>
 
-      {/* About Section */}
-      <section className="section" id="about" data-aos="fade-up">
+      <Section id="about">
         <AboutUs />
-      </section>
+      </Section>
 
-      {/* Contact Section */}
-      <section className="section" id="contact" data-aos="fade-up">
+      <Section id="contact">
         <ConsultationForm />
-      </section>
+      </Section>
 
-      {/* Reviews Section */}
-      <section className="section" id="reviews" data-aos="fade-up">
+      <Section id="reviews">
         <div className="title-container">
           <h2 className="title">Reviews</h2>
           <Image
@@ -124,12 +126,11 @@ export default function Home() {
           My clients have left positive reviews on Yelp and Google!
         </p>
         <ReviewsCarousel />
-      </section>
+      </Section>
 
-      {/* Collage Section */}
-      <section className="section" id="collage" data-aos="fade-up">
+      <Section id="collage">
         <Collage />
-      </section>
+      </Section>
 
       <Footer />
     </main>

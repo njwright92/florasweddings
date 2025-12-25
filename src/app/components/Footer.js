@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareInstagram,
@@ -6,122 +7,111 @@ import {
   faYelp,
   faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
-import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+
+const SOCIAL_LINKS = [
+  {
+    href: "https://www.instagram.com/floras_flowers4u/",
+    icon: faSquareInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.facebook.com/happytrailsfloral",
+    icon: faSquareFacebook,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.yelp.com/biz/floras-flowers-rathdrum",
+    icon: faYelp,
+    label: "Yelp",
+  },
+  {
+    href: "https://www.google.com/search?q=floras+weddings+rathdrum",
+    icon: faGoogle,
+    label: "Google",
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="flex flex-col items-center justify-between md:flex-row">
-          <div className="md:flex-grow-0">
-            <Link href="/">
-              <img src="/img/logo.webp" alt="Floras Flowers" className="logo" />
-            </Link>
-          </div>
-
-          <div className="title-container text-center md:flex-grow">
-            <h1 className="subtitle">
-              Thanks for visiting Floras Flowers wedding page!
-            </h1>
+    <footer className="mt-4 w-full bg-white/90 px-4 py-4">
+      <div className="mx-auto max-w-5xl">
+        {/* Main Content Row */}
+        <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
             <Image
-              src="/img/flower-PhotoRoom.webp"
-              width={160}
-              height={80}
-              alt="Flower"
-              className="-mb-10 -mt-20"
+              src="/img/logo.webp"
+              alt="Flora's Flowers"
+              width={140}
+              height={70}
+              className="h-auto w-28"
             />
-          </div>
-        </div>
+          </Link>
 
-        <div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row md:gap-8">
-          <div className="flex flex-col items-center md:flex-grow">
-            <h2 className="body-text text-center">
-              Follow me on social media:
-            </h2>
-            <div className="flex gap-1">
-              <Link
-                href="https://www.instagram.com/floras_flowers4u/"
-                className="footer-link custom-button"
-                aria-label="Visit our Instagram page"
+          {/* Center - Social & Contact */}
+          <div className="flex flex-col items-center gap-2">
+            {/* Social Icons */}
+            <div className="flex gap-2">
+              {SOCIAL_LINKS.map(({ href, icon, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow transition-transform hover:scale-110"
+                  aria-label={`Visit our ${label} page`}
+                >
+                  <FontAwesomeIcon
+                    icon={icon}
+                    className="h-5 w-5 text-[rgb(var(--color-green))]"
+                  />
+                </Link>
+              ))}
+            </div>
+
+            {/* Contact Links */}
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm">
+              <a
+                href="mailto:Florasproflowers@gmail.com"
+                className="flex items-center gap-1 text-[rgb(var(--color-green))] hover:underline"
               >
-                <FontAwesomeIcon icon={faSquareInstagram} className="fa-xl" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
-                href="https://www.facebook.com/happytrailsfloral"
-                className="footer-link custom-button"
-                aria-label="Visit our Facebook page"
+                <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+                Florasproflowers@gmail.com
+              </a>
+              <a
+                href="tel:+12087559409"
+                className="flex items-center gap-1 text-[rgb(var(--color-green))] hover:underline"
               >
-                <FontAwesomeIcon icon={faSquareFacebook} className="fa-xl" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link
-                href="https://www.yelp.com/biz/floras-flowers-rathdrum?osq=floras+flowers"
-                className="footer-link custom-button"
-                aria-label="Check out our reviews on Yelp"
-              >
-                <FontAwesomeIcon icon={faYelp} className="fa-xl" />
-                <span className="sr-only">Yelp</span>
-              </Link>
-              <Link
-                href="https://www.google.com/search?sca_esv=596423552&sxsrf=ACQVn09gpbrwwD8VldD4ljK2Zd6apOvpOg:1704670363664&q=florasweddings&nfpr=1&sa=X&ved=2ahUKEwjz1_D7t8yDAxWtATQIHXEaAfgQvgUoAXoECBEQAw&biw=1287&bih=771&dpr=2"
-                className="footer-link custom-button"
-                aria-label="Find us on Google"
-              >
-                <FontAwesomeIcon icon={faGoogle} className="fa-xl" />
-                <span className="sr-only">Google</span>
-              </Link>
+                <FontAwesomeIcon icon={faPhone} className="h-4 w-4" />
+                (208) 755-9409
+              </a>
             </div>
           </div>
 
-          <div className="flex flex-col items-center md:flex-grow-0">
-            <h2 className="body-text m-1 text-center">
-              Looking to send flowers for a special occasion? Visit our online
-              store for a beautiful selection and prompt delivery.
-            </h2>
-            <Link
-              href="https://www.florasflowers4u.com"
-              className="footer-link text-lg"
-            >
-              <button
-                className="rounded-lg border border-black p-2 drop-shadow-xl"
-                aria-label="Visit Floras Flowers Website"
-              >
-                🌸 Floras Flowers
-              </button>
-            </Link>
-          </div>
+          {/* Shop Link */}
+          <Link
+            href="https://www.florasflowers4u.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg border border-[rgb(var(--color-green))] px-3 py-1.5 text-sm font-medium text-[rgb(var(--color-green))] transition-all hover:bg-[rgb(var(--color-green))] hover:text-white"
+          >
+            🌸 Visit Shop
+          </Link>
         </div>
 
-        <h3 className="body-text pt-2">Email or call me now at:</h3>
-        <a
-          href="mailto:Florasproflowers@gmail.com"
-          className="footer-link text-md m-1"
-        >
-          <FontAwesomeIcon icon={faMailBulk} className="mr-1 h-5 w-5" />
-          Florasproflowers@gmail.com
-        </a>
-        <a href="tel:+12087559409" className="footer-link text-md m-1">
-          <FontAwesomeIcon icon={faPhone} className="mr-1 h-5 w-5" />
-          (208)-755-9409
-        </a>
-      </div>
-
-      <div className="footer-bottom">
-        <p>
-          © {new Date().getFullYear()} Floras Weddings. All rights reserved.
-          <br />
-          Designed and Coded by: Nathan Wright visit my{" "}
+        {/* Bottom Bar */}
+        <div className="mt-3 border-t border-gray-200 pt-2 text-center text-xs text-gray-500">
+          © {new Date().getFullYear()} Flora&apos;s Weddings • Built by{" "}
           <Link
             href="https://njwright92.github.io/paper-kit-portfolio"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer-link"
+            className="text-[rgb(var(--color-green))] hover:underline"
           >
-            Portfolio
+            Nathan Wright
           </Link>
-        </p>
+        </div>
       </div>
     </footer>
   );
